@@ -1,0 +1,267 @@
+/* Site header and footer */
+
+// Ripped paper effect
+
+.ripped-bottom-header {
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  align-self: flex-end;
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+// Navigation
+header { background-color: #fff; }
+
+.navbar-light .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+  color: #060606;
+  font-weight: 500;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin-left: 3.33rem;
+  z-index: 100;
+}
+
+.navbar-nav { margin-left: 4.5rem; }
+
+.navbar-light .navbar-toggler { border: none; }
+
+.nav-item { margin: 1.7rem 1.88rem 0 .25rem; }
+
+.navbar-light .navbar-toggler-icon {
+  margin-right: 3.3rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .close-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.11rem;
+  height: 1.11rem;
+  margin-right: 3.3rem;
+  background-image: url(../img/close.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.collapsing {height: auto; }
+
+.navbar-toggler.collapsed .close-icon { display: none; }
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon { display: none; }
+
+.dropdown-menu { min-width: 3rem; }
+
+.dropdown-item { padding: 0.25rem 1rem; }
+
+.lang-menu.nav-item { 
+  min-width: auto;
+  margin-left: 1.8rem;
+}
+
+@media only screen and (max-width: 1365px) {
+
+  .navbar-brand { margin-left: 1rem; }
+
+  .navbar-brand img{ max-width: 80%; }
+
+  .nav-item { margin: .1rem 0.5rem 0 0.5rem; }
+
+}
+
+@media only screen and (max-width: 1162px) and (min-width: 991px){
+
+  .navbar-nav,
+  .dropdown-item { font-size: .8rem; }
+
+  .navbar-collapse .navbar-nav { margin-left: 2.5rem; }
+
+}
+
+@media only screen and (max-width: 991px) {
+  
+  .navbar-light .navbar-brand {
+    margin-left: 4.5rem;
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    margin-right: 2.6rem;
+  }
+
+  .navbar-light .close-icon {
+    margin-right: 2.9rem;
+  }
+
+  .collapsing {
+    position: absolute !important;
+    z-index: 50;
+    width: 100%;
+    top: 77px;
+    background-color: #fff;
+  }
+
+  .collapse.show {
+    display: block;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    top: 77px;
+    background-color: #fff;
+  }
+
+  .navbar-nav .nav-item .active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #FFA800;
+    text-decoration-thickness: 0.167rem;
+    text-underline-position: under;
+  }
+
+  .navbar-nav {
+    margin: 5.33rem 0 8.33rem 0;
+    font-size: 1.33rem;
+    font-weight: 500;
+  }
+
+  .nav-link {
+    margin-top: 3.5rem;
+    padding-bottom: 0;
+  }
+
+  .lang-menu a {
+    display: inline-block;
+    margin: 0 2.44rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .navbar-light .navbar-toggler-icon,
+  .navbar-light .close-icon {
+    margin-right: 0;
+  }
+
+  .navbar-nav {
+    margin: 3.78rem 0;
+    font-size: 1rem;
+  }
+
+  .navbar-light .navbar-brand { margin-left: 1rem; }
+
+  .navbar-brand img { max-width: 50%; }
+
+  .nav-link { margin: 1.75rem 0 0 0; }
+
+  .collapsing,
+  .collapse.show { top: 48px; }
+
+  .lang-menu a { margin: 0 1.33rem; }
+}
+
+// Footer
+
+footer {
+  background: #2f4858;
+  color: #fff;
+}
+
+.footer-inner { margin-top: 4.4rem; }
+
+footer a { color: #fff; }
+
+.footer-logo, .footer-bank-info { margin-left: 0.7rem }
+
+.footer-logo .h4 {
+  margin-bottom: 1.22rem;
+}
+
+.footer-logo .h4,
+.footer-details {
+  display: none;
+}
+
+.footer-menu {margin-left: 2.2rem; }
+
+.footer-menu li { margin-bottom: .9rem; }
+
+.footer-bank-info .h4, 
+.footer-contacts .h4 { margin-bottom: .8rem }
+
+.footer-bank-info p,
+.footer-contacts p {
+  margin-bottom: .33rem;
+}
+
+.footer-contacts {margin-left: 1rem; }
+
+.footer-icons {
+  margin-top: 2.65rem;
+  margin-bottom: 1.4rem;
+}
+
+.copyright {
+  font-size: .777rem;
+  padding: 0 2.6rem 1rem 3.44rem;
+}
+
+.copyright p:first-child {
+  width: 14.5%;
+}
+
+@media only screen and (max-width: 991px) {
+  .footer-logo img { width: 90%; }
+
+  .footer-logo .h4 {
+    display: block;
+    padding-top: 1.39rem;
+  }
+
+  .footer-menu,
+  .footer-bank-info {
+    display: none;
+  }
+
+  .footer-contacts .h4 { visibility: hidden; }
+
+  .footer-details { display: block; }
+
+  .footer-details:hover { color: #fff; }
+
+  .footer-icons {
+    height: 30%;
+    margin-top: 1.75rem;
+  }
+
+  .copyright { font-size: 0.89rem; }
+  
+  .copyright p:first-child { width: 70%; }
+}
+
+@media only screen and (max-width: 576px) {
+  
+  .footer-inner {
+    margin-top: 2rem;
+  }
+
+  .footer-logo img { width: 55%; }
+
+  footer .h4 { font-size: 1rem; }
+
+  .footer-contacts p { font-size: .667rem; }
+
+  .footer-details { font-size: .778rem; }
+
+  .copyright { 
+    font-size: .611rem;
+    padding: 0; 
+  }
+  
+  .copyright p:first-child { width: 100%; }
+
+  .copyright { margin-left: 1.11rem; }
+}
