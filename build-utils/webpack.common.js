@@ -57,6 +57,10 @@ const config = {
       filename: 'page-example.html',
       template: 'resources/page-example.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'ideja.html',
+      template: 'resources/ideja.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
     }),

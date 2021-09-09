@@ -2,6 +2,14 @@
 
 // General
 
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.67rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3.33rem;
+}
+
 .button {
   padding: .65rem 3rem;
   text-align: center;
@@ -31,6 +39,7 @@
   margin-top: 0.3%;
   align-self: flex-end;
   width: 100%;
+  z-index: 1000;
 }
 
 @media only screen and (max-width: 991px) {
@@ -63,24 +72,31 @@
   }
 }
 
-// Goals
-.goals-text {
+// Description
+
+.description-container {
+  margin-top: 3.8rem;
+  margin-bottom: 9.5rem;
+}
+
+.description-text {
   width: 48%;
-  margin: 3.8rem auto 9.5rem auto;
   text-align: center;
   line-height: 1.22rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 991px) {
 
-  .goals-text {
+  .description-text {
     width: 85%;
     margin: 7.55rem auto 9.33rem auto;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .goals-text {
+  .description-text {
     font-size: .667rem;
     width: 90%;
     margin: 4.44rem auto;
@@ -213,7 +229,7 @@ input[type="checkbox"]
 input[type=checkbox]:checked
 {
   background-color: #ffa800;
-  background: #ffa800 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+  background: #ffa800 url(data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==) 3px 3px no-repeat;
 }
 
 .form-container .button { padding: 0.95rem 3.5rem; }
@@ -293,3 +309,38 @@ input[type=checkbox]:checked
   .logo-container-inner .logo { width: 15%; }
 
 }
+
+// Ideja
+
+// Hero
+.hero {
+  width: 100vw;
+  height: 50vw;
+  background: url(../img/Juris.jpg);
+}
+
+.hero-text {
+  position: absolute;
+  bottom: -16rem;
+  left: 16rem;
+  width: 60%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.33rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #fff;
+  z-index: 100;
+}
+
+.hero-overlay {
+  width: 100vw;
+  height: 50vw;
+  background: linear-gradient(-180deg, rgba(47, 72, 88, 0.8) 18.63%, rgba(47, 72, 88, 0) 49.21%);
+  transform: rotate(-180deg);
+  z-index: 1;
+}
+
+.hero .ripped-bottom {
+  margin-top: -4%;
+}
+
