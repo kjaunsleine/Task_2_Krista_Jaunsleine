@@ -213,6 +213,15 @@ footer a { color: #fff; }
   width: 14.5%;
 }
 
+@media only screen and (min-width: 991px) and (max-width: 1325px) {
+  .footer-inner {
+    margin-right: 1rem;
+  }
+
+  .copyright p:first-child { width: 20%; }
+}
+
+
 @media only screen and (max-width: 991px) {
   .footer-logo img { width: 90%; }
 
