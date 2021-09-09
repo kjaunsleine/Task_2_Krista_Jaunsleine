@@ -20,7 +20,7 @@
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "debug:prod": "npm run debug -- --env.env=prod",
     "debug:dev": "npm run debug -- --env.env=dev",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d assets"
   },
   "repository": {
     "type": "git",
