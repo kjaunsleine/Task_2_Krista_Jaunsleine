@@ -115,7 +115,7 @@ const config = {
         use: [
           { loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "../"
+              publicPath: "../Task_2_Krista_Jaunsleine/"
             } 
           },
           { loader: "css-loader" },

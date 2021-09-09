@@ -19,7 +19,8 @@
     "webpack-defaults": "webpack-defaults",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "debug:prod": "npm run debug -- --env.env=prod",
-    "debug:dev": "npm run debug -- --env.env=dev"
+    "debug:dev": "npm run debug -- --env.env=dev",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -66,5 +67,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
