@@ -49,13 +49,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-facebook:before {
+.icon-facebook::before {
   content: "\ea90";
   font-size: 2rem;
   margin-right: 0.85rem;
 }
 
-.icon-instagram:before {
+.icon-instagram::before {
   content: "\ea92";
   font-size: 2rem;
   margin-right: -0.2rem;
@@ -63,12 +63,12 @@
 
 @media only screen and (max-width: 991px) {
 
-  .icon-facebook:before {
+  .icon-facebook::before {
     font-size: 1.5rem;
     margin-right: 1.1rem;
   }
 
-  .icon-instagram:before {
+  .icon-instagram::before {
     font-size: 1.5rem;
   }
 }
