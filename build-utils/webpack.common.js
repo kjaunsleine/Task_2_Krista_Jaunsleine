@@ -54,11 +54,11 @@ const config = {
       template: 'resources/404.html'
     }),
     new HtmlWebpackPlugin({
-      filename: 'page-example.html',
-      template: 'resources/page-example.html'
+      filename: 'ideja.html',
+      template: 'resources/ideja.html'
     }),
     new HtmlWebpackPlugin({
-      filename: 'ideja.html',
+      filename: 'piesaki-sapni.html',
       template: 'resources/ideja.html'
     }),
     new MiniCssExtractPlugin({

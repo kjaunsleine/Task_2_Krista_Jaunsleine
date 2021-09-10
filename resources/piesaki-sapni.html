@@ -1,0 +1,65 @@
+${require('./header.html')}
+        <main>
+          <div>
+            <h1>Piesaki sapni</h1>
+            <p>Tev ir iespēja pieteikt personīgo vai profesionālo sapni.</p>
+          </div>
+          <div>
+            <div>
+              <img>
+              <h2>Personīgais sapnis</h2>
+              <p>Bērnības nepiepildītie sapņi... No sev piederoša svaigi spiestas sulas bāra uz Tērbatas ielas līdz iespējai satikties ar Džekiju Čanu.</p>
+              <a>Piesaki sapni</a>
+            </div>
+            <div>
+              <img>
+              <h2>Profesionālais SAPNIS</h2>
+              <p>Sapnis vai ideja, kura ir balstīta uz reģiona, pasaules vai cilvēku attīstību 4 virzienos - kultūra, izglītība, zinātne, ģimene jeb sociālā vide. Tā ir iespēja attīstīt ideju, kas uzlabotu ikdienas dzīves kvalitāti vai atrisinātu vietēja vai starptautiska līmeņa problēmu. Pastāsti, kāpēc Tev tas ir tik nozīmīgi?</p>
+              <a>Piesaki sapni</a>
+            </div>
+          </div>
+          <!-- <div class="image-container d-flex justify-content-center">
+            <img class="ripped-up" src="${require('./img/ripped1.png')}">
+            <div>
+              <img src="${require('./img/Zanda_1.jpg')}" alt="Woman with a backpack hiking">
+            </div>
+            <div>
+              <img src="${require('./img/Sibilla_4.jpg')}" alt="Smiling woman hugging a dog">
+            </div>
+            <div>
+              <img src="${require('./img/Brinuma_meita-15.jpg')}" alt="Smiling woman with two men">
+              <img src="${require('./img/Alina_1.jpg')}" alt="Smiling woman on the street">
+            </div>
+            <div>
+              <img src="${require('./img/Anda_2.jpg')}" alt="Smiling man and woman looking at each other">
+            </div>
+            <img class="ripped-bottom" src="${require('./img/ripped1.png')}">
+          </div> -->
+          <div class="form-container d-flex flex-column text-center">
+            <p class="h3 text-uppercase">Sazināties ar mums</p>
+            <form method="post" action="">
+              <div class="row">
+                <div class="col-12 col-sm-6">
+                  <input class="form-control" name="full-name" type="text" placeholder="Vārds, Uzvārds*" required>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <input class="form-control" name="email" type="text" placeholder="E-pasts*" required>
+                </div>
+              </div>
+                  <div>
+                    <input class="form-control" name="phone" type="tel" placeholder="Telefons*" required>
+                  </div>
+              <div>
+                  <textarea class="form-control" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
+                  <p class="form-info text-left mb-4">* obligāti aizpildāmie lauki</p>
+              </div>
+              <div class="form-check form-info ">
+                  <input class="form-check-input" name="permission" type="checkbox" id="permission">
+                  <label class="form-check-label mr-md-3 mb-4" for="permission">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un tiks 
+                    saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
+              </div>
+                  <input class="button mt-5" type="submit" value="Sūtīt">
+            </form>
+        </div>
+        </main>
+${require('./footer.html')}
