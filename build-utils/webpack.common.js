@@ -73,6 +73,10 @@ const config = {
       filename: 'sapnus-atbalsta.html',
       template: 'resources/sapnus-atbalsta.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: '99iedvesmas-stasti.html',
+      template: 'resources/99iedvesmas-stasti.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
     }),
