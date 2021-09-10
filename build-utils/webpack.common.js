@@ -59,7 +59,15 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       filename: 'piesaki-sapni.html',
-      template: 'resources/ideja.html'
+      template: 'resources/piesaki-sapni.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'uznemejiem.html',
+      template: 'resources/uznemejiem.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sapnu-banka.html',
+      template: 'resources/sapnu-banka.html'
     }),
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
