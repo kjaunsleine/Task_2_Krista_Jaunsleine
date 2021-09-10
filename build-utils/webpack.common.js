@@ -69,6 +69,10 @@ const config = {
       filename: 'sapnu-banka.html',
       template: 'resources/sapnu-banka.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'sapnus-atbalsta.html',
+      template: 'resources/sapnus-atbalsta.html'
+    }),
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
     }),
