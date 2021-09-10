@@ -344,3 +344,17 @@ input[type=checkbox]:checked
   margin-top: -4%;
 }
 
+.slider-wrapper {
+  width: 55%;
+  margin: 8.33rem auto 8.33rem auto;
+}
+
+.lightslider-item p:nth-child(2) {
+  margin-top: 0.556rem;
+  margin-bottom: 1.667rem;
+}
+
+.lightslider-item p:nth-child(3) {
+  font-size: 1.33rem;
+}
+
