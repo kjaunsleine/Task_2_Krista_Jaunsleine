@@ -66,71 +66,25 @@ $(document).ready(function() {
     }
     } 
 
-    windowWidthCheck();
-    $(window).on('resize', windowWidthCheck);
+  windowWidthCheck();
+  $(window).on('resize', windowWidthCheck);
 
-  // Image slider script
-  function imageSlider() {
-    if( $('.lightslider').length > 0 ) {
-      let slider = 0;
-
-      $(".lightslider").each(function() {
-        slider += 1;
-        let $this = $(this);
-        let $this_slider = $('#lightslider-'+slider);
-
-        if ( $this.hasClass("with-pager") ) {
-          $this.lightSlider({
-            item      : 1,
-            auto      : true,
-            loop      : true,
-            pauseOnHover  : true,
-            speed: 600,
-            pause: 3000,
-            controls: false,
-            onBeforeStart: function() {
-              if ( $this_slider.find('li').length < 2 ) {
-                $this_slider.addClass('one-item');
-              }
-            },
-            onSliderLoad: function() {
-              $this_slider.removeClass('cS-hidden').addClass('initialized');
-            },
-          });
-        } else {
-          $this.lightSlider({
-            item  : 1,
-            pager : false,
-            auto      : true,
-            loop      : true,
-            pauseOnHover  : true,
-            speed: 600,
-            pause: 3000,
-            enableTouch : false,
-            enableDrag : false,
-            onBeforeStart: function() {
-              if ( $this_slider.find('li').length < 2 ) {
-                $this_slider.addClass('one-item');
-              }
-            },
-            onSliderLoad: function() {
-              $this_slider.parent().find('.lSAction > a').prepend('<div class="slider-arrow-img"></div>');
-              $this_slider.removeClass('cS-hidden').addClass('initialized');
-            },
-            onAfterSlide: function() {
-              $this_slider.find('video').each(function() {
-                $(this).get(0).pause();
-              });
-              $this_slider.find('.btn-play').removeClass('opacity-0');
-            }
-          });
-        }
-
-      });
-
-    }
-  }
-  imageSlider();
+  const  slider = $('#lightSlider').lightSlider({
+    item: 1,
+    controls: false,
+    loop: true,
+    pager: false,
+    enableDrag: false,
+    auto: true,
+    pauseOnHover: true,
+    pause: 6000
+  });
+  $('#goToPrevSlide').on('click', function () {
+    slider.goToPrevSlide();
+  });
+  $('#goToNextSlide').on('click', function () {
+    slider.goToNextSlide();
+  });  
 
   /* // Add CSS class to Site Header when scrollTop position of the document is not 0
   let $lastY = $window.scrollTop();
