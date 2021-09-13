@@ -19,7 +19,7 @@ ${require('./header.html')}
                   <p class="text-center">Bērnības nepiepildītie sapņi... No sev piederoša svaigi spiestas sulas bāra uz Tērbatas ielas līdz iespējai satikties ar Džekiju Čanu.</p>
                 </div>
                 <div class="row mx-0">
-                  <a class="button text-center" href="#">Piesaki sapni</a>
+                  <a class="button application-button text-center" href="#">Piesaki sapni</a>
                 </div>
               </div>
               <div class="application-container-inner d-flex col-5 flex-column justify-items-center align-items-center mx-0">
@@ -33,7 +33,7 @@ ${require('./header.html')}
                   <p class="text-center">Sapnis vai ideja, kura ir balstīta uz reģiona, pasaules vai cilvēku attīstību 4 virzienos - kultūra, izglītība, zinātne, ģimene jeb sociālā vide. Tā ir iespēja attīstīt ideju, kas uzlabotu ikdienas dzīves kvalitāti vai atrisinātu vietēja vai starptautiska līmeņa problēmu. Pastāsti, kāpēc Tev tas ir tik nozīmīgi?</p>
                 </div>
                 <div class="row mx-0">
-                  <a class="button text-center" href="#">Piesaki sapni</a>
+                  <a class="button application-button text-center" href="#">Piesaki sapni</a>
                 </div>
               </div>
             </div>
@@ -42,24 +42,24 @@ ${require('./header.html')}
           <div class="image-container d-flex justify-content-center">
             <img class="ripped-up" src="${require('./img/ripped1.png')}">
             <div>
-              <img src="${require('./img/Zanda_1.jpg')}" alt="Woman with a backpack hiking">
+              <img src="${require('./img/Lauma.jpg')}" alt="">
             </div>
             <div>
-              <img src="${require('./img/Sibilla_4.jpg')}" alt="Smiling woman hugging a dog">
+              <img src="${require('./img/Brinuma-meita-3.jpg')}" alt="">
+              <img src="${require('./img/Arta-2.jpg')}" alt="">
             </div>
             <div>
-              <img src="${require('./img/Brinuma_meita-15.jpg')}" alt="Smiling woman with two men">
-              <img src="${require('./img/Alina_1.jpg')}" alt="Smiling woman on the street">
+              <img src="${require('./img/Lauma-3.jpg')}" alt="">
             </div>
             <div>
-              <img src="${require('./img/Anda_2.jpg')}" alt="Smiling man and woman looking at each other">
+              <img src="${require('./img/Brinuma-meita-2.jpg')}" alt="">
             </div>
             <img class="ripped-bottom" src="${require('./img/ripped1.png')}">
           </div>
           <!-- Application form -->
           <div class="form-container d-flex flex-column text-center">
             <p class="h3 text-uppercase">Sazināties ar mums</p>
-            <form method="post" action="">
+            <form id="applForm"method="post" action="">
               <div class="row">
                 <div class="col-12 col-sm-6">
                   <input class="form-control" name="full-name" type="text" placeholder="Vārds, Uzvārds*" required>
@@ -80,7 +80,7 @@ ${require('./header.html')}
                   <label class="form-check-label mr-md-3 mb-4" for="permission">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un tiks 
                     saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
               </div>
-                  <input class="button mt-5" type="submit" value="Sūtīt">
+                  <input class="button mt-5" id="submit" type="submit" value="Sūtīt">
             </form>
         </div>
         </main>

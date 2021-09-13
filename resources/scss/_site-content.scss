@@ -118,9 +118,12 @@ h2 {
 
 // Images
 
+.image-container { margin-top: 8.33rem; }
+
 .image-container img { 
   display: block;
   width: 100%;
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -148,7 +151,9 @@ h2 {
 }
 // Application - dream entry
 .application-container {
-  margin: 8.53rem auto 8.39rem auto;
+  margin-top: 8.53rem;
+  margin-left: auto;
+  margin-right: auto;
   padding-right: 1.8rem;
   padding-left: 2.7rem;
 }
@@ -185,13 +190,13 @@ h2 {
 
 .form-container {
   width: 46.5%;
-  margin: 2rem auto 8.34rem auto;
+  margin: 8.39rem auto 8.34rem auto;
   font-size: 1.333rem;
   padding-left: 1rem;
 }
 
 .form-container .h3{
-  margin-bottom: 3.25rem;
+  margin-bottom: 3.55rem;
   font-size: 1.67rem;
 }
 
@@ -411,17 +416,24 @@ input[type=checkbox]:checked
   margin-bottom: 1.67rem;
 }
 
-.application-container .application-container-inner:nth-child(1) a {
+.application-container .application-container-inner:nth-child(1) .application-button {
   margin-top: 7.94rem;
 }
 
-.application-container .application-container-inner:nth-child(2) a {
+.application-container .application-container-inner:nth-child(2) .application-button {
   margin-top: 1.9rem;
 }
 
+.submit-message { color: #ffa800; }
 
+.submit-message p:nth-child(1) {
+  margin-top: 3.33rem;
+  margin-bottom: 1.66rem;
+}
 
-//.application-container-inner p {}
+.submit-message p:nth-child(2) {
+  font-size: 1rem;
+}
 
 
 

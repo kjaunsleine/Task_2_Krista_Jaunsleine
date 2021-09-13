@@ -84,7 +84,22 @@ $(document).ready(function() {
   });
   $('#goToNextSlide').on('click', function () {
     slider.goToNextSlide();
-  });  
+  });
+
+  // Form submit message
+
+  $('#applForm').on('submit', function(event){
+    event.preventDefault();
+    for (const div of $('.form-info')){
+      $(div).hide();
+    }
+    const submitMsg = document.createElement('div');
+    $(submitMsg).addClass('submit-message');
+    const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
+    $(submitMsg).html(html);
+    document.querySelector('.form-container').appendChild(submitMsg);
+    $('#submit').hide();
+  });
 
   /* // Add CSS class to Site Header when scrollTop position of the document is not 0
   let $lastY = $window.scrollTop();
