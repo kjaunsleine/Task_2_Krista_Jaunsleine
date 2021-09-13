@@ -1,24 +1,45 @@
 ${require('./header.html')}
         <main>
-          <div>
+          <!-- Description -->
+          <div class="description-container">
             <h1>Piesaki sapni</h1>
-            <p>Tev ir iespēja pieteikt personīgo vai profesionālo sapni.</p>
+            <p class="description-text">Tev ir iespēja pieteikt personīgo vai profesionālo sapni.</p>
           </div>
-          <div>
-            <div>
-              <img>
-              <h2>Personīgais sapnis</h2>
-              <p>Bērnības nepiepildītie sapņi... No sev piederoša svaigi spiestas sulas bāra uz Tērbatas ielas līdz iespējai satikties ar Džekiju Čanu.</p>
-              <a>Piesaki sapni</a>
-            </div>
-            <div>
-              <img>
-              <h2>Profesionālais SAPNIS</h2>
-              <p>Sapnis vai ideja, kura ir balstīta uz reģiona, pasaules vai cilvēku attīstību 4 virzienos - kultūra, izglītība, zinātne, ģimene jeb sociālā vide. Tā ir iespēja attīstīt ideju, kas uzlabotu ikdienas dzīves kvalitāti vai atrisinātu vietēja vai starptautiska līmeņa problēmu. Pastāsti, kāpēc Tev tas ir tik nozīmīgi?</p>
-              <a>Piesaki sapni</a>
+          <!-- Application links-->
+          <div class="application-container container mw-100">
+            <div class="row justify-content-around mx-0">
+              <div class="application-container-inner d-flex col-5 flex-column justify-items-center align-items-center mx-0">
+                <div class="row mx-0">
+                  <img class="dog-art" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAADGAQMAAACNcAJQAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABtJREFUeNrtwQENAAAAwqD3T20PBxQAAADAvwERBAABqxP6IAAAAABJRU5ErkJggg==">
+                </div>
+                <div class="row mx-0">
+                  <h2 class="text-uppercase">Personīgais sapnis</h2>
+                </div>
+                <div class="row w-75 justify-content-center mx-0">
+                  <p class="text-center">Bērnības nepiepildītie sapņi... No sev piederoša svaigi spiestas sulas bāra uz Tērbatas ielas līdz iespējai satikties ar Džekiju Čanu.</p>
+                </div>
+                <div class="row mx-0">
+                  <a class="button text-center" href="#">Piesaki sapni</a>
+                </div>
+              </div>
+              <div class="application-container-inner d-flex col-5 flex-column justify-items-center align-items-center mx-0">
+                <div class="row mx-0">
+                  <img class="baloon-art" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAADHAQMAAAC+zCoCAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABtJREFUeNrtwQENAAAAwqD3T20ON6AAAAAAuDYR4QAB4M7BTgAAAABJRU5ErkJggg==">
+                </div>
+                <div class="row mx-0">
+                  <h2 class="text-uppercase">Profesionālais sapnis</h2>
+                </div>
+                <div class="row w-75 justify-content-center mx-0">
+                  <p class="text-center">Sapnis vai ideja, kura ir balstīta uz reģiona, pasaules vai cilvēku attīstību 4 virzienos - kultūra, izglītība, zinātne, ģimene jeb sociālā vide. Tā ir iespēja attīstīt ideju, kas uzlabotu ikdienas dzīves kvalitāti vai atrisinātu vietēja vai starptautiska līmeņa problēmu. Pastāsti, kāpēc Tev tas ir tik nozīmīgi?</p>
+                </div>
+                <div class="row mx-0">
+                  <a class="button text-center" href="#">Piesaki sapni</a>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- <div class="image-container d-flex justify-content-center">
+          <!-- Images-->      
+          <div class="image-container d-flex justify-content-center">
             <img class="ripped-up" src="${require('./img/ripped1.png')}">
             <div>
               <img src="${require('./img/Zanda_1.jpg')}" alt="Woman with a backpack hiking">
@@ -34,7 +55,8 @@ ${require('./header.html')}
               <img src="${require('./img/Anda_2.jpg')}" alt="Smiling man and woman looking at each other">
             </div>
             <img class="ripped-bottom" src="${require('./img/ripped1.png')}">
-          </div> -->
+          </div>
+          <!-- Application form -->
           <div class="form-container d-flex flex-column text-center">
             <p class="h3 text-uppercase">Sazināties ar mums</p>
             <form method="post" action="">
