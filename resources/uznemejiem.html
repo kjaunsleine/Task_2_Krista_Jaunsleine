@@ -2,36 +2,11 @@ ${require('./header.html')}
         <main>
           <div class="description-container">
             <h1>Uzņēmējiem</h1>
-            <p class="description-text">Ja ticat labākas pasaules attīstībai un vēlaties piedalīties starptautisku ideju realizēšanā, tad priecāsimies ar Jums iepazīties.</p>
+            <p class="description-text description-wide">Ja ticat labākas pasaules attīstībai un vēlaties piedalīties starptautisku ideju realizēšanā, tad priecāsimies ar Jums iepazīties.</p>
           </div>
           <div class="form-container d-flex flex-column text-center">
             <p class="h3 text-uppercase">Palīdzi īstenot sapni!</p>
-            <form method="post" action="">
-              <div class="row">
-                <div class="col-12 col-sm-6">
-                  <input class="form-control" name="full-name" type="text" placeholder="Vārds, Uzvārds*" required>
-                </div>
-                <div class="col-12 col-sm-6">
-                  <input class="form-control" name="email" type="text" placeholder="E-pasts*" required>
-                </div>
-              </div>
-              <div>
-                <input class="form-control" name="phone" type="text" placeholder="Uzņēmuma nosaukums*" required>
-              </div>
-              <div>
-                <input class="form-control" name="phone" type="tel" placeholder="Telefons*" required>
-              </div>
-              <div>
-                <textarea class="form-control" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
-                <p class="form-info text-left mb-4">* obligāti aizpildāmie lauki</p>
-              </div>
-              <div class="form-check form-info ">
-                  <input class="form-check-input" name="permission" type="checkbox" id="permission">
-                  <label class="form-check-label mr-md-3 mb-4" for="permission">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un tiks 
-                    saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
-              </div>
-                  <input class="button mt-5" type="submit" value="Sūtīt">
-            </form>
+            ${require('./form.html')}
         </div>
           
         </main>
