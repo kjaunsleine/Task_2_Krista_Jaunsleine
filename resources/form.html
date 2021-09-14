@@ -1,0 +1,23 @@
+            <form id="applForm"method="post" action="">
+              <div class="row">
+                <div class="col-12 col-sm-6">
+                  <input class="form-control" name="full-name" type="text" placeholder="Vārds, Uzvārds*" required>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <input class="form-control" name="email" type="text" placeholder="E-pasts*" required>
+                </div>
+              </div>
+                  <div>
+                    <input class="form-control" name="phone" type="tel" placeholder="Telefons*" required>
+                  </div>
+              <div>
+                  <textarea class="form-control" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
+                  <p class="form-info text-left mb-4">* obligāti aizpildāmie lauki</p>
+              </div>
+              <div class="form-check form-info ">
+                  <input class="form-check-input" name="permission" type="checkbox" id="permission">
+                  <label class="form-check-label mr-md-3 mb-4" for="permission">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un tiks 
+                    saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
+              </div>
+                  <input class="button mt-5" id="submit" type="submit" value="Sūtīt">
+            </form>
