@@ -68,16 +68,19 @@ h3 {
 .video-container { 
   position: relative; 
   padding-bottom: 56.25%; 
-  overflow: hidden; 
-  max-width: 100%;
+  overflow: hidden;
 } 
 
 .video-container iframe { 
   position: absolute; 
   top: -4.5rem; 
-  left: 0; 
-  width: 100%; 
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1366px;
   height: 100%;
+  margin: 0 auto;
+  
 }
 
 @media only screen and (max-width: 1024px) {
@@ -511,19 +514,33 @@ input[type=checkbox]:checked
   position: relative;
   width: 12vw;
   height: 12vw;
-  background: url(../img/story-color.jpg);
+  margin: 0.39rem;
+  background-image: url(../img/story1.jpg);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.story-overlay {
+  position: absolute;
+  width: 12vw;
+  height: 12vw;
+  background-image: url(../img/story-color.jpg);
   background-repeat: none;
   background-size: contain;
+  opacity: 0.5;
+  z-index: 100;
 }
 
 .story .number {
   position: absolute;
   top: 6rem;
-  left: 7rem;
+  left: 5rem;
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
   color: #fff;
-
+  z-index: 1000;
 }
 
 
