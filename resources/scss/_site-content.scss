@@ -505,4 +505,25 @@ input[type=checkbox]:checked
  
 .white-rainbow-art { background-position: 0 0%; background-size: 100%; }
 
+// 99 iedvesmas stāsti
+
+.story {
+  position: relative;
+  width: 12vw;
+  height: 12vw;
+  background: url(../img/story-color.jpg);
+  background-repeat: none;
+  background-size: contain;
+}
+
+.story .number {
+  position: absolute;
+  top: 6rem;
+  left: 7rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+
+}
+
 
