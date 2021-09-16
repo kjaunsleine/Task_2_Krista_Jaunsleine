@@ -101,6 +101,89 @@ $(document).ready(function() {
     $('#submit').hide();
   });
 
+  // Add story divs
+  function generateStoryDivs(){
+    for (let i=1; i < 100; i++){
+      let storyDiv = $("<div></div>");
+      $(storyDiv).addClass('story');
+      $(storyDiv).attr('id', `story${i}`);
+      let html = `<div class="story-overlay"></div><p class="number" id="num${i}">${i}</p>`;
+      $(storyDiv).html(html);
+      $('.story-container').append($(storyDiv));
+    }
+  }
+  generateStoryDivs();
+
+  // Add 99 videos
+
+  /* const videoID = {
+    story1: 'https://vimeo.com/api/v2/video/251456177.json',
+    story2: 'https://vimeo.com/api/v2/video/546472954.json',
+    story3: 'https://vimeo.com/api/v2/video/251323647.json',
+    story4: 'https://vimeo.com/api/v2/video/264119207.json',
+    story5: 'https://vimeo.com/api/v2/video/92861779.json'
+  }; */
+
+  const videoUrlArray = ['https://vimeo.com/api/v2/video/251456177.json', 
+  'https://vimeo.com/api/v2/video/546472954.json', 
+  'https://vimeo.com/api/v2/video/251323647.json', 
+  'https://vimeo.com/api/v2/video/264119207.json',
+  'https://vimeo.com/api/v2/video/92861779.json'
+  ];
+
+  function addVideos(arr){
+    for(let i=0; i < arr.length; i++){
+      let url = arr[i];
+        $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: 'json',
+        success: function(data) {
+          $(`#story${i+1}`).css({backgroundImage: `url(${data[0].thumbnail_large})`});
+        }
+        });
+    }
+  }
+
+  /* function addVideos(i, obj){
+    let index = i;
+    const videoIdKeys = Object.keys(obj);
+    const numOfVideos = videoIdKeys.length;
+    let key = videoIdKeys[i];
+    $.ajax({
+      type: 'GET',
+      url: 'https://vimeo.com/api/v2/video/' + obj.key + '.json',
+      dataType: 'json',
+      success: function(data) {
+        $(`#${key}`).css({backgroundImage: `url(${data[0].thumbnail_large})`});
+      }
+      });
+  }
+
+  for(let i = 1; i < Object.keys(videoID).length; i++){
+    addVideos(i, videoID);
+  }
+ */
+  
+
+  addVideos(videoUrlArray);
+
+
+  
+  /* $.ajax({
+    type: 'GET',
+    url: 'https://vimeo.com/api/v2/video/546472954.json',
+    dataType: 'json',
+    success: function(data) {
+      $('#story1').css({backgroundImage: `url(${data[0].thumbnail_large})`})
+      $('.description-text').html(data[0].thumbnail_large);
+
+      console.log(data);
+    }
+  }); */
+
+  
+
   /* // Add CSS class to Site Header when scrollTop position of the document is not 0
   let $lastY = $window.scrollTop();
   function add_not_top() {

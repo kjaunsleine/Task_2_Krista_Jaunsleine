@@ -510,12 +510,13 @@ input[type=checkbox]:checked
 
 // 99 iedvesmas stāsti
 
+.story-container { width: 80%; }
+
 .story {
   position: relative;
   width: 12vw;
   height: 12vw;
   margin: 0.39rem;
-  background-image: url(../img/story1.jpg);
   background-repeat: none;
   background-size: cover;
   background-position: center;
