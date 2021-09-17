@@ -107,7 +107,7 @@ $(document).ready(function() {
       let storyDiv = $("<div></div>");
       $(storyDiv).addClass('story');
       $(storyDiv).attr('id', `story${i}`);
-      let html = `<div class="story-overlay"></div><p class="number" id="num${i}">${i}</p>`;
+      let html = `<div class="overlay"></div><p class="story-title"></p><div class="story-overlay"></div><p class="number" id="num${i}">${i}</p>`;
       $(storyDiv).html(html);
       $('.story-container').append($(storyDiv));
     }
@@ -131,30 +131,41 @@ $(document).ready(function() {
         url: url,
         dataType: 'json',
         success: function(data) {
-          console.log(data.thumbnail_url);
           $(`#story${i+1}`).css({backgroundImage: `url(${data.thumbnail_url})`});
           $(`#story${i+1} .story-overlay`).css({opacity: '0.7'});
+          $(`#story${i+1} .story-title`).html(data.title);
+          $(`#story${i+1} .story-title`).css({opacity: '0'});
           
-          $(`#story${arr.length+1}`).html(`<div class="story-overlay"></div><p class="story-coming-soon">Jauns stāsts tiks pievienots drīzumā<p/><p class="number" id="num${arr.length+1}">${arr.length+1}</p>`);
+          $(`#story${arr.length+1}`).html(`<div class="overlay"></div><div class="story-overlay"></div><p class="story-coming-soon">Jauns stāsts tiks pievienots drīzumā<p/><p class="number" id="num${arr.length+1}">${arr.length+1}</p>`);
           
-          $(`#story${i+1}`).on('click', function(){ 
-            console.log(data.html);
+          $(`#story${i+1}`).on('click', function(){
+            // Removes thumbnail
             $(this).css({backgroundImage: "none"});
-            $(`#story${i+1} .story-overlay`).css({opacity: '1'});
-            const titlePar = document.createElement('p');
-            $(titlePar).addClass('story-title');
-            $(titlePar).html(data.title);
-            $(this).prepend(titlePar);
-            //$(this).html(`<div class="story-overlay"></div><p class="story-title">${data.title}<p/><p class="number" id="num${i+1}">${i+1}</p>`);
+            $(`#story${i+1} .story-overlay`).css({opacity: '1', top: '0'});
+
+            // Removes iframe and title in modal
+            $('.modal-body').empty();
+            $('.modal-title').html('');
+            
+            // Adds title in story div
+            $(`#story${i+1} .story-title`).css({opacity: '1'});
+
+            // Adds iframe to modal
+            $('.modal-body').prepend(data.html);
+            $('.modal-title').html(data.title);
+            
+            // Adds data-toggle and data-target attributes and opens modal
             $(this).attr('data-toggle', 'modal');
             $(this).attr('data-target', '#newModal');
-            //$('.modal-body').append(data[0].url);
-            //$('.modal-body').append(data[0].title);
             
-            
-            //const videoDiv = document.createElement('div');
-            //$(videoDiv).addClass('story-video');
-            //$(videoDiv).html(data[0].html);
+            // After closing of modal return thumbnail and remove title
+            $('#newModal').on('hidden.bs.modal', function(){
+              $(`#story${i+1}`).css({backgroundImage: `url(${data.thumbnail_url})`});
+              $(`#story${i+1} .story-overlay`).css({opacity: '0.7'});
+              $(`#story${i+1} .story-title`).html(data.title);
+              $(`#story${i+1} .story-title`).css({opacity: '0'});
+            });
+               
           });
         }
         });

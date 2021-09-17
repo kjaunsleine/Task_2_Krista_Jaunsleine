@@ -510,7 +510,14 @@ input[type=checkbox]:checked
 
 // 99 iedvesmas stāsti
 
-.story-container { width: 80%; }
+.story-container { width: 81%; }
+
+.story-container,
+.modal {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-align: center;
+}
 
 .story {
   position: relative;
@@ -523,31 +530,49 @@ input[type=checkbox]:checked
   z-index: 1;
 }
 
-.story:hover {
+.overlay:hover {
   border: 1px solid #000000;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   cursor: pointer;
 }
 
-.story-overlay-empty { opacity: 1; }
-
+.overlay,
 .story-overlay {
   position: absolute;
   width: 12vw;
   height: 12vw;
+}
+
+.overlay {
+  background-color: transparent;
+  z-index: 2;
+}
+
+.story-overlay {
   background-image: url(../img/story-color.jpg);
   background-repeat: none;
   background-size: contain;
   opacity: 1;
 }
 
+.story .number,
+.modal-title { font-size: 2rem; }
+
 .story .number {
   position: absolute;
   top: 6rem;
   left: 5rem;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  color: #fff;
+  z-index: 1;
+}
+
+.story-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 3rem auto;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
   z-index: 1;
 }
 
@@ -555,33 +580,14 @@ input[type=checkbox]:checked
   position: absolute;
   top: 30%;
   margin: auto auto;
-  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   line-height: 1.5rem;
-  text-align: center;
-  color: #fff;
   z-index: 1;
 }
 
-.story-title {
-  position: relative;
-  top: 35%;
-  margin: auto auto;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  line-height: 1.5rem;
-  text-align: center;
-  color: #fff;
-}
-
-.story-video {
-  position: fixed;
-  width: 100vw;
-  background-color: rgba(47, 72, 88, 0.9);
-}
-
 .modal-header,
-.modal-content { border: none; }
+.modal-content,
+.modal-footer { border: none; }
 
 .modal-header { justify-content: flex-end;}
 
@@ -599,7 +605,6 @@ input[type=checkbox]:checked
   display: inline-block;
   width: 1.11rem;
   height: 1.11rem;
-  color: #fff;
   background-image: url(../img/close-white.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -608,5 +613,61 @@ input[type=checkbox]:checked
 .modal-backdrop { background: rgba(47, 72, 88, 0.9); }
 
 .modal-backdrop.show { opacity: 0.9; }
+
+.team-description { 
+  width: 85%;
+  margin: 8.33rem auto 8.33rem auto; 
+}
+
+.team-description h2 { margin-bottom: 1.67rem; }
+
+.team-description .description-text {
+  width: 65%;
+  margin-bottom: 3.33rem;
+  font-weight: 500;
+}
+
+.team-member-container {
+  color: #fff;
+}
+
+.team-member-container h3 {
+  margin: 0;
+  font-weight: 500;
+  padding-bottom: 0;
+  z-index: 2;
+}
+
+.team-member-container p {
+  width: 90%;
+  margin: 0 auto 1.11rem auto;
+  z-index: 2;
+}
+
+.team-member-1,
+.team-member-2,
+.team-member-3 {
+  position: relative;
+  width: 23vw;
+  height: 30vw;
+  background-repeat: no-repeat;
+}
+
+.team-member-1 { background-image: url(../img/Juris2.jpg); }
+
+.team-member-2 { background-image: url(../img/Girts.jpg); }
+
+.team-member-3 { background-image: url(../img/Janis.jpg); }
+
+.team-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23vw;
+  height: 29vw;
+  background: linear-gradient(180deg, rgba(47, 72, 88, 0.8) 18.63%, rgba(47, 72, 88, 0) 49.21%);
+  transform: rotate(-180deg);
+  z-index: 1;
+}
 
 
