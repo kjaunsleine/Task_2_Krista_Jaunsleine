@@ -523,6 +523,14 @@ input[type=checkbox]:checked
   z-index: 1;
 }
 
+.story:hover {
+  border: 1px solid #000000;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+
+.story-overlay-empty { opacity: 1; }
+
 .story-overlay {
   position: absolute;
   width: 12vw;
@@ -530,8 +538,7 @@ input[type=checkbox]:checked
   background-image: url(../img/story-color.jpg);
   background-repeat: none;
   background-size: contain;
-  opacity: 0.5;
-  z-index: 100;
+  opacity: 1;
 }
 
 .story .number {
@@ -541,7 +548,65 @@ input[type=checkbox]:checked
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
   color: #fff;
-  z-index: 1000;
+  z-index: 1;
 }
+
+.story-coming-soon {
+  position: absolute;
+  top: 30%;
+  margin: auto auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.story-title {
+  position: relative;
+  top: 35%;
+  margin: auto auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.story-video {
+  position: fixed;
+  width: 100vw;
+  background-color: rgba(47, 72, 88, 0.9);
+}
+
+.modal-header,
+.modal-content { border: none; }
+
+.modal-header { justify-content: flex-end;}
+
+.modal-content { 
+  width: 57vw;
+  background: transparent; 
+}
+
+.modal-dialog {
+  width: 57vw;
+  margin: 7.75rem auto;
+}
+
+.modal-header .close-icon {
+  display: inline-block;
+  width: 1.11rem;
+  height: 1.11rem;
+  color: #fff;
+  background-image: url(../img/close-white.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.modal-backdrop { background: rgba(47, 72, 88, 0.9); }
+
+.modal-backdrop.show { opacity: 0.9; }
 
 

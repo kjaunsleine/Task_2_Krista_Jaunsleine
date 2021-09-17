@@ -116,19 +116,11 @@ $(document).ready(function() {
 
   // Add 99 videos
 
-  /* const videoID = {
-    story1: 'https://vimeo.com/api/v2/video/251456177.json',
-    story2: 'https://vimeo.com/api/v2/video/546472954.json',
-    story3: 'https://vimeo.com/api/v2/video/251323647.json',
-    story4: 'https://vimeo.com/api/v2/video/264119207.json',
-    story5: 'https://vimeo.com/api/v2/video/92861779.json'
-  }; */
-
-  const videoUrlArray = ['https://vimeo.com/api/v2/video/251456177.json', 
-  'https://vimeo.com/api/v2/video/546472954.json', 
-  'https://vimeo.com/api/v2/video/251323647.json', 
-  'https://vimeo.com/api/v2/video/264119207.json',
-  'https://vimeo.com/api/v2/video/92861779.json'
+  const videoUrlArray = ['https://vimeo.com/api/oembed.json?url=https://vimeo.com/251456177&width=640&height=360', 
+  'https://vimeo.com/api/oembed.json?url=https://vimeo.com/546472954', 
+  'https://vimeo.com/api/oembed.json?url=https://vimeo.com/251323647', 
+  'https://vimeo.com/api/oembed.json?url=https://vimeo.com/264119207',
+  'https://vimeo.com/api/oembed.json?url=https://vimeo.com/92861779'
   ];
 
   function addVideos(arr){
@@ -139,32 +131,35 @@ $(document).ready(function() {
         url: url,
         dataType: 'json',
         success: function(data) {
-          $(`#story${i+1}`).css({backgroundImage: `url(${data[0].thumbnail_large})`});
+          console.log(data.thumbnail_url);
+          $(`#story${i+1}`).css({backgroundImage: `url(${data.thumbnail_url})`});
+          $(`#story${i+1} .story-overlay`).css({opacity: '0.7'});
+          
+          $(`#story${arr.length+1}`).html(`<div class="story-overlay"></div><p class="story-coming-soon">Jauns stāsts tiks pievienots drīzumā<p/><p class="number" id="num${arr.length+1}">${arr.length+1}</p>`);
+          
+          $(`#story${i+1}`).on('click', function(){ 
+            console.log(data.html);
+            $(this).css({backgroundImage: "none"});
+            $(`#story${i+1} .story-overlay`).css({opacity: '1'});
+            const titlePar = document.createElement('p');
+            $(titlePar).addClass('story-title');
+            $(titlePar).html(data.title);
+            $(this).prepend(titlePar);
+            //$(this).html(`<div class="story-overlay"></div><p class="story-title">${data.title}<p/><p class="number" id="num${i+1}">${i+1}</p>`);
+            $(this).attr('data-toggle', 'modal');
+            $(this).attr('data-target', '#newModal');
+            //$('.modal-body').append(data[0].url);
+            //$('.modal-body').append(data[0].title);
+            
+            
+            //const videoDiv = document.createElement('div');
+            //$(videoDiv).addClass('story-video');
+            //$(videoDiv).html(data[0].html);
+          });
         }
         });
     }
   }
-
-  /* function addVideos(i, obj){
-    let index = i;
-    const videoIdKeys = Object.keys(obj);
-    const numOfVideos = videoIdKeys.length;
-    let key = videoIdKeys[i];
-    $.ajax({
-      type: 'GET',
-      url: 'https://vimeo.com/api/v2/video/' + obj.key + '.json',
-      dataType: 'json',
-      success: function(data) {
-        $(`#${key}`).css({backgroundImage: `url(${data[0].thumbnail_large})`});
-      }
-      });
-  }
-
-  for(let i = 1; i < Object.keys(videoID).length; i++){
-    addVideos(i, videoID);
-  }
- */
-  
 
   addVideos(videoUrlArray);
 

@@ -6,6 +6,7 @@ require('bootstrap/js/dist/button');
 require('bootstrap/js/dist/collapse');
 require('bootstrap/js/dist/dropdown');
 require('bootstrap/js/dist/util');
+require('bootstrap/js/dist/modal');
 
 // Your own CSS files
 require("./vendor/cookieconsent.min.css");
