@@ -174,20 +174,20 @@ $(document).ready(function() {
 
   addVideos(videoUrlArray);
 
+  // Google Maps
 
+  const script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCH7D-7k5hlveynQ-xJpa7YTOq6Vrj2lPI&callback=initMap';
+  script.async = true;
   
-  /* $.ajax({
-    type: 'GET',
-    url: 'https://vimeo.com/api/v2/video/546472954.json',
-    dataType: 'json',
-    success: function(data) {
-      $('#story1').css({backgroundImage: `url(${data[0].thumbnail_large})`})
-      $('.description-text').html(data[0].thumbnail_large);
+  window.initMap = function() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8,
+    });  
+  };
 
-      console.log(data);
-    }
-  }); */
-
+  document.head.appendChild(script);
   
 
   /* // Add CSS class to Site Header when scrollTop position of the document is not 0
