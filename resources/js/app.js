@@ -179,11 +179,17 @@ $(document).ready(function() {
   const script = document.createElement('script');
   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCH7D-7k5hlveynQ-xJpa7YTOq6Vrj2lPI&callback=initMap';
   script.async = true;
+
+  let map;
   
   window.initMap = function() {
     map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
+      center: { lat: 56.945, lng: 24.132 },
+      zoom: 13,
+      mapId: '188a28bf3623f836',
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false
     });  
   };
 
