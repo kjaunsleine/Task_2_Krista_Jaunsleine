@@ -180,6 +180,30 @@ $(document).ready(function() {
   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCH7D-7k5hlveynQ-xJpa7YTOq6Vrj2lPI&callback=initMap';
   script.async = true;
 
+  function ZoomControl (controlDiv, map){
+    const controlWrapper = document.createElement('div');
+    $(controlWrapper).addClass('zoom-btn-container');
+    controlDiv.appendChild(controlWrapper);
+
+    const zoomInButton = document.createElement('div');
+    $(zoomInButton).addClass('zoom-btn');
+    $(zoomInButton).html('<span class="icon-plus"></span>');
+    controlWrapper.appendChild(zoomInButton);
+
+    const zoomOutButton = document.createElement('div');
+    $(zoomOutButton).addClass('zoom-btn');
+    $(zoomOutButton).html('<span class="icon-minus"></span>');
+    controlWrapper.appendChild(zoomOutButton);
+
+    google.maps.event.addDomListener(zoomInButton, 'click', function() {
+      map.setZoom(map.getZoom() + 1);
+    });
+
+    google.maps.event.addDomListener(zoomOutButton, 'click', function() {
+      map.setZoom(map.getZoom() - 1);
+    });
+  }
+
   let map;
   
   window.initMap = function() {
@@ -187,11 +211,18 @@ $(document).ready(function() {
       center: { lat: 56.945, lng: 24.132 },
       zoom: 13,
       mapId: '188a28bf3623f836',
-      mapTypeControl: false,
-      streetViewControl: false,
-      fullscreenControl: false
-    });  
+      disableDefaultUI: true,
+    });
+
+    const zoomControlDiv = document.createElement('div');
+    const zoomControl = new ZoomControl(zoomControlDiv, map);
+
+    zoomControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(zoomControlDiv);
   };
+
+  /* const myControl = new MyControl($('#zoom-in'));
+  map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push($('#zoom-in')); */
 
   document.head.appendChild(script);
   

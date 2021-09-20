@@ -672,6 +672,25 @@ input[type=checkbox]:checked
 
 // Sapnus atbalsta
 
+.zoom-btn-container {
+  margin-right: 3.72rem;
+  margin-bottom: 4.06rem;
+}
+
+.zoom-btn {
+  width: 3.17rem;
+  height: 3.17rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 168, 0, 0.5);
+  border-radius: 0.78rem;
+  cursor: pointer;
+}
+
+.zoom-btn:hover { background: rgba(255, 203, 102, 0.5); }
+
 #map { height: 46.5vw; }
 
 

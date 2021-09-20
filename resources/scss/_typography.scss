@@ -63,10 +63,12 @@
 
 .icon-plus:before {
   content: "\ea0a";
+  font-weight: bold;
 }
 
 .icon-minus:before {
   content: "\ea0b";
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 991px) {
