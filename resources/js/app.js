@@ -221,9 +221,6 @@ $(document).ready(function() {
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(zoomControlDiv);
   };
 
-  /* const myControl = new MyControl($('#zoom-in'));
-  map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push($('#zoom-in')); */
-
   document.head.appendChild(script);
   
 
@@ -261,14 +258,16 @@ $(document).ready(function() {
   }); */
 
   // Select
+
+  //$('#location-select').SumoSelect();
   function selectPlugin() {
     if( $('.js-select').length > 0 ) {
       $('.js-select').each(function() {
         let $this = $(this);
         if( !$this.hasClass('js-initialized') ) {
           $this.SumoSelect({
-            search: true,
-            searchText: '',
+            placeholder: 'Izvēlies',
+            selectAll: false,
             noMatch: '',
             forceCustomRendering: true,
           });

@@ -4,38 +4,44 @@ ${require('./header.html')}
               <h1>Sapņus atbalsta</h1>
               <p class="description-text description-wide">Sadarbības partneri ir uzņēmumi, kuri savā preču vai pakalpojumu ikdienā ir integrējuši SparkleHeart zīmolu un dala ar to konkrētu daļu savu ienākumu.</p>
             </div>
-            <div>
-              <div>
+            <div class="select-container d-flex justify-content-center">
+              <div class="d-flex flex-column text-center">
                 <label for="location-select">Uzņēmuma atrašanās vieta</label>
-                <select name="location" id="location-select">
+                <select id="location-select" class="js-select" name="location" >
                   <option value="">Izvēlies</option>
                   <option value="riga">Rīga</option>
                   <option value="jelgava">Jelgava</option>
                   <option value="ogre">Ogre</option>
                 </select>
               </div>
-              <div>
+
+              <div class="d-flex flex-column text-center">
                 <label for="type-select">Uzņēmuma veids</label>
-                <select name="type" id="type-select">
+                <select id="type-select" class="js-select" name="type">
                   <option value="">Izvēlies</option>
                   <option value="edinasana">Ēdināšana</option>
                   <option value="skaistumkopsana">Skaistumkopšana</option>
                   <option value="atputa">Aktīva atpūta</option>
                 </select>
               </div>
-              <div>
-
-              </div>
             </div>
-            <!-- <div>
+
+            <div class="company-container">
+              <div class="company-logo"></div>
+              <div class="company-name"></div>
+              <div class="company-contacts">
+                <p>Numurs</p>
+                <p>Address</p>
+              </div>
+
+            </div>
               <!-- Ēdināšana, skaistumkopšana, Aktīva atpūta -->
+            <!-- <div>
               <div id="zoom-btn-container"></div>
               <div id="zoom-in"class="zoom-btn"><span class="icon-plus"></span></div>
               <div id="zoom-out" class="zoom-btn"><span class="icon-minus"></span></div>
             </div> -->
-            <div id="map">
-
-            </div>
+            <div id="map"></div>
 
           </main>
           ${require('./footer.html')}
