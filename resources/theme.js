@@ -17,6 +17,10 @@ require("./scss/style.scss");
 
 // Your own javascript files
 require("./vendor/lightslider.min.js");
-require("./js/app.js");
 window.AOS = require("./vendor/aos.js");
 require("./vendor/jquery.sumoselect.min.js");
+require("./js/app.js");
+
+// Images
+require("./img/marker-icon.png");
+require("./img/marker-icon-clicked.png");
