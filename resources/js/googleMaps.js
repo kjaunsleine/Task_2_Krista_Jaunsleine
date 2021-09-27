@@ -267,143 +267,15 @@ window.initMap = function() {
         map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
       }
 
-      /* if(marker.city === cityVal){
-        marker.setVisible(true);
-        
-      } else {
-        marker.setVisible(false);
-      } */
-
       if(marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === ''){
         marker.setVisible(true);
         createCard(marker);
       } else {
         marker.setVisible(false);
       }
-
-      
-
-       /* if(cityVal === 'jelgava' && marker.city === cityVal){
-        map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      }
-
-      if(cityVal === 'ogre' && marker.city === cityVal){
-        map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      }
- */
-      
-
-     
-
-      /* if(cityVal ===  marker.city && typeVal === marker.sector){
-        //marker.setVisible(true);
-        createCard(marker);
-      } else {
-        marker.setVisible(false);
-      } */
-
-
-
     }
-      /* if(marker.city === 'Ogre'){
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      }
-
-      if(typeVal === marker.sector && cityVal === 'ogre'){
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      } */
-      
-      /* else if(marker.city === 'Ogre' && marker.sector === 'Ēdināšana' && typeVal === 'edinasana'){
-        marker.setVisible(true);
-      } else if (marker.city === 'Ogre' && marker.sector === 'Skaistumkopšana'){
-        marker.setVisible(true);
-      } else if (marker.city === 'Ogre' && marker.sector === 'Atpūta'){
-        marker.setVisible(true);
-      } else {
-        marker.setVisible(false);
-      } */
-     
-    /* else if(cityVal === 'jelgava'){
-      map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
-    } else if (cityVal === 'riga' || cityVal === ''){
-      map.setCenter({ lat: 56.945, lng: 24.132 });
-    } */
-    
-    /* if(cityVal === 'ogre'){
-     
-      deleteMarkers();
-      for (let company of companies){
-        if (company.city === 'Ogre'){
-          makeMarker(company, map, infowindow);
-        }
-      }
-      if($('option:selected', '#type-select').val() === value){
-
-    } else if ($('option:selected', this).val() === 'jelgava'){
-      map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 }); 
-    } else {
-      map.setCenter({ lat: 56.945, lng: 24.132 });
-    }
-    } */
 
   });
 
-  /* function selectType(value, sector, companies){
-    if($('option:selected', '#type-select').val() === value){
-      deleteMarkers();
-      for (let company of companies){
-        if (company.sector === sector){
-          makeMarker(company, map, infowindow);
-        }
-      }
-    };
-  } */
-
-    /*   $('#type-select').on('change', function(){
-  $('li.opt:first').hide();
-  selectType('edinasana', 'Ēdināšana', companies);
-  selectType('skaistumkopsana', 'Skaistumkopšana', companies);
-  selectType('atputa', 'Atpūta', companies);
-
-  if($('option:selected', this).val() === 'edinasana'){
-      deleteMarkers();
-      for (let company of companies){
-        if (company.sector === 'Ēdināšana'){
-          makeMarker(company, map, infowindow);
-        }
-      }
-    };
-    if($('option:selected', this).val() === 'skaistumkopsana'){
-      deleteMarkers();
-      for (let company of companies){
-        if (company.sector === 'Skaistumkopšana'){
-          makeMarker(company, map, infowindow);
-        }
-      }
-    };
-    if($('option:selected', this).val() === 'atputa'){
-      deleteMarkers();
-      for (let company of companies){
-        if (company.sector === 'Atpūta'){
-          makeMarker(company, map, infowindow);
-        }
-      }
-    }; 
-
-    });
-  }; */
-  
-
-  
 });
 
