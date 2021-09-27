@@ -523,7 +523,7 @@ input[type=checkbox]:checked
   position: relative;
   width: 12vw;
   height: 12vw;
-  margin: 0.39rem;
+  margin: .39rem;
   background-repeat: none;
   background-size: cover;
   background-position: center;
@@ -532,7 +532,7 @@ input[type=checkbox]:checked
 
 .overlay:hover {
   border: 1px solid #000000;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
   cursor: pointer;
 }
 
@@ -610,9 +610,9 @@ input[type=checkbox]:checked
   background-size: 100% 100%;
 }
 
-.modal-backdrop { background: rgba(47, 72, 88, 0.9); }
+.modal-backdrop { background: rgba(47, 72, 88, .9); }
 
-.modal-backdrop.show { opacity: 0.9; }
+.modal-backdrop.show { opacity: .9; }
 
 .team-description { 
   width: 85%;
@@ -679,17 +679,17 @@ input[type=checkbox]:checked
 
 .SumoSelect {
   width: 288px;
-  margin: 0.83rem;
+  margin: .83rem;
 }
 
 .SelectBox {
-  padding: 0.67rem 3.33rem 0.56rem 0.83rem;
+  padding: .67rem 3.33rem .56rem .83rem;
 }
 
 .SumoSelect > .CaptionCont {
   min-height: 43px;
   background: #E4E4E4;
-  border-radius: 0.33rem;
+  border-radius: .33rem;
   border: none;
   text-align: left;
 }
@@ -697,7 +697,7 @@ input[type=checkbox]:checked
 .SumoSelect > .optWrapper {
   text-align: left;
   border: none;
-  border-radius: 0 0 0.33rem 0.33rem;
+  border-radius: 0 0 .33rem .33rem;
   background: #E4E4E4;
 }
 
@@ -716,7 +716,7 @@ label[for="type-select"] {
 }
 
 .SumoSelect.open .SelectBox {
-  border-radius: 0.33rem 0.33rem 0 0;
+  border-radius: .33rem .33rem 0 0;
   padding-bottom: 0; 
 }
 
@@ -731,12 +731,12 @@ label[for="type-select"] {
 }
 
 .SumoSelect > .optWrapper > .options > li.opt {
-  padding: 0.56rem 0.83rem 0 0.83rem;
+  padding: .56rem .83rem 0 .83rem;
   border: none;
 }
 
 .SumoSelect > .optWrapper > .options > li.opt:last-child {
-  padding-bottom: 0.56rem;
+  padding-bottom: .56rem;
 }
 
 .SumoSelect > .optWrapper > .options li.selected {
@@ -744,15 +744,16 @@ label[for="type-select"] {
 }
 
 .SumoSelect.open .SelectBox span {
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
   border-bottom: 2px solid #2F4858;
   font-weight: 700;
 }
 
-p[title="Rīga"] {
+/* p[title="Rīga"] {
   font-weight: 700;
-}
+} */
 
+// Google maps styles
 .zoom-btn-container {
   margin-right: 3.72rem;
   margin-bottom: 4.06rem;
@@ -765,13 +766,55 @@ p[title="Rīga"] {
   padding-top: 1rem;
   font-size: 1rem;
   text-align: center;
-  background: rgba(255, 168, 0, 0.5);
-  border-radius: 0.78rem;
+  background: rgba(255, 168, 0, .5);
+  border-radius: .78rem;
   cursor: pointer;
 }
 
-.zoom-btn:hover { background: rgba(255, 203, 102, 0.5); }
+.zoom-btn:hover { background: rgba(255, 203, 102, .5); }
 
 #map { height: 46.5vw; }
+
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}
+
+.info-window {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 486px;
+  height: 174px;
+  //padding-top: 1.22rem;
+  //padding-bottom: 1.67rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.info-window-logo{
+  display: flex;
+  align-items: center;
+}
+
+.gm-style .gm-style-iw {
+  max-width: 486px;
+  box-shadow: none;
+  border-radius: .78rem;
+  background: rgba(255, 168, 0, 0.5);
+  
+}
+
+.gm-style .gm-style-iw-d { overflow: hidden !important; }
+
+.gm-style-iw > button { display: none !important; }
+
+.info-window-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: right;
+}
+
+
 
 

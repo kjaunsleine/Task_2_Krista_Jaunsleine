@@ -3,6 +3,12 @@
 $(document).ready(function() {
   'use strict';
 
+  function importAll(r) {
+    return r.keys().map(r);
+  }
+  
+  const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
+
   $('.js-select').on('sumo:opened', () => {
       // Do stuff here
       $('body').addClass('sumo-opened');
@@ -32,9 +38,9 @@ $(document).ready(function() {
     $('#browser-notification-style').remove();
   });
 
-  // Replace all .svg to .png, in case the browser does not support the format
+  // Replace all .svg to .png, in case the browser does not the format
   if(!Modernizr.svg) {
-      $('img[src*="svg"]').attr('src', () => {
+      $('images[src*="svg"]').attr('src', () => {
           return $(this).attr('src').replace('.svg', '.png');
       });
       $('*[style*="svg"]').attr('style', () => {
@@ -193,218 +199,6 @@ $(document).ready(function() {
     }
   }
   selectPlugin();
-
-  // Google Maps
-
-  const companies = [{ 
-    sector: 'Ēdināšana',
-    name: 'Nirvana',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.958811377272816, lng: 24.12074462729583 },
-  },
-  {
-    sector: 'Ēdināšana',
-    name: 'Kurts',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.951192430399956, lng: 24.120726774255203 },
-  },
-  {
-    sector: 'Ēdināšana',
-    name: 'Purch restaurant',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.95841709326254, lng: 24.191152276727728 }
-  },
-  {
-    sector: 'Skaistumkopšana',
-    name: 'Grieze',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.9589776257728, lng: 24.119726129076216 }, 
-  },
-  {
-    sector: 'Skaistumkopšana',
-    name: 'Rīdzene',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.949692200867524, lng: 24.123385984893993 }, 
-  },
-  {
-    sector: 'Aktīva atpūta',
-    name: 'Gandrs',
-    city: 'Rīga',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.94404505791262, lng: 24.070492568260306 },
-  },
-  {
-    sector: 'Ēdināšana',
-    name: 'LaCasa Ogre',
-    city: 'Ogre',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.8181364060927, lng: 24.605441556052483 }, 
-  },
-  {
-    sector: 'Aktīva atpūta',
-    name: 'Milžu taka',
-    city: 'Ogre',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.827816812948264, lng: 24.593429192378306 }, 
-  },
-  {
-    sector: 'Ēdināšana',
-    name: 'Chocolate and pepper',
-    city: 'Jelgava',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.65409032732801, lng: 23.723595867682334 }, 
-  },
-  {
-    sector: 'Skaistumkopšana',
-    name: 'Skaistumburve',
-    city: 'Jelgava',
-    phone: '+371XXXXXXXX',
-    address: 'Centra iela 1',
-    logo: './img/BlackLogo.png',
-    coord: { lat: 56.64772725493188, lng: 23.718456700227858 }, 
-  }];
-
-  const script = document.createElement('script');
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCH7D-7k5hlveynQ-xJpa7YTOq6Vrj2lPI&callback=initMap';
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-  let map;
-  const markerIcon = './images/marker-icon.png';
-
-  function ZoomControl (controlDiv, map){
-    const controlWrapper = document.createElement('div');
-    $(controlWrapper).addClass('zoom-btn-container');
-    controlDiv.appendChild(controlWrapper);
-
-    const zoomInButton = document.createElement('div');
-    $(zoomInButton).addClass('zoom-btn');
-    $(zoomInButton).html('<span class="icon-plus"></span>');
-    controlWrapper.appendChild(zoomInButton);
-
-    const zoomOutButton = document.createElement('div');
-    $(zoomOutButton).addClass('zoom-btn');
-    $(zoomOutButton).html('<span class="icon-minus"></span>');
-    controlWrapper.appendChild(zoomOutButton);
-
-    google.maps.event.addDomListener(zoomInButton, 'click', function() {
-      map.setZoom(map.getZoom() + 1);
-    });
-
-    google.maps.event.addDomListener(zoomOutButton, 'click', function() {
-      map.setZoom(map.getZoom() - 1);
-    });
-  }
-
-  const markers = [];
-
-  function makeMarker(location, title){
-    let marker = new google.maps.Marker({
-      position: location,
-      map,
-      title: title,
-      icon: markerIcon,
-    });
-
-    markers.push(marker);
-  }
-  
-  window.initMap = function() {
-
-    // Initialize map
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 56.945, lng: 24.132 },
-      zoom: 13,
-      mapId: '188a28bf3623f836',
-      disableDefaultUI: true,
-    });
-
-    // Add custom zoom buttons
-    const zoomControlDiv = document.createElement('div');
-    const zoomControl = new ZoomControl(zoomControlDiv, map);
-
-    zoomControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(zoomControlDiv);
-
-    // Add all markers
-    companies.forEach(function(company){
-    makeMarker(company.coord, company.name);
-  });
-
-  };
-
-  
-
-  
-
-  $('#location-select').on('change', function(){
-    $('li.opt:first-child').hide();
-    if($('option:selected', this).val() === 'ogre'){
-      map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
-    } else if ($('option:selected', this).val() === 'jelgava'){
-      map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 }); 
-    } else {
-      map.setCenter({ lat: 56.945, lng: 24.132 });
-    }
-  });
-
-  /* const locationMenu = document.getElementById('location-select');
-  document.getElementById('location-select').addEventListener('change', function(event){
-    console.log(event.target);
-  });
- */
-  /* function addMarkers(arr){
-    const locationMenu = document.getElementById('location-select');
-    locationMenu.addEventListener('change', function(event){
-      console.log(event.target.value);
-      if (event.target.value === "riga"){
-        console.log('ok');
-      }
-    });
-  } */
-
-  //addMarkers(companies);
-
-  
-  
-  
-
-  // Animations
-  AOS.init();
-
-  /*     
-  const companyDiv = document.createElement('div');
-  const namePar = document.createElement('p');
-  //console.log(companies[1].name);
-  //$(namePar).html(companies['Ēdināšana'].name);
-  //$(companyDiv).append(namePar);
-  //const sectorPar
-  //const city
-  $('.company-container').append(companyDiv);
-   */
 
   /* // Add CSS class to Site Header when scrollTop position of the document is not 0
   let $lastY = $window.scrollTop();

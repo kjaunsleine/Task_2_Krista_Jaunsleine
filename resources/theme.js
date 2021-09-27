@@ -20,7 +20,8 @@ require("./vendor/lightslider.min.js");
 window.AOS = require("./vendor/aos.js");
 require("./vendor/jquery.sumoselect.min.js");
 require("./js/app.js");
+require("./js/googleMaps.js");
+
 
 // Images
-require("./img/marker-icon.png");
-require("./img/marker-icon-clicked.png");
+require.context('./img', true);

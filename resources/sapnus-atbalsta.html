@@ -7,8 +7,8 @@ ${require('./header.html')}
             <div class="select-container d-flex justify-content-center">
               <div class="d-flex flex-column text-center">
                 <label for="location-select">Uzņēmuma atrašanās vieta</label>
-                <select id="location-select" class="js-select" name="location" >
-                  <option value="" selected>Izvēlies</option>
+                <select id="location-select" class="js-select" name="location" autocomplete="off">
+                  <option value="">Izvēlies</option>
                   <option value="riga">Rīga</option>
                   <option value="jelgava">Jelgava</option>
                   <option value="ogre">Ogre</option>
@@ -17,7 +17,7 @@ ${require('./header.html')}
 
               <div class="d-flex flex-column text-center">
                 <label for="type-select">Uzņēmuma veids</label>
-                <select id="type-select" class="js-select" name="type">
+                <select id="type-select" class="js-select" name="type" autocomplete="off">
                   <option value="">Izvēlies</option>
                   <option value="edinasana">Ēdināšana</option>
                   <option value="skaistumkopsana">Skaistumkopšana</option>
@@ -27,20 +27,9 @@ ${require('./header.html')}
             </div>
 
             <div class="company-container">
-              <div class="company-logo"></div>
-              <div class="company-name"></div>
-              <!-- <div class="company-contacts">
-                <p>Numurs</p>
-                <p>Address</p>
-              </div> -->
 
             </div>
               <!-- Ēdināšana, skaistumkopšana, Aktīva atpūta -->
-            <!-- <div>
-              <div id="zoom-btn-container"></div>
-              <div id="zoom-in"class="zoom-btn"><span class="icon-plus"></span></div>
-              <div id="zoom-out" class="zoom-btn"><span class="icon-minus"></span></div>
-            </div> -->
             <div id="map"></div>
 
           </main>
