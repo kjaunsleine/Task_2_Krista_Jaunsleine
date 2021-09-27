@@ -142,7 +142,7 @@ function ZoomControl (controlDiv, map){
 /* ************* Create info window content ************  */
 
 function createPopupContent(company){
-  const contentString = `<div class="info-window"><div class="info-window-logo"><img src=${company.logo}></div><div class="info-window-contacts"><p class="h3">${company.name}</p><div><p>${company.phone}</p><p>${company.address},${company.city}</p></div></div></div>`;
+  const contentString = `<div class="info-window"><div class="info-window-logo"><img src=${company.logo}></div><div class="info-window-contacts"><p class="h3">${company.name}</p><div><p>${company.phone}</p><p>${company.address}, ${company.cityName}</p></div></div></div>`;
   return contentString;
 }
 

@@ -674,7 +674,7 @@ input[type=checkbox]:checked
 
 .select-container {
   width: 100%;
-  height: 15%;
+  margin-bottom: 3.33rem;
 }
 
 .SumoSelect {
@@ -682,9 +682,7 @@ input[type=checkbox]:checked
   margin: .83rem;
 }
 
-.SelectBox {
-  padding: .67rem 3.33rem .56rem .83rem;
-}
+.SelectBox { padding: .67rem 3.33rem .56rem .83rem; }
 
 .SumoSelect > .CaptionCont {
   min-height: 43px;
@@ -749,9 +747,22 @@ label[for="type-select"] {
   font-weight: 700;
 }
 
-/* p[title="Rīga"] {
-  font-weight: 700;
-} */
+.company-container-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.83rem auto;
+  max-width: 55%;
+  color: rgba(47, 72, 88, 1);
+}
+
+.company-container-inner .company-name {
+  font-size: 1.33rem;
+  font-weight: 500;
+}
+
+.company-phone,
+.company-address { text-align: right; }
 
 // Google maps styles
 .zoom-btn-container {
