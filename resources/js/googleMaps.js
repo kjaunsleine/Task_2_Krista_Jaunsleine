@@ -110,8 +110,7 @@ $(window).on('load', function(){
 const script = document.createElement('script');
 script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCH7D-7k5hlveynQ-xJpa7YTOq6Vrj2lPI&callback=initMap';
 script.async = true;
-script.defer = true;
-document.head.appendChild(script);
+document.body.appendChild(script);
 
 /* ************* Create custom zoom buttons ************  */
 
@@ -214,6 +213,7 @@ window.initMap = function() {
     zoom: 13,
     mapId: '188a28bf3623f836',
     disableDefaultUI: true,
+    clickableIcons: false,
   });
 
   // Add custom zoom buttons
@@ -241,7 +241,9 @@ window.initMap = function() {
     html += `<p class="company-address">${obj.address}, ${obj.cityName}</p></div>`;
     console.log(html);
     $(companyDiv).html(html);
-    $('.company-container').append(companyDiv);
+    $('.company-container').hide();
+    $(companyDiv).appendTo('.company-container');
+    $('.company-container').slideDown(200, 'easeInCirc');
   }
 
   $('#location-select').add('#type-select').on('change', function(){
@@ -250,7 +252,10 @@ window.initMap = function() {
     let cityVal = $('option:selected', '#location-select').val();
     let typeVal = $('option:selected', '#type-select').val();
 
-    $('.company-container').html('');
+    $('.company-container').slideToggle('slow', function(){
+      $('.company-container').html('');
+    });
+    
       
     for(let i=0; i < markers.length; i++){
       let marker = markers[i];

@@ -3,11 +3,11 @@
 $(document).ready(function() {
   'use strict';
 
-  function importAll(r) {
+  /* function importAll(r) {
     return r.keys().map(r);
-  }
+  } */
   
-  const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
+  //const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
 
   $('.js-select').on('sumo:opened', () => {
       // Do stuff here
@@ -47,6 +47,13 @@ $(document).ready(function() {
           return $(this).attr('style').replace('.svg', '.png');
       });
   }
+
+  // Adding style to active nav-link
+
+  const url = window.location.href;
+  $('.nav-item .nav-link').filter(function(){
+    return url.indexOf(this.href) != -1;
+  }).addClass('active');
 
   // Navigation change triggered by window width change
   function windowWidthCheck() {
@@ -234,3 +241,5 @@ $(document).ready(function() {
   }); */
 
 });
+
+
