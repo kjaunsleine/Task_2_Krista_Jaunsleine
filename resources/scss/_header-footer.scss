@@ -21,6 +21,14 @@ header { background-color: #fff; }
   font-weight: 500;
 }
 
+.navbar-nav .nav-item .active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #FFA800;
+  text-decoration-thickness: 0.167rem;
+  text-underline-position: under;
+}
+
 .navbar-brand {
   padding: 0;
   margin-left: 3.33rem;
@@ -99,7 +107,7 @@ header { background-color: #fff; }
 
   .collapsing {
     position: absolute !important;
-    z-index: 50;
+    z-index: 1000;
     width: 100%;
     top: 77px;
     background-color: #fff;
@@ -108,18 +116,10 @@ header { background-color: #fff; }
   .collapse.show {
     display: block;
     position: absolute;
-    z-index: 50;
+    z-index: 1000;
     width: 100%;
     top: 77px;
     background-color: #fff;
-  }
-
-  .navbar-nav .nav-item .active {
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: #FFA800;
-    text-decoration-thickness: 0.167rem;
-    text-underline-position: under;
   }
 
   .navbar-nav {
@@ -169,6 +169,8 @@ footer {
   background: #2f4858;
   color: #fff;
 }
+
+footer .ripped-up { margin-top: -3%; }
 
 .footer-inner { margin-top: 4.4rem; }
 
