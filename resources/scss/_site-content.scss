@@ -748,7 +748,7 @@ input[type=checkbox]:checked
 
 // 99 iedvesmas stāsti
 
-.story-container { width: 81%; }
+.story-container { width: 80%; }
 
 .story-container,
 .modal {
@@ -759,8 +759,8 @@ input[type=checkbox]:checked
 
 .story {
   position: relative;
-  width: 12vw;
-  height: 12vw;
+  width: 11.7vw;
+  height: 11.7vw;
   margin: .39rem;
   background-repeat: none;
   background-size: cover;
@@ -777,8 +777,8 @@ input[type=checkbox]:checked
 .overlay,
 .story-overlay {
   position: absolute;
-  width: 12vw;
-  height: 12vw;
+  width: 11.7vw;
+  height: 11.7vw;
 }
 
 .overlay {
@@ -798,8 +798,8 @@ input[type=checkbox]:checked
 
 .story .number {
   position: absolute;
-  top: 6rem;
-  left: 5rem;
+  bottom: -.65rem;
+  right: .778rem;
   z-index: 1;
 }
 
@@ -808,6 +808,7 @@ input[type=checkbox]:checked
   left: 0;
   right: 0;
   margin: 3rem auto;
+  font-size: 1.33rem;
   font-weight: 700;
   line-height: 1.5rem;
   text-align: center;
@@ -823,20 +824,37 @@ input[type=checkbox]:checked
   z-index: 1;
 }
 
+ @media only screen and (max-width: 768px) {
+  .story-container { width: 83.5%; }
+  
+  .story {
+    width: 18.55vw;
+    height: 18.55vw;
+  }
+
+  .story-overlay,
+  .overlay {
+    width: 18.55vw;
+    height: 18.55vw;
+  }
+}
+
+.modal { padding-right: 0 !important; }
+
 .modal-header,
 .modal-content,
 .modal-footer { border: none; }
 
-.modal-header { justify-content: flex-end;}
-
-.modal-content { 
-  width: 57vw;
-  background: transparent; 
+.modal-header {
+  width: 72vw;
+  justify-content: flex-end;
 }
 
+.modal-content { background: transparent; }
+
 .modal-dialog {
-  width: 57vw;
-  margin: 7.75rem auto;
+  max-width: 912px;
+  margin: 4.75rem auto 0 auto;
 }
 
 .modal-header .close-icon {
@@ -848,12 +866,40 @@ input[type=checkbox]:checked
   background-size: 100% 100%;
 }
 
+.modal-body {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-body iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-open { padding-right: 0 !important; }
+
 .modal-backdrop { background: rgba(47, 72, 88, .9); }
 
 .modal-backdrop.show { opacity: .9; }
 
+@media only screen and (max-width: 768px) {
+  .modal-dialog {
+    max-width: 608px;
+    margin-top: 14.75rem ;
+  }
+
+  .modal-header { width: 87vw; }
+}
+
 .team-description { 
-  width: 85%;
+  width: 75%;
   margin: 8.33rem auto 8.33rem auto; 
 }
 
@@ -870,7 +916,7 @@ input[type=checkbox]:checked
 }
 
 .team-member-container h3 {
-  margin: 0;
+  margin-top: 14rem;
   font-weight: 500;
   padding-bottom: 0;
   z-index: 2;
@@ -886,9 +932,11 @@ input[type=checkbox]:checked
 .team-member-2,
 .team-member-3 {
   position: relative;
-  width: 23vw;
-  height: 30vw;
+  width: 100%;
+  max-width: 289px;
+  max-height: 365px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .team-member-1 { background-image: url(../img/Juris2.jpg); }
@@ -901,11 +949,43 @@ input[type=checkbox]:checked
   position: absolute;
   top: 0;
   left: 0;
-  width: 23vw;
-  height: 29vw;
+  width: 100%;
+  height: 100%;
+  max-width: 289px;
+  max-height: 365px;
   background: linear-gradient(180deg, rgba(47, 72, 88, 0.8) 18.63%, rgba(47, 72, 88, 0) 49.21%);
   transform: rotate(-180deg);
   z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .team-description { width: 100%; }
+
+  .team-description .description-text { 
+    margin-top: 1.667rem;
+    margin-bottom: 5rem;
+  }
+
+  .team-member-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+  .team-member-container h3 { margin-top: 19rem; }
+
+  .team-member-1,
+  .team-member-2,
+  .team-member-3,
+  .team-image-overlay {
+    max-width: 352px;
+    max-height: 443px;
+    margin-bottom: 1.39rem;
+  }
+  
+  
+
+  
+  
 }
 
 // Sapnus atbalsta
