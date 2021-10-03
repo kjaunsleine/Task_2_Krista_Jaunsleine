@@ -568,17 +568,17 @@ input[type=checkbox]:checked
     margin-top: 0;
   }
 
-  .piesaki-sapni .image-container {
+  .image-container.image-container-reverse {
     margin-top: 0;
   }
   
-  .piesaki-sapni .image-container div:nth-child(2) { max-width: 51.3%; }
+  .image-container.image-container-reverse div:nth-child(2) { max-width: 51.3%; }
 
-  .piesaki-sapni .image-container div:nth-child(3) { max-width: 48.7%; }
+  .image-container.image-container-reverse div:nth-child(3) { max-width: 48.7%; }
 
-  .piesaki-sapni .image-container div:nth-child(4) { max-width: 38.6%; }
+  .image-container.image-container-reverse div:nth-child(4) { max-width: 38.6%; }
 
-  .piesaki-sapni .image-container div:nth-child(5) { max-width: 61.4%; }
+  .image-container.image-container-reverse div:nth-child(5) { max-width: 61.4%; }
 
 }
 
@@ -748,6 +748,13 @@ input[type=checkbox]:checked
 
 // 99 iedvesmas stāsti
 
+@media only screen and (max-width: 320px) {
+  .description-container.introduction-container-mobile { margin-bottom: 4.44rem; }
+  .introduction-container-mobile {
+    font-size: 1rem;
+  }
+}
+
 .story-container { width: 80%; }
 
 .story-container,
@@ -832,12 +839,8 @@ input[type=checkbox]:checked
 
 @media only screen and (max-width: 768px) {
   .story-container { width: 83.5%; }
-  
-  .story {
-    width: 18.55vw;
-    height: 18.55vw;
-  }
 
+  .story,
   .story-overlay,
   .overlay {
     width: 18.55vw;
@@ -845,6 +848,18 @@ input[type=checkbox]:checked
   }
 }
 
+@media only screen and (max-width: 320px) {
+  .story-container { width: 98%; }
+
+  .story,
+  .story-overlay,
+  .overlay {
+    width: 42vw;
+    height: 42vw;
+  }
+
+  .story-coming-soon { font-size: .778rem; }
+}
 .modal { padding-right: 0 !important; }
 
 .modal-header,
@@ -987,12 +1002,39 @@ input[type=checkbox]:checked
     max-width: 352px;
     max-height: 443px;
     margin-bottom: 1.39rem;
-  }
-  
-  
+  }  
+}
 
-  
-  
+@media only screen and (max-width: 320px) {
+  .team-description {
+    margin-top: 6.667rem;
+    margin-bottom: 6.667rem;
+  }
+
+  .team-description h2 { font-size: 1.333rem; }
+
+  .team-description .description-text {
+    margin-bottom: 4.444rem;
+    font-size: .778rem;
+  }
+
+  .team-member-container { width: 90%; }
+
+  .team-member-1 h3,
+  .team-member-2 h3,
+  .team-member-3 h3 { font-size: 1rem; }
+
+  .team-member-1 p,
+  .team-member-2 p,
+  .team-member-3 p { font-size: .778rem; }
+
+  .team-member-1,
+  .team-member-2,
+  .team-member-3,
+  .team-image-overlay {
+    max-width: 280px;
+    max-height: 354px;
+  }
 }
 
 // Sapnus atbalsta
