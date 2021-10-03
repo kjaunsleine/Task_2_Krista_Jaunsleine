@@ -160,6 +160,7 @@ $(document).ready(function() {
         counter++;
       });
     } else {
+      // Show all divs on larger screens
       for(let i=1; i < 100; i++){
         let storyDiv = `#story${i}`;
         $(storyDiv).show();
