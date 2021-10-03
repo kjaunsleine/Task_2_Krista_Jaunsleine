@@ -1,13 +1,5 @@
-/*! Main script file of theme */
-
 $(document).ready(function() {
   'use strict';
-
-  /* function importAll(r) {
-    return r.keys().map(r);
-  } */
-  
-  //const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
 
   $('.js-select').on('sumo:opened', () => {
       // Do stuff here
@@ -25,20 +17,20 @@ $(document).ready(function() {
   let $document = $(document);
   let $body = $("body");
 
-  // Trigger revoke cookies functionality
+  // --------------- Trigger revoke cookies functionality
   $('body').on('mouseup', 'a[href="#revoke-cookies"]', () => {
     $('.cc-revoke').trigger('click');
     return false;
   });
 
-  // Script for deprecated browser notification
+  // --------------- Script for deprecated browser notification
   $('.close_announcement').click((e) => {
     e.preventDefault();
     $('.update_browser_fake_body').css('display', 'none');
     $('#browser-notification-style').remove();
   });
 
-  // Replace all .svg to .png, in case the browser does not the format
+  // --------------- Replace all .svg to .png, in case the browser does not the format
   if(!Modernizr.svg) {
       $('images[src*="svg"]').attr('src', () => {
           return $(this).attr('src').replace('.svg', '.png');
@@ -48,14 +40,14 @@ $(document).ready(function() {
       });
   }
 
-  // Adding style to active nav-link
+  // --------------- Adding style to active nav-link
 
   const url = window.location.href;
   $('.nav-item .nav-link').filter(function(){
     return url.indexOf(this.href) != -1;
   }).addClass('active');
 
-  // Navigation change triggered by window width change
+  // --------------- Navigation change triggered by window width change
   function windowWidthCheck() {
     if ($(window).width() < 992) {
       $('.lang-menu').removeClass('dropdown');
@@ -81,6 +73,8 @@ $(document).ready(function() {
   windowWidthCheck();
   $(window).on('resize', windowWidthCheck);
 
+  // ---------------------- Lightslider
+
   const  slider = $('#lightSlider').lightSlider({
     item: 1,
     controls: false,
@@ -98,7 +92,7 @@ $(document).ready(function() {
     slider.goToNextSlide();
   });
 
-  // Form submit message
+  // ------------------------- Form submit message
 
   $('#applForm').on('submit', function(event){
     event.preventDefault();
@@ -113,7 +107,7 @@ $(document).ready(function() {
     $('#submit').hide();
   });
 
-  // Add story divs
+  // ------------------------- Add story divs
   function generateStoryDivs(){
     for (let i=1; i < 100; i++){
       let storyDiv = $("<div></div>");
@@ -126,7 +120,58 @@ $(document).ready(function() {
   }
   generateStoryDivs();
 
-  // Add 99 videos
+  // ------------------------- Show only 20 story divs on smaller than 992 px screens
+
+  function addAddMoreBtn(){
+    
+  }
+  function hideStoryDivs () {
+    // Checks screen width
+    if ($(window).width() < 992) {
+      // Creates 'Add more' button and story div
+      const addMoreBtn = document.createElement('button');
+      $(addMoreBtn).html('Skatīt vairāk');
+      $(addMoreBtn).addClass('button');
+      $('.story-container').append(addMoreBtn);
+      let storyDiv;
+      
+      // Hides story divs which id > 20
+      for(let i=1; i < 100; i++){
+        storyDiv = `#story${i}`;
+        if(i > 20) {
+          $(storyDiv).hide();
+        }
+      }
+
+      // Sets counter
+      let counter = 1;
+      // Adds click event to the Add more button, after every click adds 20 story divs
+      $(addMoreBtn).on('click', function(){
+        for (let i = (20*counter); i <= 20*(counter+1); i++){
+          if (i<100){
+            storyDiv = `#story${i}`;
+            $(storyDiv).show();
+          } else {
+            // When all 99 story divs are displayed, button dissapears
+            $(addMoreBtn).remove();
+          } 
+        }
+        // After every click adds 1 to counter 
+        counter++;
+      });
+    } else {
+      for(let i=1; i < 100; i++){
+        let storyDiv = `#story${i}`;
+        $(storyDiv).show();
+        $('.story-container button').remove();
+      }
+    }
+  }
+
+  hideStoryDivs();
+  $(window).on('resize', hideStoryDivs);
+
+  // ----------------------------- Add 99 videos
 
   const videoUrlArray = ['https://vimeo.com/api/oembed.json?url=https://vimeo.com/251456177&width=640&height=360', 
   'https://vimeo.com/api/oembed.json?url=https://vimeo.com/546472954', 
@@ -186,9 +231,8 @@ $(document).ready(function() {
 
   addVideos(videoUrlArray);
 
-  // Select
+  // ------------------------------- Select
 
-  //$('#location-select').SumoSelect();
   function selectPlugin() {
     if( $('.js-select').length > 0 ) {
       $('.js-select').each(function() {

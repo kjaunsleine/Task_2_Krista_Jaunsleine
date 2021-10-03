@@ -824,7 +824,13 @@ input[type=checkbox]:checked
   z-index: 1;
 }
 
- @media only screen and (max-width: 768px) {
+.story-container .button {
+  margin: 2.778rem auto 0 auto;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
   .story-container { width: 83.5%; }
   
   .story {
@@ -958,16 +964,17 @@ input[type=checkbox]:checked
   z-index: 1;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .team-description { width: 100%; }
 
-  .team-description .description-text { 
+  .team-description .description-text {
+    width: 80%;
     margin-top: 1.667rem;
     margin-bottom: 5rem;
   }
 
   .team-member-container {
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
   }
   
