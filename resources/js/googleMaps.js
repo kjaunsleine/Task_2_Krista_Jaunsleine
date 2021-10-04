@@ -252,10 +252,7 @@ window.initMap = function() {
     let cityVal = $('option:selected', '#location-select').val();
     let typeVal = $('option:selected', '#type-select').val();
 
-    $('.company-container').slideToggle('slow', function(){
-      $('.company-container').html('');
-    });
-    
+    $('.company-container').html('');
       
     for(let i=0; i < markers.length; i++){
       let marker = markers[i];
