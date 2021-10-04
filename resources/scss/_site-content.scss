@@ -470,7 +470,10 @@ input[type=checkbox]:checked
   margin-top: 2.778rem;
   font-size: 1.33rem;
 }
-.description-wide { width: 60%; }
+.description-wide {
+  width: 60%;
+  line-height: .94rem;
+}
 
 @media only screen and (max-width: 768px) {
   .description-container.introduction-container {
@@ -494,7 +497,7 @@ input[type=checkbox]:checked
     font-weight: 500; 
   }
 
-  .description-wide { width: 90%; }
+  .description-wide { width: 92%; }
 
   .description-line { font-size: 1rem; }
 }
@@ -1041,7 +1044,7 @@ input[type=checkbox]:checked
 
 .select-container {
   width: 100%;
-  margin-bottom: 3.33rem;
+  padding-bottom: 11.44rem;;
 }
 
 .SumoSelect {
@@ -1049,11 +1052,15 @@ input[type=checkbox]:checked
   margin: .83rem;
 }
 
+.SumoSelect > .CaptionCont > label { width: 45px; }
+
+.SumoSelect > .CaptionCont > label > i { background-image: url(../img/select-icon.png); }
+
 .SelectBox { padding: .67rem 3.33rem .56rem .83rem; }
 
 .SumoSelect > .CaptionCont {
   min-height: 43px;
-  background: #E4E4E4;
+  background: #ececec;
   border-radius: .33rem;
   border: none;
   text-align: left;
@@ -1063,7 +1070,7 @@ input[type=checkbox]:checked
   text-align: left;
   border: none;
   border-radius: 0 0 .33rem .33rem;
-  background: #E4E4E4;
+  background: #ececec;
 }
 
 .SumoSelect.open > .CaptionCont,
@@ -1076,6 +1083,7 @@ input[type=checkbox]:checked
 
 label[for="location-select"],
 label[for="type-select"] {
+  padding-left: 0.8rem;
   font-weight: 500;
   color: #FFA800;
 }
@@ -1109,7 +1117,7 @@ label[for="type-select"] {
 }
 
 .SumoSelect.open .SelectBox span {
-  padding-bottom: .5rem;
+  padding-bottom: .49rem;
   border-bottom: 2px solid #2F4858;
   font-weight: 700;
 }
@@ -1124,12 +1132,46 @@ label[for="type-select"] {
 }
 
 .company-container-inner .company-name {
+  width: 40%;
   font-size: 1.33rem;
   font-weight: 500;
 }
 
+//.company-container .company-container-inner:last-child { margin-bottom: 3.33rem; }
+
 .company-phone,
 .company-address { text-align: right; }
+
+@media only screen and (max-width: 768px) {
+
+  .select-container {
+    width: 100%;
+    padding-bottom: 8.667rem;
+  }
+
+  .company-container-inner { max-width: 78.7%; }
+
+  .company-logo { width: 16.6%; }
+}
+
+@media only screen and (max-width: 320px) {
+  .SumoSelect {
+    width: 280px;
+    height: 41px;
+  }
+
+  label[for="location-select"],
+  label[for="type-select"],
+  .SumoSelect > .CaptionCont > span {
+    font-size: .778rem;
+  }
+
+  .select-container {
+    padding-bottom: 4.44rem;
+  }
+}
+
+
 
 // Google maps styles
 .zoom-btn-container {
@@ -1157,14 +1199,24 @@ label[for="type-select"] {
   display: none;
 }
 
+.gm-style .gm-style-iw-c { padding: 0; }
+
+@media only screen and (max-width: 768px) {
+  .zoom-btn-container { display: none; };
+
+  #map { height: 86vw; }
+}
+
+@media only screen and (max-width: 320px) {
+  #map { height: 190vw; }
+}
+
 .info-window {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 486px;
   height: 174px;
-  //padding-top: 1.22rem;
-  //padding-bottom: 1.67rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 }
@@ -1192,6 +1244,36 @@ label[for="type-select"] {
   justify-content: space-around;
   text-align: right;
 }
+
+@media only screen and (max-width: 320px) {
+  .gm-style-iw.gm-style-iw-c {
+    max-width: 280px !important;
+    max-height: 200px !important;
+  }
+
+  .info-window {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 280px;
+    height: 200px;
+    padding: .833rem;
+  }
+
+  .info-window-logo { justify-content: flex-end;}
+
+  .info-window-logo img { width: 67%; }
+
+  .info-window-contacts .h3 {
+    margin-bottom: 1.11rem;
+    font-size: 1rem;
+  }
+
+  .info-window-contacts div p { font-size: .778rem; }
+  
+}
+
 
 
 

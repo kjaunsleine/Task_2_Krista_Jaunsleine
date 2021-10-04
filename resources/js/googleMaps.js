@@ -209,7 +209,7 @@ window.initMap = function() {
 
   // Initialize map
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 56.945, lng: 24.132 },
+    center: { lat: 56.945, lng: 24.102 },
     zoom: 13,
     mapId: '188a28bf3623f836',
     disableDefaultUI: true,
@@ -243,7 +243,7 @@ window.initMap = function() {
     $(companyDiv).html(html);
     $('.company-container').hide();
     $(companyDiv).appendTo('.company-container');
-    $('.company-container').slideDown(200, 'easeInCirc');
+    $('.company-container').slideDown(300, 'easeInCirc');
   }
 
   $('#location-select').add('#type-select').on('change', function(){
@@ -258,7 +258,7 @@ window.initMap = function() {
       let marker = markers[i];
 
       if(cityVal === 'riga'|| cityVal === ''){
-        map.setCenter({ lat: 56.945, lng: 24.132 });
+        map.setCenter({ lat: 56.945, lng: 24.102 });
       }
 
       if(cityVal === 'jelgava'){
