@@ -57,6 +57,8 @@ $(document).ready(function() {
       html += '<a class="nav-link" href="#">EN</a>';
       html += '<a class="nav-link" href="#">RU</a>';
       $('.lang-menu').html(html);
+
+      $('.footer-details').after($('.footer-bank-info'));
     } 
     else {
       $('.lang-menu').addClass('dropdown');
@@ -67,11 +69,18 @@ $(document).ready(function() {
       html += '<a class="dropdown-item" href="#">EN</a>';
       html += '<a class="dropdown-item" href="#">RU</a></div>';
       $('.lang-menu').html(html);
-    }
+
+      $('.footer-menu').after($('.footer-bank-info'));
+      }
     } 
 
   windowWidthCheck();
   $(window).on('resize', windowWidthCheck);
+
+  $('.footer-details').on('click', function(event){
+    event.preventDefault();
+    $('.footer-bank-info').slideToggle();
+  });
 
   // ---------------------- Lightslider
 
