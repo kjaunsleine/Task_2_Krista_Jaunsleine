@@ -239,11 +239,10 @@ window.initMap = function() {
     html += `<p class="company-name">${obj.name}</p>`;
     html += `<div><p class="company-phone">${obj.phone}</p>`;
     html += `<p class="company-address">${obj.address}, ${obj.cityName}</p></div>`;
-    console.log(html);
     $(companyDiv).html(html);
-    $('.company-container').hide();
+    //$('.company-container').hide();
     $(companyDiv).appendTo('.company-container');
-    $('.company-container').slideDown(300, 'easeInCirc');
+    //$('.company-container').slideDown(300, 'easeInCirc');
   }
 
   $('#location-select').add('#type-select').on('change', function(){
@@ -252,30 +251,36 @@ window.initMap = function() {
     let cityVal = $('option:selected', '#location-select').val();
     let typeVal = $('option:selected', '#type-select').val();
 
-    $('.company-container').html('');
-      
-    for(let i=0; i < markers.length; i++){
-      let marker = markers[i];
+    $('.company-container').slideUp(400, 'easeInQuad', function(){
+      $('.company-container').html('');
 
-      if(cityVal === 'riga'|| cityVal === ''){
-        map.setCenter({ lat: 56.945, lng: 24.102 });
+      for(let i=0; i < markers.length; i++){
+        let marker = markers[i];
+  
+        if(cityVal === 'riga'|| cityVal === ''){
+          map.setCenter({ lat: 56.945, lng: 24.102 });
+        }
+  
+        if(cityVal === 'jelgava'){
+          map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
+        }
+  
+        if(cityVal === 'ogre'){
+          map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
+        }
+  
+        if(marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === ''){
+          marker.setVisible(true);
+          createCard(marker);
+        } else {
+          marker.setVisible(false);
+        }
+  
+        $('.company-container').slideDown(400, 'easeInQuad');
       }
-
-      if(cityVal === 'jelgava'){
-        map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
-      }
-
-      if(cityVal === 'ogre'){
-        map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
-      }
-
-      if(marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === ''){
-        marker.setVisible(true);
-        createCard(marker);
-      } else {
-        marker.setVisible(false);
-      }
-    }
+    });
+    
+    
 
   });
 
