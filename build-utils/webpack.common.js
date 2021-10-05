@@ -7,10 +7,13 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  entry: path.resolve(__dirname, "../", "resources/theme.js"),
+  entry: {
+    theme: path.resolve(__dirname, "../","resources/theme.js"),
+    googleMaps: path.resolve(__dirname, "../","resources/js/googleMaps.js")
+  },
   output: {
-    filename: "theme.js",
     path: path.resolve(__dirname, "../", "assets/"),
+    filename: "[name].js",
   },
   devtool: "source-map",
   devServer: {
@@ -47,35 +50,51 @@ const config = {
     ),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'resources/index.html'
+      template: 'resources/index.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: '404.html',
-      template: 'resources/404.html'
+      template: 'resources/404.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: 'ideja.html',
-      template: 'resources/ideja.html'
+      template: 'resources/ideja.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: 'piesaki-sapni.html',
-      template: 'resources/piesaki-sapni.html'
+      template: 'resources/piesaki-sapni.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: 'uznemejiem.html',
-      template: 'resources/uznemejiem.html'
+      template: 'resources/uznemejiem.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: 'sapnu-banka.html',
-      template: 'resources/sapnu-banka.html'
+      template: 'resources/sapnu-banka.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: '99iedvesmas-stasti.html',
-      template: 'resources/99iedvesmas-stasti.html'
+      template: 'resources/99iedvesmas-stasti.html',
+      inject: true,
+      chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
       filename: 'sapnus-atbalsta.html',
-      template: 'resources/sapnus-atbalsta.html'
+      template: 'resources/sapnus-atbalsta.html',
+      inject: true,
+      chunks: ['googleMaps', 'theme']
     }),
     new MiniCssExtractPlugin({
       filename: "./css/style.css"
