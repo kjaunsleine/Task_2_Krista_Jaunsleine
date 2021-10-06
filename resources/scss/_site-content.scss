@@ -92,17 +92,20 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 1366px;
+  max-width: 1700px;
   height: 100%;
   margin: 0 auto;
   
 }
 
 @media only screen and (max-width: 1024px) {
-  .video-container iframe {
-  top: 0;
-  }
+  .video-container iframe { top: -1rem; }
 }
+
+@media only screen and (max-width: 1024px) {
+  .video-container iframe { top: 0; }
+}
+
 
 // Description
 
@@ -128,26 +131,29 @@ h3 {
 }
 
 @media only screen and (max-width: 576px) {
+
+  .description-container { margin-bottom: 5.33rem; }
+  
   .description-text {
     font-size: .667rem;
     width: 90%;
     margin: 4.44rem auto;
-    line-height: 0.8rem;
+    line-height: 0.85rem;
   }
 }
 
 // Images
 
-.image-container { margin-top: 8.33rem; }
+.image-container { margin-top: 9.6rem; }
 
 .image-container img { 
   display: block;
   width: 100%;
-
 }
 
 @media only screen and (max-width: 576px) {
   .image-container {
+    margin-top: 0;
     flex-wrap: wrap-reverse;
     align-items: center;
   }
@@ -171,10 +177,10 @@ h3 {
 }
 // Application - dream entry
 .application-container {
-  margin-top: 8.53rem;
+  margin-top: 8.63rem;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 8.53rem;
+  margin-bottom: 8.43rem;
   padding-right: 1.8rem;
   padding-left: 2.7rem;
 }
@@ -202,6 +208,11 @@ h3 {
 
 @media only screen and (max-width: 576px) {
 
+  .application-container {
+    margin-top: 7.73rem;
+    margin-bottom: 6.83rem;
+  }
+
   .application-container .application-container-inner:nth-child(2) { margin-top: 4.44rem; }
 
   .application-container-inner .h3 { padding-bottom: 1.667rem; }
@@ -216,14 +227,20 @@ h3 {
   padding-left: 1rem;
 }
 
+.form-container .col-6,
+.form-container .col-12 {
+  padding-right: 14px;
+  padding-left: 11px;
+}
+
 .form-container .h3{
-  margin-bottom: 3.55rem;
+  margin-bottom: 3.25rem;
   font-size: 1.67rem;
 }
 
 .form-control {
-  margin-bottom: 0.75rem;
-  padding: 0.55rem 0.45rem;
+  margin-bottom: 0.85rem;
+  padding: 0.55rem 0.65rem;
   background: rgba(196, 196, 196, 0.4);
   border-radius: 0.333rem;
   border: none;
@@ -239,7 +256,7 @@ h3 {
 textarea.form-control  { 
   height: 13em;
   border: none;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
 }
 
 .form-info {
@@ -286,9 +303,17 @@ input[type=checkbox]:checked
 
   .form-control { padding: .1rem .5rem; }
 
+  .form-control { font-size: .77rem; }
+
   .form-control::placeholder { font-size: .77rem; }
 
-  textarea.form-control  { height: 7em; }
+  textarea.form-control  { height: 9em; }
+
+  .form-container .col-6,
+  .form-container .col-12 {
+    padding-right: 12px;
+    padding-left: 15px;
+  }
 
   .form-info { font-size: .66rem; }
 
@@ -300,6 +325,7 @@ input[type=checkbox]:checked
 
 @media only screen and (max-width: 320px) {
   .form-container { margin-top: 6.67rem; }
+
 }
 // Logo container
 
@@ -312,7 +338,7 @@ input[type=checkbox]:checked
 
 .logo-container-inner {
   width: 100%;
-  margin: 4.6rem auto 6rem auto;
+  margin: 4.6rem auto 9.5rem auto;
 }
 
 .logo-container-inner img {
@@ -321,6 +347,10 @@ input[type=checkbox]:checked
 }
 
 .logo-container-inner .logo { width: 6%; }
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+  .logo-container-inner img { margin-left: 2rem; }
+}
 
 @media only screen and (max-width: 991px) {
 
@@ -667,7 +697,7 @@ input[type=checkbox]:checked
   .goals div:nth-child(3) p { max-width: 90%; }
 }
 
-.logo-container p {
+.art-container p {
   max-width: 69%;
   padding-bottom: 4.94rem;
   font-size: 1.33rem;
@@ -698,7 +728,7 @@ input[type=checkbox]:checked
 .white-rainbow-art { background-position: 0 0%; background-size: 100%; }
 
 @media only screen and (max-width: 768px) {
-  .logo-container p { max-width: 80%; }
+  .art-container p { max-width: 80%; }
 
   .rupor-art { max-width: 70%; }
 
@@ -715,14 +745,14 @@ input[type=checkbox]:checked
 }
 
 @media only screen and (max-width: 320px) {
-  .logo-container {
+  .art-container {
     max-width: 100%;
     font-size: 1rem;
   }
 
-  .logo-container div { max-width: 94%; }
+  .art-container div { max-width: 94%; }
 
-  .logo-container p {
+  .art-container p {
     max-width: 100%;
     font-size: 1rem;
   }

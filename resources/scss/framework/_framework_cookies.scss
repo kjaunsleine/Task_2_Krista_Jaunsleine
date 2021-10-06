@@ -115,12 +115,6 @@
     background-color: #ffcB66;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1060px) {
-  
-  .cc-right { right: 8%; }
-
-}
-
 @media only screen and (max-width: 576px) {
 
   .cc-window.cc-floating .cc-compliance { flex-direction: column; }
@@ -136,6 +130,7 @@
 
   .cc-window.cc-floating {
     flex-direction: column;
+    padding: 1em;
   }
 
   .cc-floating .cc-message { 

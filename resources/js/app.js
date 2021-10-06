@@ -50,6 +50,8 @@ $(document).ready(function() {
   // --------------- Navigation change triggered by window width change
   function windowWidthCheck() {
     if ($(window).width() < 992) {
+      $('#navbarSupportedContent').addClass('collapse collapsing in');
+
       $('.lang-menu').removeClass('dropdown');
       $('.lang-menu').html('');
       let html = '';
@@ -61,6 +63,8 @@ $(document).ready(function() {
       $('.footer-details').after($('.footer-bank-info'));
     } 
     else {
+      $('#navbarSupportedContent').removeClass('collapse collapsing in');
+
       $('.lang-menu').addClass('dropdown');
       $('.lang-menu').html('');
       let html = '';

@@ -14,6 +14,8 @@
 // Navigation
 header { background-color: #fff; }
 
+.navbar { padding: 0; }
+
 .navbar-light .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
@@ -23,17 +25,22 @@ header { background-color: #fff; }
 
 .navbar-nav .nav-item .active {
   font-weight: 700;
+  padding-bottom: 0;
   text-decoration: underline;
   text-decoration-color: #FFA800;
   text-decoration-thickness: 0.167rem;
   text-underline-position: under;
 }
 
+a.nav-link { transition: none; } 
+
 .navbar-brand {
   padding: 0;
-  margin-left: 3.33rem;
+  margin-left: 3.5rem;
   z-index: 100;
 }
+
+.navbar-brand img{ max-width: 100%; }
 
 .navbar-nav { margin-left: 3.7rem; }
 
@@ -72,38 +79,38 @@ header { background-color: #fff; }
   margin-left: 1.8rem;
 }
 
-@media only screen and (max-width: 1365px) {
+@media only screen and (min-width: 1440px) {
+  .navbar-nav { margin-left: 0; }
 
-  .navbar-brand { margin-left: 1rem; }
+  .nav-item { margin: 1.7rem 2.88rem 0 .25rem; }
 
-  .navbar-brand img{ max-width: 80%; }
-
-  .nav-item { margin: .1rem 0.5rem 0 0.5rem; }
-
+  .navbar-collapse { justify-content: center; }
 }
 
-@media only screen and (max-width: 1162px) and (min-width: 991px){
+@media only screen and (max-width: 1280px) and (min-width: 991px){
 
   .navbar-nav,
   .dropdown-item { font-size: .8rem; }
 
-  .navbar-collapse .navbar-nav { margin-left: 2.5rem; }
+  .navbar-collapse .navbar-nav { margin-left: 0.5rem; }
+
+  .navbar-brand img{ max-width: 80%; }
+
+  .nav-item { margin-right: .58rem; }
 
 }
 
 @media only screen and (max-width: 991px) {
+
+  .navbar-toggler { margin-top: .25rem; }
   
-  .navbar-light .navbar-brand {
-    margin-left: 4.5rem;
-  }
+  .navbar-light .navbar-brand { margin-left: 4.5rem; }
 
-  .navbar-light .navbar-toggler-icon {
-    margin-right: 2.6rem;
-  }
+  .navbar-light .navbar-toggler-icon { margin-right: 2.6rem; }
 
-  .navbar-light .close-icon {
-    margin-right: 2.9rem;
-  }
+  .navbar-light .close-icon { margin-right: 2.9rem; }
+
+  .navbar-brand img{ max-width: 80%; }
 
   .collapsing {
     position: absolute !important;
@@ -170,9 +177,9 @@ footer {
   color: #fff;
 }
 
-footer .ripped-up { margin-top: -4%; }
+footer .ripped-up { margin-top: -4.5%; }
 
-.footer-inner { margin-top: 4.4rem; }
+.footer-inner { margin-top: 0.9rem; }
 
 footer a { color: #fff; }
 
@@ -248,9 +255,13 @@ footer a { color: #fff; }
     margin-top: 1.75rem;
   }
 
-  .copyright { font-size: 0.89rem; }
+  .copyright {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 0.89rem;
+  }
   
-  .copyright p:first-child { width: 70%; }
+  .copyright p:first-child { width: 80%; }
 }
 
 @media only screen and (max-width: 576px) {
