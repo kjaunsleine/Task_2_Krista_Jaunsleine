@@ -153,6 +153,16 @@ a.nav-link { transition: none; }
     margin-right: 0;
   }
 
+  .navbar-light .navbar-toggler {
+    padding-left: .2rem;
+    padding-right: .2rem;
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    width: 1.1em;
+    height: 1.1em;
+  }
+
   .navbar-nav {
     margin: 3.78rem 0;
     font-size: 1rem;
@@ -265,12 +275,16 @@ footer a { color: #fff; }
 }
 
 @media only screen and (max-width: 576px) {
+
+  footer .ripped-up { margin-top: -2.1%; }
   
   .footer-inner {
     margin-top: 2rem;
   }
 
   .footer-logo { margin-left: 1rem; }
+
+  .footer-logo .h4 { margin-bottom: .5rem; }
 
   .footer-logo img { width: 55%; }
 
@@ -284,10 +298,12 @@ footer a { color: #fff; }
 
   .copyright { 
     font-size: .611rem;
-    padding: 0; 
+    padding: 0;
+    margin-left: 1.11rem;
   }
   
   .copyright p:first-child { width: 100%; }
 
-  .copyright { margin-left: 1.11rem; }
+  .copyright p:last-child { margin-bottom: 2rem; }
+
 }

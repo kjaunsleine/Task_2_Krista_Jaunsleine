@@ -5,8 +5,9 @@ const companies = [{
   name: 'Big Bad Bagels',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 24556585',
+  email: 'bbb@bigbadbagels.com',
+  address: 'Baznīcas iela 8',
   logo: "./images/bbb-logo.png",
   coord: { lat: 56.95688031271806, lng: 24.11925253069052 }, 
 },
@@ -15,8 +16,9 @@ const companies = [{
   name: 'Kurts coffee',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 23202079',
+  email: 'kurtscoffee.riga@gmail.com',
+  address: 'Tērbatas iela 2J',
   logo: './images/kurts-logo.png',
   coord: { lat: 56.951192430399956, lng: 24.120726774255203 },
 },
@@ -25,8 +27,9 @@ const companies = [{
   name: 'PURCH restaurant',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 20200400',
+  email: '',
+  address: 'Dzelzavas iela 51A',
   logo: './images/purch-logo.png',
   coord: { lat: 56.95841709326254, lng: 24.191152276727728 }
 },
@@ -35,8 +38,9 @@ const companies = [{
   name: 'Grieze',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 20015220',
+  email: 'grieze@grieze.lv',
+  address: 'Ģertrūdes iela 2 - k2',
   logo: './images/grieze-logo.png',
   coord: { lat: 56.9589776257728, lng: 24.119726129076216 }, 
 },
@@ -45,8 +49,9 @@ const companies = [{
   name: 'Strogonovs ',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 67283122',
+  email: '',
+  address: 'Marijas iela 8',
   logo: './images/strogonovs_logo.jpg',
   coord: { lat: 56.949692200867524, lng: 24.123385984893993 }, 
 },
@@ -55,8 +60,9 @@ const companies = [{
   name: 'Gandrs',
   city: 'riga',
   cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 2544 5311 ',
+  email: 'veikals@gandrs.lv',
+  address: 'Kalnciema iela 30',
   logo: './images/gandrs-logo.svg',
   coord: { lat: 56.94404505791262, lng: 24.070492568260306 },
 },
@@ -65,9 +71,9 @@ const companies = [{
   name: 'LaCasa Ogre',
   city: 'ogre',
   cityName: 'Ogre',
-  cityName: 'Rīga',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 63470700',
+  email: '',
+  address: 'Brīvības iela 21',
   logo: './images/lacasa-ogre-logo.jpg',
   coord: { lat: 56.8181364060927, lng: 24.605441556052483 }, 
 },
@@ -77,7 +83,8 @@ const companies = [{
   city: 'ogre',
   cityName: 'Ogre',
   phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  email: 'info@milzutaka.lv',
+  address: '"Ogres Zilie kalni", Dabas parks',
   logo: './images/milzu-taka-logo.png',
   coord: { lat: 56.827816812948264, lng: 24.593429192378306 }, 
 },
@@ -86,8 +93,9 @@ const companies = [{
   name: 'Chocolate and pepper',
   city: 'jelgava',
   cityName: 'Jelgava',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 63010220',
+  email: 'info@choco-pepper.lv',
+  address: 'Krišjāņa Barona iela 6',
   logo: './images/choc-and-pep-logo.jpg',
   coord: { lat: 56.65409032732801, lng: 23.723595867682334 }, 
 },
@@ -96,8 +104,9 @@ const companies = [{
   name: 'Skaistumburve',
   city: 'jelgava',
   cityName: 'Jelgava',
-  phone: '+371XXXXXXXX',
-  address: 'Centra iela 1',
+  phone: '+371 20552222',
+  email: 'info@skaistumburve.lv',
+  address: 'Pētera iela 13',
   logo: './images/skaistumburve-logo.png',
   coord: { lat: 56.64772725493188, lng: 23.718456700227858 }, 
 }];
@@ -141,7 +150,7 @@ function ZoomControl (controlDiv, map){
 /* ************* Create info window content ************  */
 
 function createPopupContent(company){
-  const contentString = `<div class="info-window"><div class="info-window-logo"><img src=${company.logo}></div><div class="info-window-contacts"><p class="h3">${company.name}</p><div><p>${company.phone}</p><p>${company.address}, ${company.cityName}</p></div></div></div>`;
+  const contentString = `<div class="info-window"><div class="info-window-logo"><img src=${company.logo}></div><div class="info-window-contacts"><p class="h3">${company.name}</p><div><p>${company.phone}</p><p>${company.email}</p><p>${company.address}, ${company.cityName}</p></div></div></div>`;
   return contentString;
 }
 
@@ -163,6 +172,7 @@ function makeMarker(company, map, infowindow){
     logo: company.logo,
     name: company.name,
     phone: company.phone,
+    email: company.email,
     address: company.address
   });
 
@@ -209,7 +219,7 @@ window.initMap = function() {
 
   // Initialize map
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 56.945, lng: 24.102 },
+    center: { lat: 56.947, lng: 24.132 },
     zoom: 13,
     mapId: '188a28bf3623f836',
     disableDefaultUI: true,
@@ -240,9 +250,7 @@ window.initMap = function() {
     html += `<div><p class="company-phone">${obj.phone}</p>`;
     html += `<p class="company-address">${obj.address}, ${obj.cityName}</p></div>`;
     $(companyDiv).html(html);
-    //$('.company-container').hide();
     $(companyDiv).appendTo('.company-container');
-    //$('.company-container').slideDown(300, 'easeInCirc');
   }
 
   $('#location-select').add('#type-select').on('change', function(){
@@ -251,7 +259,7 @@ window.initMap = function() {
     let cityVal = $('option:selected', '#location-select').val();
     let typeVal = $('option:selected', '#type-select').val();
 
-    $('.company-container').slideUp(400, 'easeInQuad', function(){
+    $('.company-container').slideUp(400, 'easeInQuad', function(){ 
       $('.company-container').html('');
 
       for(let i=0; i < markers.length; i++){
@@ -279,10 +287,6 @@ window.initMap = function() {
         $('.company-container').slideDown(400, 'easeInQuad');
       }
     });
-    
-    
-
   });
-
 });
 

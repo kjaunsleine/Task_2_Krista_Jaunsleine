@@ -141,6 +141,7 @@ $(document).ready(function() {
   function hideStoryDivs () {
     // Checks screen width
     if ($(window).width() < 992) {
+      $('.story-container button').remove();
       // Creates 'Add more' button and story div
       const addMoreBtn = document.createElement('button');
       $(addMoreBtn).html('Skatīt vairāk');
@@ -173,11 +174,11 @@ $(document).ready(function() {
         counter++;
       });
     } else {
+      $('.story-container button').remove();
       // Show all divs on larger screens
       for(let i=1; i < 100; i++){
         let storyDiv = `#story${i}`;
         $(storyDiv).show();
-        $('.story-container button').remove();
       }
     }
   }
