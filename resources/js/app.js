@@ -75,8 +75,8 @@ $(document).ready(function() {
       $('.lang-menu').html(html);
 
       $('.footer-menu').after($('.footer-bank-info'));
-      }
-    } 
+    }
+  } 
 
   windowWidthCheck();
   $(window).on('resize', windowWidthCheck);
@@ -258,6 +258,7 @@ $(document).ready(function() {
             selectAll: false,
             noMatch: '',
             forceCustomRendering: true,
+            floatWidth: 300
           });
           $this.addClass('js-initialized');
         }
@@ -265,38 +266,5 @@ $(document).ready(function() {
     }
   }
   selectPlugin();
-
-  /* // Add CSS class to Site Header when scrollTop position of the document is not 0
-  let $lastY = $window.scrollTop();
-  function add_not_top() {
-    $body.addClass("not--top");
-  }
-  function remove_not_top() {
-    $body.removeClass("not--top");
-  }
-  let $timeout_add_not_top;
-  let $timeout_remove_not_top;
-
-  if( $lastY > 50 ) {
-    add_not_top();
-  }
-
-  $(window).scroll(() => {
-
-    let $currentY = $window.scrollTop();
-    let y;
-    if ( $currentY > $lastY ) {
-      y = 'down';
-    } else if ( $currentY < $lastY ) {
-      y = 'up';
-    }
-    $lastY = $currentY;
-    if ( $document.scrollTop() > 50 && y == 'down' ) {
-      $timeout_add_not_top = setTimeout(add_not_top, 150);
-    } else if ( $document.scrollTop() <= 100 && y == 'up' ) {
-      $timeout_remove_not_top = setTimeout(remove_not_top, 150);
-    }
-
-  }); */
 
 });
