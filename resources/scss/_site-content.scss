@@ -1,7 +1,6 @@
 /* Site content */
 
 // General
-
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 2.67rem;
@@ -44,6 +43,7 @@ h3 {
   }
 }
 
+
 .button {
   padding: .65rem 3rem;
   text-align: center;
@@ -51,6 +51,11 @@ h3 {
   background: #ffa800;
   border-radius: 2rem;
   border: none;
+}
+
+.button-1 {
+  background-color: #fff;
+  color: #ffa800;
 }
 
 .button:hover {
@@ -1669,6 +1674,26 @@ label[for="type-select"] {
   .info-window-contacts div p { font-size: .778rem; }
   
 }
+
+// 404 site
+.post_404 { margin-bottom: 11.7rem; }
+
+.post_404 .number-title {
+  margin-top: 10.5rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5.33rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.post_404 .page-not-found-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.33rem;
+  text-transform: none;
+}
+
+.post_404 .button { margin-top: 2.78rem; }
 
 
 

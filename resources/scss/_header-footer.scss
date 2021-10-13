@@ -96,8 +96,7 @@ a.nav-link { transition: none; }
 
   .navbar-brand img{ max-width: 80%; }
 
-  .nav-item { margin-right: .58rem; }
-
+  .nav-item { margin-right: .95rem; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -111,6 +110,8 @@ a.nav-link { transition: none; }
   .navbar-light .close-icon { margin-right: 2.9rem; }
 
   .navbar-brand img{ max-width: 80%; }
+
+  .nav-item { margin-top: 0; }
 
   .collapsing {
     position: absolute !important;
@@ -136,8 +137,9 @@ a.nav-link { transition: none; }
   }
 
   .nav-link {
-    margin-top: 3.5rem;
+    margin-top: 3.4rem;
     padding-bottom: 0;
+    padding-left: 1rem;
   }
 
   .lang-menu a {
@@ -164,7 +166,7 @@ a.nav-link { transition: none; }
   }
 
   .navbar-nav {
-    margin: 3.78rem 0;
+    margin: 1.78rem 0;
     font-size: 1rem;
   }
 
@@ -172,7 +174,15 @@ a.nav-link { transition: none; }
 
   .navbar-brand img { max-width: 50%; }
 
-  .nav-link { margin: 1.75rem 0 0 0; }
+  .navbar-nav .nav-item {
+    margin: 1.25rem 0 0 0;
+    padding-left: 2rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin-top: 0;
+    
+  }
 
   .collapsing,
   .collapse.show { top: 48px; }

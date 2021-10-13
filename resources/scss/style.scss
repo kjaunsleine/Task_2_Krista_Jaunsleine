@@ -51,6 +51,8 @@ $c_overlay: #191C1F;
 $c_black: #000;
 $c_white: #fff;
 $c_transparent: transparent;
+$c_yellow: #FFCB66;
+
 
 		// Color an background-color classes for custom use
 .c-accent { color: $c_accent; }
@@ -62,6 +64,7 @@ $c_transparent: transparent;
 .c-white { color: $c_white; }
 .c-transparent { color: $c_transparent; }
 .c-on-dark { color: $c_white!important; }
+.c-yellow { color: $c_yellow; }
 
 .bg-accent { background-color: $c_accent; }
 .bg-default { background-color: $c_default; }
@@ -71,6 +74,7 @@ $c_transparent: transparent;
 .bg-black { background-color: $c_black; }
 .bg-white { background-color: $c_white; }
 .bg-transparent { background-color: $c_transparent; }
+.bg-yellow { background-color: $c_yellow; }
 
 	// Others ( add all values that you think should be variables )
 $box_shadow: 0px 2px 6px 0px rgba(0,0,0,.6);

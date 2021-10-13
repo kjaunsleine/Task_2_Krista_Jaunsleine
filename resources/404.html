@@ -1,20 +1,19 @@
-<%= require('html-loader!./header.html') %>
+${require('./header.html')}
 			
             <!-- site content -->
-			<main class="site-content">
+			<main class="site-content bg-yellow">
 				<section>
 					<div class="container">
 						<div class="row">
 							<article class="post_404">
-								<div class="h1 number-title c-accent">404</div>
-								<h1 class="h1 page-not-found-title">Page Not Found</h1>
-								<p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-								<a href="#" class="btn btn-1">to homepage</a>
+								<div class="h1 number-title">404</div>
+								<h1 class="h1 page-not-found-title">Lapa netika atrasta!</h1>
+								<p>Radusies kāda tehniska kļūda, vai šī lapa vairs nav pieejama.</p>
+								<a href="index.html" class="button button-1">Uz sākumlapu</a>
 							</article>							
 						</div>
 					</div>
 				</section>
 			</main>
             <!-- /site content -->
-
-<%= require('html-loader!./footer.html') %>
+${require('./footer.html')}
