@@ -591,13 +591,17 @@ input[type=checkbox]:checked
     margin-bottom: 5rem; 
   }  
 }
+@media only screen and (max-width: 480px) {
+  .introduction-container .description-text {
+    font-size: .78rem;
+    font-weight: 500;
+  }
+}
 
 @media only screen and (max-width: 320px) {
   .introduction-container .description-text {
     margin-top: 0;
     margin-bottom: 4.44rem;
-    font-size: .78rem;
-    font-weight: 500;
   }
 
   .description-wide {
@@ -1468,7 +1472,7 @@ p.art-container-text-wide { max-width: 72%; }
 
 label[for="location-select"],
 label[for="type-select"] {
-  padding-left: 0.8rem;
+  padding-left: 0.9rem;
   font-weight: 500;
   color: #FFA800;
 }
@@ -1512,7 +1516,7 @@ label[for="type-select"] {
   justify-content: space-between;
   align-items: center;
   margin: 2rem auto;
-  max-width: 62%;
+  max-width: 64%;
   color: rgba(47, 72, 88, 1);
 }
 
@@ -1521,40 +1525,42 @@ label[for="type-select"] {
 .company-container .company-container-inner:last-child { margin-bottom: 3.6rem; }
 
 .company-container-inner .company-name {
-  width: 37%;
   font-size: 1.33rem;
   font-weight: 500;
 }
-
-.company-logo, 
-.company-container-inner div:first-of-type { flex-grow: 1; }
-
-.company-name { flex-grow: 5;  /* text-align: center; */}
 
 .company-phone,
 .company-email,
 .company-address { text-align: right; }
 
+@media only screen and (min-width: 1600px) {
+  .company-container-inner { max-width: 54%; }
+}
+
 @media only screen and (max-width: 768px) {
 
   .select-container { width: 100%; }
 
-  .company-container-inner { max-width: 78.7%; }
+  .company-container-inner { max-width: 85%; }
+
+  .col-3,
+  .col-4,
+  .col-5 { padding: 0; }
 
   .company-container .company-container-inner:first-child { padding-top: 3.67rem; }
 
   .company-container .company-container-inner:last-child { margin-bottom: 4.6rem; }
 
-  .company-logo { width: 16.6%; }
+  .company-logo { width: 72%; }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 360px) {
 
   .select-container {
     padding-bottom: 3.5rem;
   }
 
-  .select-container div:last-child{ margin-top: 1.05rem; }
+  label[for="type-select"] { margin-top: 1.05rem; }
 
   .SelectBox { padding-top: .57rem; }
 
@@ -1570,8 +1576,6 @@ label[for="type-select"] {
     font-size: .778rem;
   }
 }
-
-
 
 // Google maps styles
 .zoom-btn-container {
