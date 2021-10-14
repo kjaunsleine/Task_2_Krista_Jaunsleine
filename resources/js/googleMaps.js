@@ -164,7 +164,7 @@ const companies = [{
   let markers = [];
   let selectedMarker;
   
-  function makeMarker(company, map, infowindow){
+  function makeMarker(company, map, infowindow) {
     let marker = new google.maps.Marker({
       position: company.coord,
       map: map,
@@ -240,59 +240,59 @@ const companies = [{
     const infowindow = new google.maps.InfoWindow();
   
     // Add all markers and info windows
-    companies.forEach(function(company){
+    companies.forEach(function(company) {
       makeMarker(company, map, infowindow);
     });
   }
   
-    function createCard(obj){
-      let companyDiv = document.createElement('div');
-      $(companyDiv).addClass('company-container-inner row');
-      let html = `<div class="col-3"><img class="company-logo" src="${obj.logo}"></div>`;
-      html += `<div class="col-5"><p class="company-name">${obj.name}</p></div>`;
-      html += `<div class="col-4"><p class="company-phone">${obj.phone}</p>`;
-      html += `<p class="company-address">${obj.address}</p></div>`;
-      $(companyDiv).html(html);
-      $(companyDiv).appendTo('.company-container');
-    }
+  function createCard(obj){
+    let companyDiv = document.createElement('div');
+    $(companyDiv).addClass('company-container-inner row');
+    let html = `<div class="col-3"><img class="company-logo" src="${obj.logo}"></div>`;
+    html += `<div class="col-5"><p class="company-name">${obj.name}</p></div>`;
+    html += `<div class="col-4"><p class="company-phone">${obj.phone}</p>`;
+    html += `<p class="company-address">${obj.address}</p></div>`;
+    $(companyDiv).html(html);
+    $(companyDiv).appendTo('.company-container');
+  }
+
+  $('#location-select').add('#type-select').on('change', function(){
+    $('li.opt:first').hide();
+
+    let cityVal = $('option:selected', '#location-select').val();
+    let typeVal = $('option:selected', '#type-select').val();
+
+    $('.company-container').slideUp(400, 'easeInQuad', function(){ 
+      $('.company-container').html('');
+
+      for (let i=0; i < markers.length; i++) {
+        let marker = markers[i];
   
-    $('#location-select').add('#type-select').on('change', function(){
-      $('li.opt:first').hide();
-  
-      let cityVal = $('option:selected', '#location-select').val();
-      let typeVal = $('option:selected', '#type-select').val();
-  
-      $('.company-container').slideUp(400, 'easeInQuad', function(){ 
-        $('.company-container').html('');
-  
-        for(let i=0; i < markers.length; i++){
-          let marker = markers[i];
-    
-          if(cityVal === 'riga'|| cityVal === ''){
-            map.setCenter({lat: 56.947, lng: 24.115});
-          }
-    
-          if(cityVal === 'jelgava'){
-            map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
-          }
-    
-          if(cityVal === 'ogre'){
-            map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
-          }
-    
-          if(marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === ''){
-            marker.setVisible(true);
-            if($(window).width() > 480){
-              createCard(marker);
-            }
-          } else {
-            marker.setVisible(false);
-          }
-    
-          $('.company-container').slideDown(400, 'easeInQuad');
+        if (cityVal === 'riga'|| cityVal === '') {
+          map.setCenter({lat: 56.947, lng: 24.115});
         }
-      });
+  
+        if (cityVal === 'jelgava') {
+          map.setCenter({ lat: 56.65122718630456, lng: 23.72430618412634 });
+        }
+  
+        if (cityVal === 'ogre') {
+          map.setCenter({ lat: 56.814891589694945, lng: 24.603889246178607 });
+        }
+  
+        if (marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === '') {
+          marker.setVisible(true);
+          if ($(window).width() > 480) {
+            createCard(marker);
+          }
+        } else {
+          marker.setVisible(false);
+        }
+  
+        $('.company-container').slideDown(400, 'easeInQuad');
+      }
     });
   });
+});
 
 
