@@ -150,7 +150,7 @@ const companies = [{
   /* ************* Create info window content ************  */
   
   function createPopupContent(company){
-    const contentString = '<div class="info-window">';
+    let contentString = '<div class="info-window">';
     contentString += `<div class="info-window-logo"><img src=${company.logo}></div>`;
     contentString += `<div class="info-window-contacts"><p class="h3">${company.name}</p><div><p>${company.phone}</p>`;
     contentString += `<p>${company.email}</p><p>${company.address}, ${company.cityName}</p></div></div></div>`;
