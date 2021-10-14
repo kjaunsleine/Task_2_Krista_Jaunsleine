@@ -209,11 +209,6 @@ const companies = [{
     setMapOnAll(null);
   }
   
-  function deleteMarkers() {
-    hideMarkers();
-    markers = [];
-  }
-  
   /* ************* Create map ************  */
   
   let map;

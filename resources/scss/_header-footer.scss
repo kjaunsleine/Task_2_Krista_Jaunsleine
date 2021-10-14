@@ -88,15 +88,17 @@ a.nav-link { transition: none; }
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 991px){
+  
+  .navbar-brand img{ max-width: 80%; }
+
+  .lang-menu .dropdown-menu { left: -1.11rem; }
 
   .navbar-nav,
   .dropdown-item { font-size: .8rem; }
 
   .navbar-collapse .navbar-nav { margin-left: 0.5rem; }
 
-  .navbar-brand img{ max-width: 80%; }
-
-  .nav-item { margin-right: .95rem; }
+  .nav-item { margin-right: .9rem; }
 }
 
 @media only screen and (max-width: 991px) {

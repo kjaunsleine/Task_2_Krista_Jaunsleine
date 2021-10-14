@@ -135,9 +135,6 @@ $(document).ready(function() {
 
   // ------------------------- Show only 20 story divs on smaller than 992 px screens
 
-  function addAddMoreBtn(){
-    
-  }
   function hideStoryDivs () {
     // Checks screen width
     if ($(window).width() < 992) {
