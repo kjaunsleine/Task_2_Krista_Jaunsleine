@@ -1,18 +1,6 @@
 $(document).ready(function() {
   'use strict';
 
-  $('.js-select').on('sumo:opened', () => {
-      // Do stuff here
-      $('body').addClass('sumo-opened');
-      console.log("Drop down opened")
-  });
-
-  $('.js-select').on('sumo:closed', () => {
-      // Do stuff here
-      $('body').addClass('sumo-closed');
-      console.log("Drop down closed")
-  });
-
   let $window = $(window);
   let $document = $(document);
   let $body = $("body");
@@ -103,21 +91,6 @@ $(document).ready(function() {
   });
   $('#goToNextSlide').on('click', function () {
     slider.goToNextSlide();
-  });
-
-  // ------------------------- Form submit message
-
-  $('#applForm').on('submit', function(event){
-    event.preventDefault();
-    for (const div of $('.form-info')){
-      $(div).hide();
-    }
-    const submitMsg = document.createElement('div');
-    $(submitMsg).addClass('submit-message');
-    const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
-    $(submitMsg).html(html);
-    document.querySelector('.form-container').appendChild(submitMsg);
-    $('#submit').hide();
   });
 
   // ------------------------- Add story divs
@@ -243,6 +216,126 @@ $(document).ready(function() {
 
   addVideos(videoUrlArray);
 
+  // Form validation
+  const form = $('#applForm');
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const company = document.getElementById('company');
+  const phone = document.getElementById('phone');
+  const comment = document.getElementById('comment');
+  const permission = document.getElementById('permission');
+  const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
+
+  $(window).on('load', function(){
+    name.value = '';
+    company.value = '';
+    email.value = '';
+    phone.value = '';
+    comment.value = '';
+  });
+
+  $.validator.addMethod('phoneRegex', function(value, element){
+    return this.optional(element) || /^[0-9\s\(\)\+\-]+$/.test(value);
+  }, 'Jāievada derīgs telefona numurs');
+
+
+  form.validate({
+    rules: {
+      name: {required: true, minlength: 2, maxlength: 64},
+      email: {required: true, email: true},
+      company: {required: true, maxlength: 300},
+      phone:  {required: true, phoneRegex: true},
+      comment: 'required',
+      permission: 'required'
+    },
+    messages: {
+      name: {required: emptyFieldMsg, minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
+      email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese' },
+      company: {required: emptyFieldMsg, maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 300'},
+      phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs' },
+      comment: emptyFieldMsg,
+      permission: 'Lauciņam jābūt atķeksētam, lai turpinātu'
+    },
+    errorPlacement: function(error, permission){
+      error.appendTo(permission.parent('div'));
+    }
+  });
+
+  // ------------------------- Form submit message
+
+  $('#applForm').on('submit', function(event){
+    event.preventDefault();
+    if($('#applForm').valid() === true){
+      for (const div of $('.form-info')){
+        $(div).hide();
+      }
+      const submitMsg = document.createElement('div');
+      $(submitMsg).addClass('submit-message');
+      const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
+      $(submitMsg).html(html);
+      document.querySelector('.form-container').appendChild(submitMsg);
+      $('#submit').hide();
+    }
+
+    
+  });
+
+  /* const requiredFields = document.querySelectorAll(':required');
+  for (let field of requiredFields){
+    field.addEventListener('invalid', function(){
+      document.getElementById('applForm').className = 'submitted';
+    });
+  }
+
+  function checkIfValid(action, field){
+    field.addEventListener(action, function(event){
+      event.target.checkValidity();
+      event.target.setCustomValidity('');
+    });
+  } */
+
+  /* checkIfValid('input',name);
+  checkIfValid('input',email);
+  checkIfValid('input',phone);
+  checkIfValid('input',comment);
+  checkIfValid('change',permission);
+
+  name.addEventListener('invalid', (event) => {
+    if(event.target.value === '') {
+      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
+    } else if (event.target.validity.tooShort) {
+      event.target.setCustomValidity('Jābūt ievadītām vismaz 2 rakstu zīmēm');
+    } else if (event.target.validity.tooLong) {
+      event.target.setCustomValidity('Sasniegts maksimālais rakstu zīmju skaits - 64');
+    }
+  });
+
+  email.addEventListener('invalid', (event) => {
+    if(event.target.value === '') {
+      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
+    } else if (event.target.validity.typeMismatch) {
+      event.target.setCustomValidity('Jāievada derīga e-pasta adrese');
+    } else if (event.target.validity.tooLong) {
+      event.target.setCustomValidity('Sasniegts maksimālais rakstu zīmju skaits - 254');
+    }
+  });
+
+  phone.addEventListener('invalid', (event) => {
+    if(event.target.value === '') {
+      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
+    } else if (event.target.validity.patternMismatch) {
+      event.target.setCustomValidity('Jāievada derīgs telefona numurs');
+    } else if (event.target.validity.tooLong) {
+      event.target.setCustomValidity('Sasniegts maksimālais zīmju skaits');
+    }
+  });
+
+  comment.addEventListener('invalid', (event) => {
+    if(event.target.value === '') {
+      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
+    }
+  }); */
+  
   // ------------------------------- Select
 
   function selectPlugin() {
@@ -263,5 +356,17 @@ $(document).ready(function() {
     }
   }
   selectPlugin();
+
+  /* $('.js-select').on('sumo:opened', () => {
+    // Do stuff here
+    $('body').addClass('sumo-opened');
+    console.log("Drop down opened")
+  });
+
+  $('.js-select').on('sumo:closed', () => {
+    // Do stuff here
+    $('body').addClass('sumo-closed');
+    console.log("Drop down closed")
+  }); */
 
 });
