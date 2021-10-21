@@ -1,7 +1,9 @@
 // Vendor resources (normalize.css, jquery and plugins by your choice)
 require("./vendor/normalize.min.css");
 window.$ = window.jQuery = require("./vendor/jquery-3.3.1.min");
-require("./vendor/jquery.easing.min")
+require("./vendor/jquery.easing.min");
+require("../resources/vendor/jquery.validate.min");
+
 //Bootstrap files
 require('bootstrap/js/dist/button');
 require('bootstrap/js/dist/collapse');
@@ -21,7 +23,6 @@ require("./vendor/lightslider.min.js");
 window.AOS = require("./vendor/aos.js");
 require("./vendor/jquery.sumoselect.min.js");
 require("./js/app.js");
-//require("./js/googleMaps.js");
 
 
 // Images
