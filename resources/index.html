@@ -46,27 +46,30 @@ ${require('./header.html')}
               <div class="form-container d-flex flex-column text-center">
                 <p class="h3 text-uppercase">Sazināties ar mums</p>
                   <form id="applForm" method="post" action="">
+                    <div>
+                      <p class="error"></p>
+                    </div>
                     <div class="row">
                       <div class="col-12 col-sm-6">
-                        <input class="form-control" name="full-name" type="text" placeholder="Vārds, Uzvārds*" required>
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Vārds, Uzvārds*" minlength="2" maxlength="64" required>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <input class="form-control" name="email" type="text" placeholder="E-pasts*" required>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="E-pasts*" maxlength="254" required>
                       </div>
                     </div>
                         <div>
-                          <input class="form-control" name="phone" type="tel" placeholder="Telefons*" required>
+                          <input class="form-control" id="phone" name="phone" type="tel" placeholder="Telefons*" maxlength="140" pattern="^[0-9\s\(\)\+\-]+$" required>
                         </div>
                     <div>
-                        <textarea class="form-control" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
+                        <textarea class="form-control" id="comment" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
                         <p class="form-info text-left mb-4">* obligāti aizpildāmie lauki</p>
                     </div>
                     <div class="form-check form-info ">
-                        <input class="form-check-input" name="permission" type="checkbox" id="permission">
+                        <input id="permission" class="form-check-input" name="permission" value="data" type="checkbox" autocomplete="off" required>
                         <label class="form-check-label mr-md-3 mb-4" for="permission">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un tiks 
-                          saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
+                          saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label><br>
                     </div>
-                        <input class="button mt-5" id="submit" type="submit" value="Sūtīt">
+                        <input id="submit" class="button mt-5" type="submit" value="Sūtīt">
                   </form>
               </div>
               <div class="logo-container d-flex flex-column justify-content-start text-center">
