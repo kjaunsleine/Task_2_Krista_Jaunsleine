@@ -84,7 +84,8 @@ $(document).ready(function() {
     enableDrag: false,
     auto: true,
     pauseOnHover: true,
-    pause: 6000
+    speed: 1000,
+    pause: 15000
   });
   $('#goToPrevSlide').on('click', function () {
     slider.goToPrevSlide();
