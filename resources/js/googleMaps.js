@@ -221,7 +221,7 @@ const companies = [{
       zoom: 13,
       mapId: '188a28bf3623f836',
       disableDefaultUI: true,
-      clickableIcons: false,
+      clickableIcons: false
     });
   
     // Add custom zoom buttons
