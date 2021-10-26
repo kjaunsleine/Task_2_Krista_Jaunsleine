@@ -1,5 +1,7 @@
 /* Site content */
 
+/***** Browser deprecation message *****/
+
 // General
 h1 {
   font-family: 'Oswald', sans-serif;
@@ -23,6 +25,7 @@ h3 {
   font-size: 1.667rem;
   text-align: center;
 }
+
 @media only screen and (max-width: 768px) {
   h1 { margin-bottom: 2.75rem; }
 }
@@ -353,8 +356,6 @@ form div:nth-child(4) { position: relative; }
   right: 0;
   bottom: .56rem;
 }
-
-
 
 @media only screen and (max-width: 991px) {
   
@@ -1647,7 +1648,9 @@ label[for="type-select"] {
   }
 }
 
-// Google maps styles
+/* ******** Google maps styles ******** */
+
+/* Zoom buttons */
 .zoom-btn-container {
   margin-right: 2.52rem;
   margin-bottom: 5rem;
@@ -1667,13 +1670,23 @@ label[for="type-select"] {
 
 .zoom-btn:hover { background: rgba(255, 203, 102, .5); }
 
+/* Map */
+
 #map { height: 48.7vw; }
 
-.gm-style .gm-style-iw-t::after {
-  display: none;
-}
+.gm-style .gm-style-iw-t::after { display: none; }
 
 .gm-style .gm-style-iw-c { padding: 0; }
+
+.gm-style div:nth-last-child(3) div:first-child {
+  bottom: unset !important;
+}
+
+div.gmnoprint,
+div.gm-style-cc {
+  top: 0 !important;
+  bottom: unset !important;
+}
 
 @media only screen and (max-width: 768px) {
   .zoom-btn-container { display: none; };
@@ -1683,6 +1696,13 @@ label[for="type-select"] {
 
 @media only screen and (max-width: 480px) {
   #map { height: 176vw; }
+}
+
+@media only screen and (max-width: 320px) {
+  div.gm-style > div:nth-last-child(3) > div:first-child img {
+    width: 59px !important;
+    height: 23px !important;
+  }
 }
 
 .info-window {
