@@ -194,6 +194,11 @@ const companies = [{
         infowindow.close();
         marker.setIcon(markerIcon);
       });
+
+      $('#location-select').add('#type-select').on('change', function(){
+        infowindow.close();
+        marker.setIcon(markerIcon);
+      });
     });
   }
   
