@@ -483,7 +483,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   position: absolute;
   left: 0;
   right: 0;
-  margin: 38% auto 0 auto;
+  margin: 37.5% auto 0 auto;
   max-width: 60%;
   font-family: 'Oswald', sans-serif;
   font-size: 1.33rem;
@@ -499,6 +499,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   background: linear-gradient(-180deg, rgba(47, 72, 88, 0.8) 18.63%, rgba(47, 72, 88, 0) 49.21%);
   transform: rotate(-180deg);
 }
+
+.hero .ripped-up { margin-top: -.3%; }
 
 .hero .ripped-bottom { margin-top: -3%; }
 
@@ -566,25 +568,34 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 .slider-wrapper {
-  width: 43%;
-  margin: 8.83rem auto 11rem auto;
+  width: 47%;
+  margin: 8.3rem auto 11rem auto;
 }
 
+#lightSlider { height: 249.188px !important; }
+
+.lSSlideOuter { padding-left: 1.5rem; }
+
 .lightslider-item p:nth-child(2) {
-  margin-top: 0.4rem;
+  margin-top: .5rem;
   margin-bottom: 1.5rem;
 }
 
-.lightslider-item p:nth-child(3) {
+.lightslider-item p:nth-child(3),
+.lightslider-item p:nth-child(4) {
   font-size: 1.33rem;
   line-height: 1.7rem;
 }
 
-#goToPrevSlide { background-image: url(../img/btn-slider.svg); }
+.lightslider-item p:nth-child(4) { width: 90%; }
+
+#goToPrevSlide {
+  background-image: url(../img/btn-slider.svg);
+  padding-left: 3.3rem;
+}
 
 #goToNextSlide {
-  margin-left: 2.26rem;
-  margin-top: 3.2rem;
+  margin-left: 1.26rem;
   background-image: url(../img/btn-slider.svg);
   transform: rotateY(180deg);
 }
