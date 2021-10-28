@@ -103,15 +103,18 @@ a.nav-link { transition: none; }
 
 @media only screen and (max-width: 991px) {
 
-  .navbar-toggler { margin-top: .25rem; }
+  .navbar-toggler { margin-top: .5rem; }
   
-  .navbar-light .navbar-brand { margin-left: 4.5rem; }
+  .navbar-light .navbar-brand { margin-left: 4.4rem; }
 
-  .navbar-light .navbar-toggler-icon { margin-right: 2.6rem; }
+  .navbar-light .navbar-toggler-icon {
+    width: 1.4em;
+    margin-right: 2.6rem;
+  }
 
   .navbar-light .close-icon { margin-right: 2.9rem; }
 
-  .navbar-brand img{ max-width: 80%; }
+  .navbar-brand img{ max-width: 82%; }
 
   .nav-item { margin-top: 0; }
 
@@ -158,6 +161,7 @@ a.nav-link { transition: none; }
   }
 
   .navbar-light .navbar-toggler {
+    margin-top: 0;
     padding-left: .2rem;
     padding-right: .2rem;
   }
@@ -167,6 +171,11 @@ a.nav-link { transition: none; }
     height: 1.1em;
   }
 
+  .navbar-light .close-icon {
+    width: .7em;
+    height: .7em;
+  }
+
   .navbar-nav {
     margin: 1.78rem 0;
     font-size: 1rem;
@@ -174,7 +183,7 @@ a.nav-link { transition: none; }
 
   .navbar-light .navbar-brand { margin-left: 1rem; }
 
-  .navbar-brand img { max-width: 50%; }
+  .navbar-brand img { max-width: 51%; }
 
   .navbar-nav .nav-item {
     margin: 1.25rem 0 0 0;
@@ -278,21 +287,19 @@ footer a { color: #fff; }
   }
 
   .copyright {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-size: 0.89rem;
+    width: 98%;
+    padding-left: 4.5rem;
+    font-size: .89rem;
   }
   
-  .copyright p:first-child { width: 80%; }
+  .copyright p:first-child { width: 65%; }
 }
 
 @media only screen and (max-width: 576px) {
 
   footer .ripped-up { margin-top: -2.1%; }
   
-  .footer-inner {
-    margin-top: 2rem;
-  }
+  .footer-inner { margin-top: 2rem; }
 
   .footer-logo { margin-left: 1rem; }
 
@@ -308,13 +315,18 @@ footer a { color: #fff; }
 
   .footer-bank-info { margin-left: 0; }
 
+  .footer-icons { margin-top: 2.1rem; }
+
   .copyright { 
     font-size: .611rem;
     padding: 0;
     margin-left: 1.11rem;
   }
   
-  .copyright p:first-child { width: 100%; }
+  .copyright p:first-child {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
 
   .copyright p:last-child { margin-bottom: 2rem; }
 
