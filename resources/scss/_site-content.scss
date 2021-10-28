@@ -33,7 +33,7 @@ h3 {
 
 @media only screen and (max-width: 320px) {
   h1 {
-    margin-bottom: 1.67rem;
+    margin-bottom: 1.45rem; // Ideja
     font-size: 2rem; 
   }
 
@@ -116,11 +116,11 @@ iframe { border: hidden; }
   
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) { // Sākumlapa
   .video-container iframe { top: -1rem; }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 576px) {
   .video-container iframe { top: 0; }
 }
 
@@ -145,8 +145,9 @@ iframe { border: hidden; }
 
   .description-text { // Sākumlapa
     width: 85%;
-    margin: 7.55rem auto 9.33rem auto;
+    margin: 7.25rem auto 9.33rem auto;
   }
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -155,7 +156,7 @@ iframe { border: hidden; }
   
   .description-text { // Sākumlapa
     font-size: .667rem;
-    width: 90%;
+    width: 100%;
     margin: 4.44rem auto;
     line-height: 0.85rem;
   }
@@ -168,6 +169,10 @@ iframe { border: hidden; }
 .image-container img { 
   display: block;
   width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+  .image-container { margin-top: 9rem; }
 }
 
 @media only screen and (max-width: 576px) {
@@ -218,11 +223,20 @@ iframe { border: hidden; }
 
 @media only screen and (max-width: 991px) {
 
-  .application-container { max-width: 100%; }
+  .application-container {
+    max-width: 100%;
+    margin-top: 8.53rem;
+    margin-bottom: 8.1rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
   
-  .application-container-inner { flex-basis: 35%; } 
+  .application-container-inner { flex-basis: 80%; } 
 
-  .application-container-inner .h3 { font-size: 1rem; }
+  .application-container-inner .h3 {
+    padding-bottom: 4.1rem;
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -231,6 +245,8 @@ iframe { border: hidden; }
     margin-top: 7.73rem;
     margin-bottom: 6.83rem;
   }
+
+  .application-container-inner {margin-left: 1.2rem; }
 
   .application-container .application-container-inner:nth-child(2) { margin-top: 4.44rem; }
 
@@ -316,7 +332,9 @@ input:-internal-autofill-selected {
 
 input[type=checkbox]:checked { background: #ffa800 url(data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==) 3px 3px no-repeat; }
 
-.form-container .button { padding: 0.95rem 3.5rem; }
+.form-container .button {
+  margin-top: 3rem;
+  padding: 0.95rem 3.5rem;}
 
 form div:nth-child(4) { position: relative; }
 
@@ -359,14 +377,21 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 @media only screen and (max-width: 991px) {
   
-  .form-container { width: 80%; }
+  .form-container {
+    width: 84%;
+    margin-top: 8.1rem;
+  }
+
+  .form-container .h3{ margin-bottom: 3.15rem; }
+
+  .form-control { margin-bottom: .55rem; }
 }
 
 @media only screen and (max-width: 576px) {
 
   .form-container { 
-    width: 95%;
-    padding-left: 0;
+    width: 98%;
+    margin-bottom: 7rem;
   }
 
   .form-container .h3{
@@ -374,9 +399,11 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
     font-size: 1.33rem;
   }
 
-  .form-control { padding: .1rem .5rem; }
-
-  .form-control { font-size: .77rem; }
+  .form-control {
+    height: calc(1.25em + .75em + 2px);
+    margin-bottom: .65rem;
+    padding: .3rem .5rem;
+  }
 
   .form-control::placeholder { font-size: .77rem; }
 
@@ -384,7 +411,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   .form-control:focus,
   .form-control:active { font-size: .89rem; }
 
-  textarea.form-control  { height: 9em; }
+  textarea.form-control  { height: 9.3em; }
 
   .form-container .col-6,
   .form-container .col-12 {
@@ -394,7 +421,14 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
   .form-info { font-size: .66rem; }
 
-  .form-container .button { 
+  .form-check { padding-left: 2rem; }
+
+  .form-check-input { top: -.1rem; }
+
+  input[type="checkbox"] { margin-left: -2rem;}
+
+  .form-container .button {
+    margin-top: 2.4rem;
     padding: 0.95rem 2.75rem;
     font-size: 1rem;
   }
@@ -421,7 +455,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 .logo-container-inner {
   width: 100%;
-  margin: 3.6rem auto 9.5rem auto;
+  margin: 3.6rem auto 10.5rem auto;
 }
 
 .logo-container-inner img {
@@ -437,9 +471,9 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 @media only screen and (max-width: 991px) {
 
-  .logo-container-inner { margin: 3rem auto 4rem auto; }
+  .logo-container-inner { margin: 1.5rem auto 6.8rem auto; }
 
-  .logo-container .h3 { margin-top: 2.7rem; }
+  .logo-container .h3 { margin-top: 3.1rem; }
 
   .logo-container-inner img { 
     max-width: 17%;
@@ -449,11 +483,14 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 @media only screen and (max-width: 576px) {
 
-  .logo-container .h3 { margin: 3rem 0; }
+  .logo-container .h3 {
+    margin-top: 4.2rem;
+    margin-bottom: 3.2rem;
+  }
 
-  .logo-container-inner { max-width: 100%; margin: 0 auto 3rem 0; }
+  .logo-container-inner { max-width: 100%; margin: 0 auto 1.8rem 0; }
 
-  .logo-container-inner img { max-width: 40%; margin: 0 0 2rem 0; }
+  .logo-container-inner img { max-width: 44%; margin: 0 0 1.6rem 0; }
 
   .logo-container-inner .logo { width: 15%; }
 
@@ -509,23 +546,21 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 @media only screen and (max-width: 768px) {
-  .introduction-container { //Ideja
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
-  .introduction-text.description-text { width: 80%; } // Ideja
+  .introduction-container { margin-top: 5rem; } //Ideja
+    
+  .introduction-text.description-text { // Ideja
+    width: 81%;
+    margin-bottom: 9rem;
+  } 
 
   .hero {
     height: 64.5vw;
     background-position-x: -5rem;
   }
 
-  .hero-overlay {
-    height: 64.5vw;
-  }
+  .hero-overlay { height: 64.5vw; }
 
-  .hero-text { margin-top: 39.3%; }
+  .hero-text { margin-top: 38.7%; }
 }
 
 @media only screen and (max-width: 600px) and (max-width: 768px) {
@@ -542,7 +577,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   } 
 
   .introduction-container .introduction-text.description-text { // Ideja
-    width: 95%;
+    width: 100%;
     font-size: .667rem;
   } 
 
@@ -560,9 +595,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
   .hero-text {
     margin-left: 49%;
-    margin-top: 28%;
+    margin-top: 28.5%;
     max-width: 32%;
-    //font-size: 1rem;
     line-height: 1.5rem;
   }
 }
@@ -621,30 +655,41 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 @media only screen and (max-width: 768px) {
-  .slider-wrapper { width: 76%; }
+  .slider-wrapper { width: 85%; }
+
+  #goToPrevSlide { padding-left: 4.3rem; }
 }
 
 @media only screen and (max-width: 360px) {
 
   .slider-wrapper {
-    width: 87%;
-    margin-top: 7.43rem;
+    width: 100%;
+    margin-top: 7.5rem;
     margin-bottom: 6.5rem;
   }
+
+  #lightSlider { height: 159.188px !important; }
+
+  .lSSlideOuter { padding-left: 1rem; }
 
   .lightslider-item .h3 { font-size: 1rem; }
 
   .lightslider-item p:nth-child(2) {
-    margin-bottom: 1.2rem;
+    margin-top: .6rem;
+    margin-bottom: 1.5rem;
     font-size: .778rem;
+    line-height: 1.3;
   }
 
-  .lightslider-item p:nth-child(3) {
+  .lightslider-item p:nth-child(3),
+  .lightslider-item p:nth-child(4) {
     font-size: .667rem;
     line-height: .85rem;
   }
 
   #goToNextSlide { margin-top: 1.9rem; }
+
+  #goToPrevSlide { padding-left: 3rem; }
  
 }
 // Piesaki sapni
@@ -652,24 +697,26 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 // Description
 .description-container.introduction-container { margin-bottom: 5rem; } // Piesaki sapni
 
-.description-line {
+.description-line { // Piesaki sapni
   margin-top: 2.778rem;
   font-size: 1.33rem;
   padding-left: 1rem;
   letter-spacing: .01rem;
 }
-.description-wide {
+.description-wide { // Piesaki sapni
   width: 61%;
   line-height: 1.3rem;
   letter-spacing: .01rem;
 }
 
-.form-container.form-container-extra-margin {
+.form-container.form-container-extra-margin { // Piesaki sapni
   margin-top: 8.8rem;
   margin-bottom: 11.34rem;
 }
 
-.form-container.form-container-extra-margin .h3 { margin-bottom: 2.85rem; }
+.form-container.form-container-extra-margin .h3 { margin-bottom: 3.4rem; } // Piesaki sapni
+
+.form-container.form-container-extra-margin textarea.form-control { margin-bottom: .65rem; }
 
 .form-container.form-container-company {
   width: 46.7%;
@@ -680,12 +727,32 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 .form-container.form-container-company textarea { margin-bottom: 1.2rem; }
 
+@media only screen and (max-width: 768px) {
+  .form-container.form-container-company {
+    width: 83%;
+    margin-bottom: 11.34rem;
+  }
+
+  .form-container.form-container-company .h3 { margin-bottom: 5.5rem; }
+}
+
+@media only screen and (max-width: 320px) {
+  .form-container.form-container-extra-margin { // Piesaki sapni
+    margin-top: 7.4rem;
+    margin-bottom: 6.6rem;
+  }
+
+  .form-container.form-container-extra-margin .h3 { margin-bottom: 1.6rem; }
+}
 
 @media only screen and (max-width: 768px) {
 
-  .description-wide { width: 82%; } // Uznemejiem
+  .description-wide { width: 85%; } // Uznemejiem
 
-  .description-line { margin-top: 1.88rem; } // Sapnu banka
+  .description-line { // Piesaki sapni, Sapnu banka
+    margin-top: 1.88rem;
+    line-height: 1.25;
+  } 
 
   .introduction-container .description-text { 
     margin-top: 2.33rem;
@@ -707,10 +774,9 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
   .description-wide {
     width: 95%;
-    line-height: .9rem;
   }
 
-  .description-line { font-size: 1rem; }
+  .description-line { font-size: 1rem; } // Piesaki sapni
 }
 
 // Images for application section
@@ -718,7 +784,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 /* Generated by http://responsive-css.spritegen.com Responsive CSS Sprite Generator */
  
 .baloon-art, .dog-art {
-  max-width: 100%;
+  max-width: 97%;
   background-size: 100%;
   background-image: url('../img/dog-baloon-sprite.png');
 }
@@ -760,8 +826,13 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   }
 
   .application-container-inner h2 {
-    margin-top: 3.25rem;
-    margin-bottom: 1.6rem;
+    margin-top: 3.05rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .application-container.application-container-img .application-container-inner.col-lg-5 {
+    padding-left: 1rem;
+    padding-right: 0;
   }
 
   .application-container.application-container-img p { width: 85%; }
@@ -769,21 +840,22 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   .application-container.application-container-img .application-container-inner:nth-child(1) .application-button,
   .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { 
     margin-top: 3.15rem;
-    margin-bottom: 8.33rem;
+    margin-bottom: 8.7rem;
   }
 
   .image-container.image-container-reverse { margin-top: 0; }
 }
 
 @media only screen and (max-width: 576px) {
+
+  .application-container.application-container-img.container { width: 98%; }
+
   .application-container-img .application-container-inner h2 {
     margin-top: 1.67rem;
     margin-bottom: .56rem;
   }
 
-  .application-container.application-container-img {
-    margin-bottom: 0;
-  }
+  .application-container.application-container-img { margin-bottom: 0; }
 
   .application-container.application-container-img p { 
     width: 100%;
@@ -794,9 +866,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
     margin-bottom: 4.44rem;
   }
 
-  .application-container.application-container-img .application-container-inner:nth-child(2) { 
-    margin-top: 0;
-  }
+  .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
 
   .image-container.image-container-reverse .ripped-bottom { margin-top: -0.1rem; }
   
@@ -804,21 +874,26 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
   .image-container.image-container-reverse div:nth-child(3) { max-width: 48.73%; }
 
-  .image-container.image-container-reverse div:nth-child(4) { max-width: 38.55%; }
+  .image-container.image-container-reverse div:nth-child(4) { max-width: 38.75%; }
 
-  .image-container.image-container-reverse div:nth-child(5) { max-width: 61.45%; }
+  .image-container.image-container-reverse div:nth-child(5) { max-width: 61.25%; }
 
 }
 
 @media only screen and (max-width: 320px) {
   .application-container-img .application-container-inner h2 {
-    margin-top: .67rem;
-    margin-bottom: .15rem;
+    margin-top: 1rem;
+    margin-bottom: .3rem;
   }
 
-  .application-container.application-container-img p { line-height: .9rem; }
+  .baloon-art {
+    max-width: 79%;
+    margin-left: 2rem;
+  }
 
-  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 6.55rem; }
+  .application-container.application-container-img p { line-height: 1.3; }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 7rem; }
 }
 
 .submit-message {
@@ -973,7 +1048,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
   .goals div:nth-child(4) { margin-top: 3.43rem; }
 
-  .description-line { line-height: 1.1; }
+  //.description-line { line-height: 1.1; }
 }
 
 .art-container { background-color: #ffcb66; }
