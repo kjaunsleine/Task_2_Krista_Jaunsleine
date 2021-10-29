@@ -17,8 +17,7 @@ header { background-color: #fff; }
 .navbar { padding: 0; }
 
 .navbar-light .navbar-nav .nav-link {
-  padding-right: 0;
-  padding-left: 0;
+  padding: .5rem 0 0 0;
   color: #060606;
   font-weight: 500;
 }
@@ -42,11 +41,11 @@ a.nav-link { transition: none; }
 
 .navbar-brand img{ max-width: 100%; }
 
-.navbar-nav { margin-left: 3.7rem; }
+.navbar-nav { margin-left: 1.5rem; }
 
 .navbar-light .navbar-toggler { border: none; }
 
-.nav-item { margin: 1.7rem 1.88rem 0 .25rem; }
+.nav-item { margin: 1rem 1.5rem 0 .7rem; }
 
 .navbar-light .navbar-toggler-icon {
   margin-right: 3.3rem;
@@ -109,7 +108,7 @@ a.nav-link { transition: none; }
 
   .navbar-light .navbar-toggler-icon {
     width: 1.4em;
-    margin-right: 2.6rem;
+    margin-right: 3.6rem;
   }
 
   .navbar-light .close-icon { margin-right: 2.9rem; }
@@ -157,7 +156,7 @@ a.nav-link { transition: none; }
 
   .navbar-light .navbar-toggler-icon,
   .navbar-light .close-icon {
-    margin-right: 0;
+    margin-right: .8rem;
   }
 
   .navbar-light .navbar-toggler {
@@ -210,7 +209,10 @@ footer {
 
 footer .ripped-up { margin-top: -4.5%; }
 
-.footer-inner { margin-top: 0.9rem; }
+.footer-inner {
+  margin-top: .3rem;
+  padding-right: 1rem;
+}
 
 footer a { color: #fff; }
 
@@ -245,8 +247,11 @@ footer a { color: #fff; }
 }
 
 .copyright {
+  max-width: 91%;
+  padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   font-size: .777rem;
-  padding: 0 2.6rem 1rem 3.44rem;
 }
 
 .copyright p:first-child {
@@ -287,8 +292,7 @@ footer a { color: #fff; }
   }
 
   .copyright {
-    width: 98%;
-    padding-left: 4.5rem;
+    width: 79%;
     font-size: .89rem;
   }
   
@@ -317,15 +321,15 @@ footer a { color: #fff; }
 
   .footer-icons { margin-top: 2.1rem; }
 
-  .copyright { 
+  .copyright {
+    width: 88%;
     font-size: .611rem;
     padding: 0;
-    margin-left: 1.11rem;
   }
   
   .copyright p:first-child {
     width: 100%;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
   }
 
   .copyright p:last-child { margin-bottom: 2rem; }
