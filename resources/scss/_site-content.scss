@@ -4,6 +4,8 @@
 .update_browser_fake_body { display: none; }
 
 /********* General *********/
+
+/* Headlines */
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 2.67rem;
@@ -45,10 +47,16 @@ h3 {
   }
 }
 
+/* iFrame */
+
 iframe { border: hidden; }
+
+/* Placeholder */
 
 ::placeholder { opacity: 1; transition: opacity .5s; }
 *:focus::placeholder { opacity: 0; }
+
+/* Buttons */
 
 .button {
   padding: .65rem 3rem;
@@ -122,14 +130,28 @@ iframe { border: hidden; }
   .video-container iframe { top: 0; }
 }
 
-/********* Description *********/
+/********* Video container larger *********/
 
-.description-container { // Sākumlapa
+.video-container-large { padding-bottom: 67.25%; }
+
+.video-container-large iframe { z-index: 1000; }
+
+@media only screen and (max-width: 768px) {
+  .video-container-large { padding-bottom: 57.25%; }
+}
+
+@media only screen and (max-width: 768px) {
+  .video-container-large { padding-bottom: 58.25%; }
+}
+
+/********* Description, introduction *********/
+
+.description-container { // index.html
   margin-top: 3.05rem;
   margin-bottom: 8.333rem;
 }
 
-.description-text { // Sākumlapa
+.description-text { // index.html
   width: 49%;
   margin-left: auto;
   margin-right: auto;
@@ -137,6 +159,28 @@ iframe { border: hidden; }
   text-align: center;
   line-height: 1.25rem;
 }
+
+.description-container.introduction-container { margin-bottom: 5rem; } // piesaki-sapni.html, sapnus-atbalsta.html
+
+.description-line { // piesaki-sapni.html, sapnu-banka.html
+  margin-top: 2.778rem;
+  font-size: 1.33rem;
+  padding-left: 0;
+  letter-spacing: .01rem;
+}
+
+.description-wide { // piesaki-sapni.html, sapnu-banka.html
+  width: 61%;
+  line-height: 1.25;
+  letter-spacing: .01rem;
+}
+
+.description-narrow { // uznemejiem.html
+  width: 81%;
+  padding-left: 0;
+}
+
+.description-container.introduction-headline { margin-bottom: 3.5rem; }
 
 @media only screen and (max-width: 991px) {
 
@@ -148,6 +192,24 @@ iframe { border: hidden; }
 
 }
 
+@media only screen and (max-width: 768px) {
+  .description-narrow {
+    width: 83%;
+    line-height: 1.25;
+  }
+
+  .description-wide { width: 82%; } // Piesaki sapni Uznemejiem
+
+  .description-line { // Piesaki sapni, Sapnu banka
+    margin-top: 1.88rem;
+    line-height: 1.25;
+  }
+
+  .description-container.introduction-headline { margin-bottom: 2.75rem; }
+
+  .description-container.introduction-headline h1 { font-size: 2.67rem; }
+}
+
 @media only screen and (max-width: 576px) {
 
   .description-container { margin-bottom: 4.8rem; } // Sākumlapa
@@ -157,6 +219,101 @@ iframe { border: hidden; }
     width: 89%;
     margin: 3.9rem auto;
     line-height: 0.85rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .description-container.introduction-headline { margin-bottom: 1.57rem; } // sapnu-banka.html
+
+  .description-container.introduction-headline h1 { font-size: 2rem; }
+
+  .description-container-mb { margin-bottom: 6.9rem; }
+
+  .description-container-mb .description-text{ margin-top: 1.4rem; }
+
+}
+
+@media only screen and (max-width: 320px) {
+  .description-container.introduction-container { margin-bottom: 4.7rem; } // Piesaki sapni, sapnus atbalsta
+
+  .description-wide {
+    width: 92%;
+    letter-spacing: initial;
+    }
+  
+  .description-line { font-size: 1rem; } // Piesaki sapni
+}
+
+/********* Introduction text *********/
+
+/********* Ideja *********/
+
+.introduction-container { //ideja.html
+  margin-top: 6.1rem;
+  margin-bottom: 8.4rem;
+}
+
+.introduction-text.description-text { //ideja.html
+  width: 43%;
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .introduction-container { //Ideja
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+  } 
+    
+  .introduction-text.description-text { // Ideja
+    width: 79%;
+    margin-bottom: 9rem;
+  } 
+
+  .introduction-container .description-text { 
+    margin-top: 2.33rem;
+    margin-bottom: 5rem; 
+  }
+
+  .introduction-container-sm-screen,
+  .introduction-container-sm-screen .description-text { margin-bottom: 4.2rem; } // 99iedvesmas-stasti.html
+}
+
+@media only screen and (max-width: 480px) {
+  .introduction-container .description-text {
+    font-size: .78rem;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .introduction-container { // Ideja
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  } 
+
+  .introduction-container .introduction-text.description-text { // Ideja
+    width: 90%;
+    font-size: .667rem;
+  }
+
+  .introduction-container .description-text {
+    margin-top: 0;
+    margin-bottom: 4.44rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .introduction-container-sm-screen { // 99iedvesmas-stasti.html
+    width: 95%;
+    margin-bottom: 4.1rem;
+    margin-left: .5rem;
+  }
+
+  .introduction-container-sm-screen h1 { margin-bottom: 3.2rem; } // 99iedvesmas-stasti.html
+
+  .introduction-container-sm-screen .description-text { // 99iedvesmas-stasti.html
+    font-size: 1rem;
+    line-height: 1.2;
   }
 }
 
@@ -196,6 +353,25 @@ iframe { border: hidden; }
     margin-top: -0.1rem;
     transform: rotateX(180deg);
   }
+}
+
+.image-container.image-container-reverse { margin-top: 9rem;}
+
+@media only screen and (max-width: 768px) {
+  .image-container.image-container-reverse { margin-top: 0; }
+}
+
+@media only screen and (max-width: 576px) {
+  
+  .image-container.image-container-reverse .ripped-bottom { margin-top: -0.1rem; }
+  
+  .image-container.image-container-reverse div:nth-child(2) { max-width: 51.27%; }
+
+  .image-container.image-container-reverse div:nth-child(3) { max-width: 48.73%; }
+
+  .image-container.image-container-reverse div:nth-child(4) { max-width: 38.55%; }
+
+  .image-container.image-container-reverse div:nth-child(5) { max-width: 61.25%; }
 }
 
 /********* Application - piesaki-sapni.html *********/
@@ -251,6 +427,151 @@ iframe { border: hidden; }
   .application-container .application-container-inner:nth-child(2) { margin-top: 4.44rem; }
 
   .application-container-inner .h3 { padding-bottom: 1.8rem; }
+}
+
+/********* Application with images piesaki-sapni.html *********/
+
+/* Generated by http://responsive-css.spritegen.com Responsive CSS Sprite Generator */
+ 
+.baloon-art, .dog-art {
+  max-width: 100%;
+  background-size: 100%;
+  background-image: url('../img/dog-baloon-sprite.png');
+}
+ 
+.baloon-art { background-position: 0 0%; background-size: 100%; }
+.dog-art { margin-left: .5rem; background-position: 0 100%; background-size: 102.994012%; }
+
+
+.application-container.application-container-img {
+  margin-top: 5rem;
+  line-height: 1.25rem;
+}
+
+.application-container .application-container-inner:nth-child(1) h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.application-container .application-container-inner:nth-child(2) h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.application-container .application-container-inner:nth-child(1) .application-button {
+  margin-top: 7.8rem;
+}
+
+.application-container .application-container-inner:nth-child(2) .application-button {
+  margin-top: 2.9rem;
+}
+
+.application-container-inner div p { width: 76%; }
+
+@media only screen and (max-width: 768px) {
+
+  .dog-art { margin-left: 0; }
+
+  .application-container-inner.small-screen { flex-basis: initial; }
+
+  .application-container.application-container-img {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .application-container .application-container-inner:nth-child(1) h2 { margin-bottom: 1.3rem; }
+
+  .application-container.application-container-img .application-container-inner.col-lg-5 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .application-container.application-container-img p { width: 82%; }
+
+  .application-container.application-container-img .application-container-inner:nth-child(1) .application-button,
+  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { 
+    margin-top: 3.15rem;
+    margin-bottom: 8.5rem;
+  }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 9rem; }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .application-container.application-container-img.container { width: 98%; }
+
+  .application-container.application-container-img .application-container-inner:nth-child(1) h2 {
+    margin-top: 1rem;
+    margin-bottom: .3rem;
+  }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) h2 {
+    margin-top: 1.2rem;
+    margin-bottom: .1rem;
+  }
+
+  .application-container.application-container-img { margin-bottom: 0; }
+
+  .application-container.application-container-img p { 
+    width: 88%;
+    font-size: 0.67rem;
+  }
+
+  .application-container.application-container-img .application-container-inner:nth-child(1) .application-button {
+    margin-bottom: 4rem;
+  }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
+}
+
+@media only screen and (max-width: 320px) {
+  .application-container-img .application-container-inner h2 {
+    margin-top: 1rem;
+    margin-bottom: .3rem;
+  }
+  .dog-art,
+  .baloon-art { max-width: 97%; }
+
+  .baloon-art { margin-left: 2rem; }
+
+  .application-container.application-container-img p { line-height: 1.3; }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 6.7rem; }
+}
+
+/********* Application before footer - sapnu-banka.html *********/
+
+.application-container-bottom {
+  margin-top: 8rem;
+  margin-bottom: 12.1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .application-container-bottom {
+    margin-top: 7.1rem;
+    margin-bottom: 11.5rem;
+  }
+
+  .application-container-bottom .application-container-inner { flex-basis: 31%; }
+
+  .application-container-bottom .application-container-inner .h3 { padding-bottom: 2.8rem; }
+}
+
+@media only screen and (max-width: 480px) {
+  
+  .application-container-bottom {
+    margin-top: 6.5rem;
+    margin-bottom: 7rem;
+  }
+
+  .application-container-bottom .h3 { padding-bottom: 3rem; }
+  
+  .application-container-bottom .application-container-inner {
+    margin-left: 0;
+    flex-basis: 75%;
+  }
 }
 
 /********* Forms *********/
@@ -448,6 +769,106 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 }
 
+/******* Form with extra margin********/
+
+// Piesaki sapni
+
+.form-container-extra-margin { // Piesaki sapni
+  margin-top: 9.1rem;
+  margin-bottom: 12rem;
+}
+
+.form-container-extra-margin .h3 { margin-bottom: 2.8rem; } // Piesaki sapni
+
+.form-container-extra-margin textarea.form-control { margin-bottom: .65rem; }
+
+@media only screen and (max-width: 768px) {
+
+  .form-container-extra-margin { margin-top: 8.7rem; }
+
+  .form-container-extra-margin .h3 { margin-bottom: 3.2rem; } // Piesaki sapni
+}
+
+@media only screen and (max-width: 320px) {
+  .form-container-extra-margin { // Piesaki sapni
+    margin-top: 6.7rem;
+    margin-bottom: 6.6rem;
+  }
+
+  .form-container-extra-margin .h3 { margin-bottom: 1.6rem; }
+
+}
+
+/********* Form with company field *********/
+
+.form-container-company {
+  width: 44.8%;
+  margin-top: 8.59rem;
+  margin-bottom: 11.34rem;
+}
+
+.form-container-company .h3 { margin-bottom: 3.7rem; }
+
+.form-container-company textarea { margin-bottom: 1.2rem; }
+
+@media only screen and (max-width: 768px) {
+  .form-container-company {
+    width: 80%;
+    margin-top: 8.39rem;
+    margin-bottom: 12rem;
+  }
+
+  .form-container-company .h3 { margin-bottom: 5.5rem; }
+
+  .form-container-company textarea { margin-bottom: .6rem; }
+
+  .form-container-company .button { margin-top: 2.7rem; }
+}
+
+@media only screen and (max-width: 320px) {
+  .form-container-company {
+    width: 86%;
+    margin-top: 6.7rem;
+    margin-bottom: 6.5rem;
+  }
+  
+  .form-container-company .h3 { margin-bottom: 1.5rem; }
+
+  .form-container-company textarea { margin-bottom: .55rem; }
+}
+
+/********* Form submit message *********/
+
+.submit-message {
+  font-weight: 500; 
+  color: #ffa800;
+}
+
+.submit-message p:nth-child(1) {
+  margin-top: 2.33rem;
+  margin-bottom: 1.4rem;
+}
+
+.submit-message p:nth-child(2) { font-size: 1rem; }
+
+@media only screen and (max-width: 768px) {
+  .submit-message p:nth-child(1) {
+    margin-top: 6.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .submit-message p:nth-child(1) { font-size: 1rem; }
+
+  .submit-message p:nth-child(1) {
+    margin-top: 2.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .submit-message p:nth-child(2) { font-size: .78rem; }
+}
+
 /********* Logo container *********/
 
 .logo-container{ background: #ffcb66; }
@@ -496,19 +917,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   .logo-container-inner .logo { width: 15%; }
 
 }
-/********* Introduction text *********/
 
-/********* Ideja *********/
-
-.introduction-container {
-  margin-top: 6.1rem;
-  margin-bottom: 8.4rem;
-}
-
-.introduction-text.description-text { // Iekš Ideja
-  width: 43%;
-  padding-left: 0;
-}
+/********* Hero *********/
 
 .hero {
   position: relative;
@@ -549,15 +959,6 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 @media only screen and (max-width: 768px) {
-  .introduction-container { //Ideja
-    margin-top: 5rem;
-    margin-bottom: 8rem;
-  } 
-    
-  .introduction-text.description-text { // Ideja
-    width: 79%;
-    margin-bottom: 9rem;
-  } 
 
   .hero {
     height: 64.5vw;
@@ -577,15 +978,6 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 @media only screen and (max-width: 360px) {
-  .introduction-container { // Ideja
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-  } 
-
-  .introduction-container .introduction-text.description-text { // Ideja
-    width: 90%;
-    font-size: .667rem;
-  } 
 
   .hero {
     width: 885px;
@@ -606,6 +998,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
     line-height: 1.5rem;
   }
 }
+
+/********* Slider *********/
 
 .slider-wrapper {
   width: 48%;
@@ -701,325 +1095,10 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   #goToPrevSlide { padding-left: 3rem; }
  
 }
-// Piesaki sapni
 
-// Description
-.description-container.introduction-container { margin-bottom: 5rem; } // Piesaki sapni, sapnus atbalsta
-
-.description-line { // Piesaki sapni, sapnu banka
-  margin-top: 2.778rem;
-  font-size: 1.33rem;
-  padding-left: 0;
-  letter-spacing: .01rem;
-}
-
-.description-wide { // Piesaki sapni, uznemejiem
-  width: 61%;
-  line-height: 1.25;
-  letter-spacing: .01rem;
-}
-
-.description-narrow { // Uznemejiem
-  width: 81%;
-  padding-left: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .description-narrow {
-    width: 83%;
-    line-height: 1.25;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .description-container.introduction-container { margin-bottom: 4.7rem; } // Piesaki sapni, sapnus atbalsta
-}
-
-.form-container-extra-margin { // Piesaki sapni
-  margin-top: 9.1rem;
-  margin-bottom: 12rem;
-}
-
-.form-container-extra-margin .h3 { margin-bottom: 2.8rem; } // Piesaki sapni
-
-.form-container-extra-margin textarea.form-control { margin-bottom: .65rem; }
-
-@media only screen and (max-width: 768px) {
-
-  .form-container-extra-margin { margin-top: 8.7rem; }
-
-  .form-container-extra-margin .h3 { margin-bottom: 3.2rem; } // Piesaki sapni
-}
-
-@media only screen and (max-width: 320px) {
-  .form-container-extra-margin { // Piesaki sapni
-    margin-top: 6.7rem;
-    margin-bottom: 6.6rem;
-  }
-
-  .form-container-extra-margin .h3 { margin-bottom: 1.6rem; }
-
-}
-
-.form-container-company {
-  width: 44.8%;
-  margin-top: 8.59rem;
-  margin-bottom: 11.34rem;
-}
-
-.form-container-company .h3 { margin-bottom: 3.7rem; }
-
-.form-container-company textarea { margin-bottom: 1.2rem; }
-
-@media only screen and (max-width: 768px) {
-  .form-container-company {
-    width: 80%;
-    margin-top: 8.39rem;
-    margin-bottom: 12rem;
-  }
-
-  .form-container-company .h3 { margin-bottom: 5.5rem; }
-
-  .form-container-company textarea { margin-bottom: .6rem; }
-
-  .form-container-company .button { margin-top: 2.7rem; }
-}
-
-@media only screen and (max-width: 320px) {
-  .form-container-company {
-    width: 86%;
-    margin-top: 6.7rem;
-    margin-bottom: 6.5rem;
-  }
-  
-  .form-container-company .h3 { margin-bottom: 1.5rem; }
-
-  .form-container-company textarea { margin-bottom: .55rem; }
-}
-
-@media only screen and (max-width: 768px) {
-
-  .description-wide { width: 82%; } // Piesaki sapni Uznemejiem
-
-  .description-line { // Piesaki sapni, Sapnu banka
-    margin-top: 1.88rem;
-    line-height: 1.25;
-  } 
-
-  .introduction-container .description-text { 
-    margin-top: 2.33rem;
-    margin-bottom: 5rem; 
-  }  
-}
-@media only screen and (max-width: 480px) {
-  .introduction-container .description-text {
-    font-size: .78rem;
-    font-weight: 500;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .introduction-container .description-text {
-    margin-top: 0;
-    margin-bottom: 4.44rem;
-  }
-
-  .description-wide {
-    width: 92%;
-    letter-spacing: initial;
-  }
-
-  .description-line { font-size: 1rem; } // Piesaki sapni
-}
-
-// Images for application section
-
-/* Generated by http://responsive-css.spritegen.com Responsive CSS Sprite Generator */
- 
-.baloon-art, .dog-art {
-  max-width: 100%;
-  background-size: 100%;
-  background-image: url('../img/dog-baloon-sprite.png');
-}
- 
-.baloon-art { background-position: 0 0%; background-size: 100%; }
-.dog-art { margin-left: .5rem; background-position: 0 100%; background-size: 102.994012%; }
-
-// Application with images
-
-.application-container.application-container-img {
-  margin-top: 5rem;
-  line-height: 1.25rem;
-}
-
-.application-container .application-container-inner:nth-child(1) h2 {
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
-}
-
-.application-container .application-container-inner:nth-child(2) h2 {
-  margin-top: 3rem;
-  margin-bottom: 1.25rem;
-}
-
-.application-container .application-container-inner:nth-child(1) .application-button {
-  margin-top: 7.8rem;
-}
-
-.application-container .application-container-inner:nth-child(2) .application-button {
-  margin-top: 2.9rem;
-}
-
-.application-container-inner div p { width: 76%; }
-
-@media only screen and (max-width: 768px) {
-
-  .dog-art { margin-left: 0; }
-
-  .application-container-inner.small-screen { flex-basis: initial; }
-
-  .application-container.application-container-img {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .application-container .application-container-inner:nth-child(1) h2 { margin-bottom: 1.3rem; }
-
-  .application-container.application-container-img .application-container-inner.col-lg-5 {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .application-container.application-container-img p { width: 82%; }
-
-  .application-container.application-container-img .application-container-inner:nth-child(1) .application-button,
-  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { 
-    margin-top: 3.15rem;
-    margin-bottom: 8.5rem;
-  }
-
-  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 9rem; }
-}
-
-@media only screen and (max-width: 576px) {
-
-  .application-container.application-container-img.container { width: 98%; }
-
-  .application-container.application-container-img .application-container-inner:nth-child(1) h2 {
-    margin-top: 1rem;
-    margin-bottom: .3rem;
-  }
-
-  .application-container.application-container-img .application-container-inner:nth-child(2) h2 {
-    margin-top: 1.2rem;
-    margin-bottom: .1rem;
-  }
-
-  .application-container.application-container-img { margin-bottom: 0; }
-
-  .application-container.application-container-img p { 
-    width: 88%;
-    font-size: 0.67rem;
-  }
-
-  .application-container.application-container-img .application-container-inner:nth-child(1) .application-button {
-    margin-bottom: 4rem;
-  }
-
-  .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
-}
-
-@media only screen and (max-width: 320px) {
-  .application-container-img .application-container-inner h2 {
-    margin-top: 1rem;
-    margin-bottom: .3rem;
-  }
-  .dog-art,
-  .baloon-art { max-width: 97%; }
-
-  .baloon-art { margin-left: 2rem; }
-
-  .application-container.application-container-img p { line-height: 1.3; }
-
-  .application-container.application-container-img .application-container-inner:nth-child(2) .application-button { margin-bottom: 6.7rem; }
-}
-
-.image-container.image-container-reverse { margin-top: 9rem;}
-
-@media only screen and (max-width: 768px) {
-  .image-container.image-container-reverse { margin-top: 0; }
-}
-
-@media only screen and (max-width: 576px) {
-  
-  .image-container.image-container-reverse .ripped-bottom { margin-top: -0.1rem; }
-  
-  .image-container.image-container-reverse div:nth-child(2) { max-width: 51.27%; }
-
-  .image-container.image-container-reverse div:nth-child(3) { max-width: 48.73%; }
-
-  .image-container.image-container-reverse div:nth-child(4) { max-width: 38.55%; }
-
-  .image-container.image-container-reverse div:nth-child(5) { max-width: 61.25%; }
-}
-
-.submit-message {
-  font-weight: 500; 
-  color: #ffa800;
-}
-
-.submit-message p:nth-child(1) {
-  margin-top: 2.33rem;
-  margin-bottom: 1.4rem;
-}
-
-.submit-message p:nth-child(2) { font-size: 1rem; }
-
-@media only screen and (max-width: 768px) {
-  .submit-message p:nth-child(1) {
-    margin-top: 6.75rem;
-    margin-bottom: 1.25rem;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .submit-message p:nth-child(1) { font-size: 1rem; }
-
-  .submit-message p:nth-child(1) {
-    margin-top: 2.5rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .submit-message p:nth-child(2) { font-size: .78rem; }
-}
+/********* Goals *********/
 
 // Sapnu banka
-
-.description-container.introduction-headline { margin-bottom: 3.5rem; }
-
-@media only screen and (max-width: 768px) {
-  .description-container.introduction-headline { margin-bottom: 2.75rem; }
-
-  .description-container.introduction-headline h1 { font-size: 2.67rem; }
-}
-
-@media only screen and (max-width: 480px) {
-  .description-container.introduction-headline { margin-bottom: 1.57rem; }
-  .description-container.introduction-headline h1 { font-size: 2rem; }
-}
-
-.video-container-large { padding-bottom: 67.25%; }
-
-.video-container-large iframe { z-index: 1000; }
-
-@media only screen and (max-width: 768px) {
-  .video-container-large { padding-bottom: 57.25%; }
-}
-
-@media only screen and (max-width: 768px) {
-  .video-container-large { padding-bottom: 58.25%; }
-}
 
 /* Generated by http://responsive-css.spritegen.com Responsive CSS Sprite Generator */
  
@@ -1120,9 +1199,9 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   .goals div:nth-child(3) p { max-width: 91%; }
 
   .goals div:nth-child(4) { margin-top: 3.43rem; }
-
-  //.description-line { line-height: 1.1; }
 }
+
+/********* Art container - container with white line art and a few lines of text *********/
 
 .art-container { background-color: #ffcb66; }
 
@@ -1152,16 +1231,59 @@ p.art-container-text-wide { max-width: 72%; }
   background-size: 108%;
 }
 
-.rupor-art { background-position: 0 24.169742%; background-size: 124.025974%; max-width: 80%; margin-bottom: 1.67rem; }
-
-.people-art { background-position: 0 0%; background-size: 100%; margin-top: 1.5rem; margin-bottom: 1.75rem; }
-
 .white-rainbow-art {
   margin-top: 4.7rem;
   margin-right: 2rem;
   background-position: 0 0%;
   background-size: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+  .art-container p {
+    max-width: 81%;
+    padding-bottom: 3.8rem;
+    line-height: 1.25;
+  }
+
+  .white-landscape-art { margin-top: 3rem; }
+}
+
+@media only screen and (max-width: 480px) {
+  
+  .art-container {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .art-container div { max-width: 94%; }
+
+  .art-container p {
+    max-width: 95%;
+    font-size: 1rem;
+    padding-left: 0;
+    padding-bottom: 4.7rem;
+  }
+
+  .art-container .ripped-bottom { margin-top: .3%; }
+
+  .white-rainbow-art,
+  .white-landscape-art {
+    margin-top: 3.9rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .white-landscape-art {
+    max-width: 95%;
+    margin-top: 3.7rem;
+    margin-left: .5rem;
+  }
+}
+
+/********* Icons and text - container with orange line art and text *********/
+
+.rupor-art { background-position: 0 24.169742%; background-size: 124.025974%; max-width: 80%; margin-bottom: 1.67rem; }
+
+.people-art { background-position: 0 0%; background-size: 100%; margin-top: 1.5rem; margin-bottom: 1.75rem; }
 
 .icons {margin-bottom: 8.33rem; }
 
@@ -1182,17 +1304,7 @@ p.art-container-text-wide { max-width: 72%; }
 
 .icons-inner div:nth-child(2) { max-width: 28%; }
 
-.application-container-bottom {
-  margin-top: 8rem;
-  margin-bottom: 12.1rem;
-}
-
 @media only screen and (max-width: 768px) {
-  .art-container p {
-    max-width: 81%;
-    padding-bottom: 3.8rem;
-    line-height: 1.25;
-  }
 
   .rupor-art {
     max-width: 41%;
@@ -1214,36 +1326,10 @@ p.art-container-text-wide { max-width: 72%; }
   .icons-inner div:nth-child(1) { max-width: 36%; }
 
   .icons-inner div:nth-child(2) { max-width: 39%; }
-
-  .white-landscape-art { margin-top: 3rem; }
-
-  .application-container-bottom {
-    margin-top: 7.1rem;
-    margin-bottom: 11.5rem;
-  }
-
-  .application-container-bottom .application-container-inner { flex-basis: 31%; }
-
-  .application-container-bottom .application-container-inner .h3 { padding-bottom: 2.8rem; }
 }
 
+
 @media only screen and (max-width: 480px) {
-
-  .art-container {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-
-  .art-container div { max-width: 94%; }
-
-  .art-container p {
-    max-width: 95%;
-    font-size: 1rem;
-    padding-left: 0;
-    padding-bottom: 4.7rem;
-  }
-
-  .art-container .ripped-bottom { margin-top: .3%; }
 
   .icons {
     max-width: 100%;
@@ -1267,57 +1353,10 @@ p.art-container-text-wide { max-width: 72%; }
     max-width: 48%;
     margin-bottom: 1.7rem;
   }
-
-  .white-rainbow-art,
-  .white-landscape-art {
-    margin-top: 3.9rem;
-    margin-bottom: 1.3rem;
-  }
-
-  .white-landscape-art {
-    max-width: 95%;
-    margin-top: 3.7rem;
-    margin-left: .5rem;
-  }
-
-  .description-container-mb { margin-bottom: 6.9rem; }
-
-  .description-container-mb .description-text{ margin-top: 1.4rem; }
-
-  .application-container-bottom {
-    margin-top: 6.5rem;
-    margin-bottom: 7rem;
-  }
-
-  .application-container-bottom .h3 { padding-bottom: 3rem; }
-  
-  .application-container-bottom .application-container-inner {
-    margin-left: 0;
-    flex-basis: 75%;
-  }
 }
 
+/********* 99 story container *********/
 // 99 iedvesmas stāsti
-
-@media only screen and (max-width: 768px) {
-  .introduction-container-sm-screen,
-  .introduction-container-sm-screen .description-text { margin-bottom: 4.2rem; }
-}
-
-@media only screen and (max-width: 320px) {
-  .introduction-container-sm-screen {
-    width: 95%;
-    margin-bottom: 4.1rem;
-    margin-left: .5rem;
-  }
-
-  .introduction-container-sm-screen h1 { margin-bottom: 3.2rem; }
-
-  .introduction-container-sm-screen .description-text {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-}
 
 .story-container {
   width: 80%;
@@ -1456,6 +1495,8 @@ p.art-container-text-wide { max-width: 72%; }
   .story-coming-soon { font-size: .778rem; }
 }
 
+/********* Modal *********/
+
 .modal { padding-right: 0 !important; }
 
 .modal-header,
@@ -1545,6 +1586,8 @@ p.art-container-text-wide { max-width: 72%; }
     font-size: 1.3rem;
   }
 }
+
+/********* Team description *********/
 
 .team-description { 
   width: 75%;
@@ -1689,6 +1732,8 @@ p.art-container-text-wide { max-width: 72%; }
   }
 }
 
+/********* Select boxes *********/
+
 // Sapnus atbalsta
 
 .select-container {
@@ -1771,6 +1816,38 @@ label[for="type-select"] {
   font-weight: 700;
 }
 
+@media only screen and (max-width: 768px) {
+  .select-container {
+    width: 100%;
+    padding-bottom: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+
+  .select-container {
+    padding-bottom: 3.5rem;
+  }
+
+  label[for="type-select"] { margin-top: 1.05rem; }
+
+  .SelectBox { padding-top: .57rem; }
+
+  .SumoSelect {
+    width: 280px;
+    height: 41px;
+  }
+
+  label[for="location-select"],
+  label[for="type-select"],
+  .SumoSelect > .CaptionCont > span,
+  .optWrapper .options > .opt {
+    font-size: .778rem;
+  }
+}
+
+/********* Company info *********/
+
 .company-container-inner {
   display: flex;
   justify-content: space-between;
@@ -1799,11 +1876,6 @@ label[for="type-select"] {
 
 @media only screen and (max-width: 768px) {
 
-  .select-container {
-    width: 100%;
-    padding-bottom: 2.2rem;
-  }
-
   .company-container-inner { max-width: 85%; }
 
   .col-3,
@@ -1815,29 +1887,6 @@ label[for="type-select"] {
   .company-container .company-container-inner:last-child { margin-bottom: 4.6rem; }
 
   .company-logo { width: 72%; }
-}
-
-@media only screen and (max-width: 360px) {
-
-  .select-container {
-    padding-bottom: 3.5rem;
-  }
-
-  label[for="type-select"] { margin-top: 1.05rem; }
-
-  .SelectBox { padding-top: .57rem; }
-
-  .SumoSelect {
-    width: 280px;
-    height: 41px;
-  }
-
-  label[for="location-select"],
-  label[for="type-select"],
-  .SumoSelect > .CaptionCont > span,
-  .optWrapper .options > .opt {
-    font-size: .778rem;
-  }
 }
 
 /* ******** Google maps styles ******** */
@@ -1862,27 +1911,15 @@ label[for="type-select"] {
 
 .zoom-btn:hover { background: rgba(255, 203, 102, .5); }
 
+@media only screen and (max-width: 768px) {
+  .zoom-btn-container { display: none; };
+}
+
 /* Map */
 
 #map { height: 49.7vw; }
 
-.gm-style .gm-style-iw-t::after { display: none; }
-
-.gm-style .gm-style-iw-c { padding: 0; }
-
-.gm-style div:nth-last-child(3) div:first-child {
-  bottom: unset !important;
-}
-
-div.gmnoprint,
-div.gm-style-cc {
-  top: 0 !important;
-  bottom: unset !important;
-}
-
 @media only screen and (max-width: 768px) {
-  .zoom-btn-container { display: none; };
-
   #map { height: 112vw; }
 }
 
@@ -1890,18 +1927,11 @@ div.gm-style-cc {
   #map { height: 180vw; }
 }
 
-@media only screen and (max-width: 375px) {
-  .gm-style div:nth-last-child(3) div:first-child {
-    bottom: 0px !important;
-  }
-}
+/* Info window */
 
-@media only screen and (max-width: 320px) {
-  div.gm-style > div:nth-last-child(3) > div:first-child img {
-    width: 59px !important;
-    height: 23px !important;
-  }
-}
+.gm-style .gm-style-iw-t::after { display: none; }
+
+.gm-style .gm-style-iw-c { padding: 0; }
 
 .info-window {
   display: flex;
@@ -1964,10 +1994,35 @@ div.gm-style-cc {
   }
 
   .info-window-contacts div p { font-size: .778rem; }
-  
 }
 
-// 404 site
+/* Copyright and logo */
+
+.gm-style div:nth-last-child(3) div:first-child {
+  bottom: unset !important;
+}
+
+@media only screen and (max-width: 375px) {
+  .gm-style div:nth-last-child(3) div:first-child {
+    bottom: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  div.gm-style > div:nth-last-child(3) > div:first-child img {
+    width: 59px !important;
+    height: 23px !important;
+  }
+}
+
+div.gmnoprint,
+div.gm-style-cc {
+  top: 0 !important;
+  bottom: unset !important;
+}
+
+/*********** Copyright and logo ***********/
+
 .post_404 { margin-bottom: 11.7rem; }
 
 .post_404 .number-title {
