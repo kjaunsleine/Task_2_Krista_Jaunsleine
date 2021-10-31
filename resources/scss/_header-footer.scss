@@ -154,10 +154,8 @@ a.nav-link { transition: none; }
 
 @media only screen and (max-width: 576px) {
 
-  .navbar-light .navbar-toggler-icon,
-  .navbar-light .close-icon {
-    margin-right: .8rem;
-  }
+  .navbar-light .navbar-toggler-icon { margin-right: 1rem; }
+  .navbar-light .close-icon { margin-right: 1.2rem; }
 
   .navbar-light .navbar-toggler {
     margin-top: 0;
