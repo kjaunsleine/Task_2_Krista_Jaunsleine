@@ -18,6 +18,7 @@ h2 {
   font-family: "Oswald", sans-serif;
   font-size: 1.67rem;
   line-height: 2.47rem;
+  text-align: center;
 }
 
 h3 {
@@ -31,7 +32,7 @@ h3 {
   h1 { margin-bottom: 2.75rem; }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
   h1 {
     margin-bottom: 1.45rem; // Ideja
     font-size: 2rem; 
@@ -116,7 +117,7 @@ iframe { border: hidden; }
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 1700px;
+  max-width: 1400px;
   height: 100%;
   margin: 0 auto;
   
@@ -134,7 +135,7 @@ iframe { border: hidden; }
 
 .video-container-large { padding-bottom: 67.25%; }
 
-.video-container-large iframe { z-index: 1000; }
+.video-container-large iframe { z-index: 100; }
 
 @media only screen and (max-width: 768px) {
   .video-container-large { padding-bottom: 57.25%; }
@@ -200,7 +201,7 @@ iframe { border: hidden; }
 
   .description-wide { width: 82%; } // Piesaki sapni Uznemejiem
 
-  .description-line { // Piesaki sapni, Sapnu banka
+  .description-text.description-line { // Piesaki sapni, Sapnu banka
     margin-top: 1.88rem;
     line-height: 1.25;
   }
@@ -407,7 +408,7 @@ iframe { border: hidden; }
     padding-left: 0;
   }
   
-  .application-container-inner { flex-basis: 80%; } 
+  .application-container-inner { flex-basis: 31%; } 
 
   .application-container-inner .h3 {
     padding-bottom: 4.1rem;
@@ -444,6 +445,7 @@ iframe { border: hidden; }
 
 
 .application-container.application-container-img {
+  max-width: 100%;
   margin-top: 5rem;
   line-height: 1.25rem;
 }
@@ -458,15 +460,17 @@ iframe { border: hidden; }
   margin-bottom: 1.25rem;
 }
 
-.application-container .application-container-inner:nth-child(1) .application-button {
-  margin-top: 7.8rem;
-}
+.application-container-img .application-container-inner div:nth-child(3) { height: 57%; }
 
 .application-container .application-container-inner:nth-child(2) .application-button {
   margin-top: 2.9rem;
-}
+} 
 
 .application-container-inner div p { width: 76%; }
+
+@media only screen and (min-width: 1600px) {
+  .application-container.application-container-img { max-width: 80%; }
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -502,8 +506,10 @@ iframe { border: hidden; }
 
   .application-container.application-container-img.container { width: 98%; }
 
+  .application-container-img .application-container-inner div:nth-child(3) { height: 60%; }
+
   .application-container.application-container-img .application-container-inner:nth-child(1) h2 {
-    margin-top: 1rem;
+    margin-top: 1.4rem;
     margin-bottom: .3rem;
   }
 
@@ -791,8 +797,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 @media only screen and (max-width: 320px) {
   .form-container-extra-margin { // Piesaki sapni
-    margin-top: 6.7rem;
-    margin-bottom: 6.6rem;
+    margin-top: 6.4rem;
+    margin-bottom: 6.8rem;
   }
 
   .form-container-extra-margin .h3 { margin-bottom: 1.6rem; }
@@ -825,7 +831,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   .form-container-company .button { margin-top: 2.7rem; }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 480px) {
   .form-container-company {
     width: 86%;
     margin-top: 6.7rem;
@@ -954,6 +960,13 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 .hero .ripped-bottom { margin-top: -3%; }
 
+@media only screen and (min-width: 1600px) {
+  .hero-text {
+    margin-top: 40.2%;
+    font-size: 1.67rem;
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   .hero-text { max-width: 80%; }
 }
@@ -1054,16 +1067,18 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   transform: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .slider-wrapper {
     width: 85%;
     margin-top: 8.6rem;
   }
+}
 
+@media only screen and (max-width: 768px) {
   #goToPrevSlide { padding-left: 4.3rem; }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
 
   .slider-wrapper {
     width: 100%;
@@ -1492,6 +1507,12 @@ p.art-container-text-wide { max-width: 72%; }
 
   .story { margin: .33rem; }
 
+  .story-title {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: .778rem;
+  }
+
   .story-coming-soon { font-size: .778rem; }
 }
 
@@ -1679,7 +1700,7 @@ p.art-container-text-wide { max-width: 72%; }
 
   .team-member-container p {
     margin-bottom: 1rem;
-    margin-left: .5rem;
+    margin-left: .6rem;
   }
 
   .team-member-1,
@@ -1874,7 +1895,7 @@ label[for="type-select"] {
   .company-container-inner { max-width: 54%; }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 
   .company-container-inner { max-width: 85%; }
 
@@ -1911,7 +1932,7 @@ label[for="type-select"] {
 
 .zoom-btn:hover { background: rgba(255, 203, 102, .5); }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .zoom-btn-container { display: none; };
 }
 
@@ -1967,7 +1988,7 @@ label[for="type-select"] {
   text-align: right;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .gm-style-iw.gm-style-iw-c {
     max-width: 280px !important;
     max-height: 200px !important;
