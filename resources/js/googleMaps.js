@@ -282,7 +282,7 @@ const companies = [{
   
         if (marker.city === cityVal && typeVal === marker.sector || marker.city === cityVal && typeVal === '') {
           marker.setVisible(true);
-          if ($(window).width() > 480) {
+          if ($(window).width() > 577) {
             createCard(marker);
           }
         } else {
