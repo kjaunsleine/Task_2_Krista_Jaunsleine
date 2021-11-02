@@ -2063,6 +2063,52 @@ div.gm-style-cc {
 
 .post_404 .button { margin-top: 2.78rem; }
 
+/*********** Privacy policy ***********/
+
+.policy {
+  width: 60%; 
+  margin: 6.1rem auto 10rem auto;
+}
+
+.policy h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.policy p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  text-indent: 3rem;
+}
+
+.policy ul {
+  margin-left: 6rem;
+  list-style-type: circle;}
+
+.policy ul li { margin-bottom: .3rem; }
+
+@media only screen and (max-width: 576px) {
+  .policy {
+    width: 80%;
+    margin-bottom: 5rem;
+  }
+
+  .policy h2 {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+
+  .policy p,
+  .policy ul { font-size: .667rem; }
+
+  .policy p { margin-bottom: .3rem; }
+
+  .policy ul { margin-left: 3rem; }
+
+  
+}
+
 
 
 
