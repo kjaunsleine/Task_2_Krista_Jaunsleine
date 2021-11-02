@@ -9,7 +9,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const config = {
   entry: {
     theme: path.resolve(__dirname, "../","resources/theme.js"),
-    googleMaps: path.resolve(__dirname, "../","resources/js/googleMaps.js")
+    googleMaps: path.resolve(__dirname, "../","resources/js/googleMaps.js"),
+    form: path.resolve(__dirname, "../","resources/js/form.js")
   },
   output: {
     path: path.resolve(__dirname, "../", "assets/"),
@@ -52,7 +53,7 @@ const config = {
       filename: 'index.html',
       template: 'resources/index.html',
       inject: true,
-      chunks: ['theme']
+      chunks: ['theme', 'form']
     }),
     new HtmlWebpackPlugin({
       filename: '404.html',
@@ -76,13 +77,13 @@ const config = {
       filename: 'piesaki-sapni.html',
       template: 'resources/piesaki-sapni.html',
       inject: true,
-      chunks: ['theme']
+      chunks: ['theme', 'form']
     }),
     new HtmlWebpackPlugin({
       filename: 'uznemejiem.html',
       template: 'resources/uznemejiem.html',
       inject: true,
-      chunks: ['theme']
+      chunks: ['theme', 'form']
     }),
     new HtmlWebpackPlugin({
       filename: 'sapnu-banka.html',
