@@ -61,6 +61,12 @@ const config = {
       chunks: ['theme']
     }),
     new HtmlWebpackPlugin({
+      filename: 'privacy-policy.html',
+      template: 'resources/privacy-policy.html',
+      inject: true,
+      chunks: ['theme']
+    }),
+    new HtmlWebpackPlugin({
       filename: 'ideja.html',
       template: 'resources/ideja.html',
       inject: true,
