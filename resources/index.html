@@ -51,14 +51,14 @@ ${require('./header.html')}
                     </div>
                     <div class="row">
                       <div class="col-12 col-sm-6">
-                        <input class="form-control" id="name" name="name" type="text" placeholder="Vārds, Uzvārds*" minlength="2" maxlength="64" required>
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Vārds, Uzvārds*" minlength="2" maxlength="64" autocomplete="off" required>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <input class="form-control" id="email" name="email" type="email" placeholder="E-pasts*" maxlength="254" required>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="E-pasts*" maxlength="254" autocomplete="off" required>
                       </div>
                     </div>
                         <div>
-                          <input class="form-control" id="phone" name="phone" type="tel" placeholder="Telefons*" maxlength="140" pattern="^[0-9\s\(\)\+\-]+$" required>
+                          <input class="form-control" id="phone" name="phone" type="tel" placeholder="Telefons*" maxlength="140" pattern="^[0-9\s\(\)\+\-]+$" autocomplete="off" required>
                         </div>
                     <div>
                         <textarea class="form-control" id="comment" name="comment" rows="8" placeholder="Jautājums vai komentārs*" required></textarea>
