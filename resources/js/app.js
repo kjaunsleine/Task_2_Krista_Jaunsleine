@@ -5,31 +5,46 @@ $(document).ready(function() {
   let $document = $(document);
   let $body = $("body");
 
-  // --------------- Trigger revoke cookies functionality
-  $('body').on('mouseup', 'a[href="#revoke-cookies"]', () => {
-    $('.cc-revoke').trigger('click');
-    return false;
-  });
-
   // --------------- Script for deprecated browser notification
-  $('.close_announcement').click((e) => {
+  function ifIE (){
+    return window.navigator.userAgent.match(/MSIE|Trident/) !== null;
+  }
+  ifIE();
+  
+  if (ifIE() === false){
+    $('.update_browser_fake_body').css('display', 'none');
+    $('.site-wrap').css('display', 'flex');
+  } else {
+    $('.update_browser_fake_body').css({display: 'table'});
+    
+    $('.close_announcement').click(function(e) {
     e.preventDefault();
     $('.update_browser_fake_body').css('display', 'none');
     $('#browser-notification-style').remove();
   });
+  }
 
+  // --------------- Add privacy policy in cookie window link
+  $('a.cc-link').attr('href', 'privacy-policy.html');
+  //console.log($('a.cc-link').attr('href'));
+
+  // --------------- Trigger revoke cookies functionality
+  $('body').on('mouseup', 'a[href="#revoke-cookies"]', function() {
+    $('.cc-revoke').trigger('click');
+    return false;
+  });
+  
   // --------------- Replace all .svg to .png, in case the browser does not the format
   if(!Modernizr.svg) {
-      $('images[src*="svg"]').attr('src', () => {
+      $('images[src*="svg"]').attr('src', function() {
           return $(this).attr('src').replace('.svg', '.png');
       });
-      $('*[style*="svg"]').attr('style', () => {
+      $('*[style*="svg"]').attr('style', function() {
           return $(this).attr('style').replace('.svg', '.png');
       });
   }
 
   // --------------- Adding style to active nav-link
-
   const url = window.location.href;
   $('.nav-item .nav-link').filter(function(){
     return url.indexOf(this.href) != -1;
@@ -74,8 +89,40 @@ $(document).ready(function() {
     $('.footer-bank-info').slideToggle();
   });
 
-  // ---------------------- Lightslider
+  // ---------------------- Up button
+  const upBtn = document.createElement('a');
+  $('body').prepend(upBtn);
+  $(upBtn).html('<span class="icon-arrow-up"></span>');
+  $(upBtn).attr('id', 'up-button');
+  const footerOffsetTop = $('footer').offset().top - 150;
 
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      $(upBtn).show().fadeIn();
+        if ($(upBtn).offset().top >= footerOffsetTop){
+          $(upBtn).css({position:'absolute'});
+          $(upBtn).css({top: footerOffsetTop});
+          $(upBtn).css({bottom: 'unset'}); 
+        }
+      if($(document).scrollTop() + window.innerHeight < footerOffsetTop){
+        $(upBtn).css('position', 'fixed');
+        $(upBtn).css({top: 'auto'});
+        $(upBtn).css({bottom: '20px'});
+      }
+      
+    } else {
+      $(upBtn).fadeOut().hide();
+    }
+    
+  }
+  window.onscroll = function() {scrollFunction()};
+
+  $(upBtn).on('click', function(){
+    $('html, body').animate({scrollTop: 0}, 700, 'easeInQuad');
+    return false;
+  });
+
+  // ---------------------- Lightslider
   const  slider = $('#lightSlider').lightSlider({
     item: 1,
     controls: false,
@@ -97,10 +144,11 @@ $(document).ready(function() {
   // ------------------------- Add story divs
   function generateStoryDivs(){
     for (let i=1; i < 100; i++){
+      let storyNr = 'story' + i;
       let storyDiv = $("<div></div>");
       $(storyDiv).addClass('story');
-      $(storyDiv).attr('id', `story${i}`);
-      let html = `<div class="overlay"></div><p class="story-title"></p><div class="story-overlay"></div><p class="number" id="num${i}">${i}</p>`;
+      $(storyDiv).attr('id', storyNr);
+      let html = '<div class="overlay"></div><p class="story-title"></p><div class="story-overlay"></div><p class="number" id="num'+ i + '">' + i + '</p>';
       $(storyDiv).html(html);
       $('.story-container').append($(storyDiv));
     }
@@ -108,7 +156,6 @@ $(document).ready(function() {
   generateStoryDivs();
 
   // ------------------------- Show only 20 story divs on smaller than 992 px screens
-
   function hideStoryDivs () {
     // Checks screen width
     if ($(window).width() < 992) {
@@ -122,7 +169,7 @@ $(document).ready(function() {
       
       // Hides story divs which id > 20
       for(let i=1; i < 100; i++){
-        storyDiv = `#story${i}`;
+        storyDiv = '#story' + i;
         if(i > 20) {
           $(storyDiv).hide();
         }
@@ -134,7 +181,7 @@ $(document).ready(function() {
       $(addMoreBtn).on('click', function(){
         for (let i = (20*counter); i <= 20*(counter+1); i++){
           if (i<100){
-            storyDiv = `#story${i}`;
+            storyDiv = '#story' + i;
             $(storyDiv).show();
           } else {
             // When all 99 story divs are displayed, button dissapears
@@ -148,7 +195,7 @@ $(document).ready(function() {
       $('.story-container button').remove();
       // Show all divs on larger screens
       for(let i=1; i < 100; i++){
-        let storyDiv = `#story${i}`;
+        let storyDiv = '#story' + i;
         $(storyDiv).show();
       }
     }
@@ -158,7 +205,6 @@ $(document).ready(function() {
   $(window).on('resize', hideStoryDivs);
 
   // ----------------------------- Add 99 videos
-
   const videoUrlArray = ['https://vimeo.com/api/oembed.json?url=https://vimeo.com/251456177&width=640&height=360', 
   'https://vimeo.com/api/oembed.json?url=https://vimeo.com/546472954', 
   'https://vimeo.com/api/oembed.json?url=https://vimeo.com/251323647', 
@@ -169,29 +215,35 @@ $(document).ready(function() {
   function addVideos(arr){
     for(let i=0; i < arr.length; i++){
       let url = arr[i];
+      let num = i + 1;
+      let storyNr = '#story' + num;
+      let storyNrStoryOverlay = storyNr + ' .story-overlay';
+      let storyNrStoryTitle = storyNr + ' .story-title';
         $.ajax({
         type: 'GET',
         url: url,
         dataType: 'json',
         success: function(data) {
-          $(`#story${i+1}`).css({backgroundImage: `url(${data.thumbnail_url})`});
-          $(`#story${i+1} .story-overlay`).css({opacity: '0.7'});
-          $(`#story${i+1} .story-title`).html(data.title);
-          $(`#story${i+1} .story-title`).css({opacity: '0'});
+          $(storyNr).css({backgroundImage: 'url(' + data.thumbnail_url + ')'});
+          $(storyNrStoryOverlay).css({opacity: '0.7'});
+          $(storyNrStoryTitle).html(data.title);
+          $(storyNrStoryTitle).css({opacity: '0'});
+
+          let comingSoonId = arr.length +1;
+          let comingSoonStory = '#story' + comingSoonId;
+          $(comingSoonStory).html('<div class="overlay"></div><div class="story-overlay"></div><p class="story-coming-soon">Jauns stāsts tiks pievienots drīzumā<p/><p class="number" id="num' + (arr.length+1) + '">' + (arr.length+1) + '</p>');
           
-          $(`#story${arr.length+1}`).html(`<div class="overlay"></div><div class="story-overlay"></div><p class="story-coming-soon">Jauns stāsts tiks pievienots drīzumā<p/><p class="number" id="num${arr.length+1}">${arr.length+1}</p>`);
-          
-          $(`#story${i+1}`).on('click', function(){
+          $(storyNr).on('click', function(){
             // Removes thumbnail
             $(this).css({backgroundImage: "none"});
-            $(`#story${i+1} .story-overlay`).css({opacity: '1', top: '0'});
+            $(storyNrStoryOverlay).css({opacity: '1', top: '0'});
 
             // Removes iframe and title in modal
             $('.modal-body').empty();
             $('.modal-title').html('');
             
             // Adds title in story div
-            $(`#story${i+1} .story-title`).css({opacity: '1'});
+            $(storyNrStoryTitle).css({opacity: '1'});
 
             // Adds iframe to modal
             $('.modal-body').prepend(data.html);
@@ -203,10 +255,10 @@ $(document).ready(function() {
             
             // After closing of modal thumbnail is returned and title is removed
             $('#newModal').on('hidden.bs.modal', function(){
-              $(`#story${i+1}`).css({backgroundImage: `url(${data.thumbnail_url})`});
-              $(`#story${i+1} .story-overlay`).css({opacity: '0.7'});
-              $(`#story${i+1} .story-title`).html(data.title);
-              $(`#story${i+1} .story-title`).css({opacity: '0'});
+              $(storyNr).css({backgroundImage: 'url(' + data.thumbnail_url + ')'});
+              $(storyNrStoryOverlay).css({opacity: '0.7'});
+              $(storyNrStoryTitle).html(data.title);
+              $(storyNrStoryTitle).css({opacity: '0'});
             });
                
           });
@@ -217,125 +269,7 @@ $(document).ready(function() {
 
   addVideos(videoUrlArray);
 
-  // Form validation
-  const form = $('#applForm');
-  const name = document.getElementById('name');
-  const email = document.getElementById('email');
-  const company = document.getElementById('company');
-  const phone = document.getElementById('phone');
-  const comment = document.getElementById('comment');
-  const permission = document.getElementById('permission');
-  const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
-
-  $(window).on('load', function(){
-    name.value = '';
-    company.value = '';
-    email.value = '';
-    phone.value = '';
-    comment.value = '';
-  });
-
-  $.validator.addMethod('phoneRegex', function(value, element){
-    return this.optional(element) || /^[0-9\s\(\)\+\-]+$/.test(value);
-  }, 'Jāievada derīgs telefona numurs');
-
-
-  form.validate({
-    rules: {
-      name: {required: true, minlength: 2, maxlength: 64},
-      email: {required: true, email: true},
-      company: {required: true, maxlength: 300},
-      phone:  {required: true, phoneRegex: true},
-      comment: 'required',
-      permission: 'required'
-    },
-    messages: {
-      name: {required: emptyFieldMsg, minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
-      email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese' },
-      company: {required: emptyFieldMsg, maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 300'},
-      phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs' },
-      comment: emptyFieldMsg,
-      permission: 'Lauciņam jābūt atķeksētam, lai turpinātu'
-    },
-    errorPlacement: function(error, permission){
-      error.appendTo(permission.parent('div'));
-    }
-  });
-
-  // ------------------------- Form submit message
-
-  $('#applForm').on('submit', function(event){
-    event.preventDefault();
-    if($('#applForm').valid() === true){
-      for (const div of $('.form-info')){
-        $(div).hide();
-      }
-      const submitMsg = document.createElement('div');
-      $(submitMsg).addClass('submit-message');
-      const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
-      $(submitMsg).html(html);
-      document.querySelector('.form-container').appendChild(submitMsg);
-      $('#submit').hide();
-    }
-
-    
-  });
-
-  /* const requiredFields = document.querySelectorAll(':required');
-  for (let field of requiredFields){
-    field.addEventListener('invalid', function(){
-      document.getElementById('applForm').className = 'submitted';
-    });
-  }
-
-  function checkIfValid(action, field){
-    field.addEventListener(action, function(event){
-      event.target.checkValidity();
-      event.target.setCustomValidity('');
-    });
-  } */
-
-  /* checkIfValid('input',name);
-  checkIfValid('input',email);
-  checkIfValid('input',phone);
-  checkIfValid('input',comment);
-  checkIfValid('change',permission);
-
-  name.addEventListener('invalid', (event) => {
-    if(event.target.value === '') {
-      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
-    } else if (event.target.validity.tooShort) {
-      event.target.setCustomValidity('Jābūt ievadītām vismaz 2 rakstu zīmēm');
-    } else if (event.target.validity.tooLong) {
-      event.target.setCustomValidity('Sasniegts maksimālais rakstu zīmju skaits - 64');
-    }
-  });
-
-  email.addEventListener('invalid', (event) => {
-    if(event.target.value === '') {
-      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
-    } else if (event.target.validity.typeMismatch) {
-      event.target.setCustomValidity('Jāievada derīga e-pasta adrese');
-    } else if (event.target.validity.tooLong) {
-      event.target.setCustomValidity('Sasniegts maksimālais rakstu zīmju skaits - 254');
-    }
-  });
-
-  phone.addEventListener('invalid', (event) => {
-    if(event.target.value === '') {
-      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
-    } else if (event.target.validity.patternMismatch) {
-      event.target.setCustomValidity('Jāievada derīgs telefona numurs');
-    } else if (event.target.validity.tooLong) {
-      event.target.setCustomValidity('Sasniegts maksimālais zīmju skaits');
-    }
-  });
-
-  comment.addEventListener('invalid', (event) => {
-    if(event.target.value === '') {
-      event.target.setCustomValidity('Lauciņš nedrīkst palikt tukšs');
-    }
-  }); */
+  
   
   // ------------------------------- Select
 
