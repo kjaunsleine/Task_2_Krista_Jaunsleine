@@ -25,9 +25,17 @@ $(document).ready(function() {
   }
 
   // --------------- Add privacy policy in cookie window link
-  $('a.cc-link').attr('href', 'privacy-policy.html');
-  //console.log($('a.cc-link').attr('href'));
+  function changeCookieWindowLink(){
+    const cookieLink = $('.cc-link');
+  cookieLink.attr('href', 'privacy-policy.html');
+  }
 
+  changeCookieWindowLink();
+
+  $window.on('load', function(){
+    changeCookieWindowLink();
+  });
+  
   // --------------- Trigger revoke cookies functionality
   $('body').on('mouseup', 'a[href="#revoke-cookies"]', function() {
     $('.cc-revoke').trigger('click');
