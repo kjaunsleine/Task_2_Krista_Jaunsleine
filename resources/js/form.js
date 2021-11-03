@@ -46,12 +46,14 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     }
   });
 
+  form.removeAttr('novalidate');
+
   // ------------------------- Form submit message
 
-  $('#applForm').on('submit', function(event){
+  form.on('submit', function(event){
     event.preventDefault();
     
-    if($('#applForm').valid() === true){
+    if(form.valid() === true){
       $('.form-info').hide();
 
       const submitMsg = document.createElement('div');
