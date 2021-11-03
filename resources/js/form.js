@@ -46,8 +46,6 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     }
   });
 
-  form.removeAttr('novalidate');
-
   // ------------------------- Form submit message
 
   form.on('submit', function(event){
