@@ -89,7 +89,7 @@ $(document).ready(function() {
     $('.footer-bank-info').slideToggle();
   });
 
-  // ---------------------- Up button
+  /* // ---------------------- Up button
   const upBtn = document.createElement('a');
   $('body').prepend(upBtn);
   $(upBtn).html('<span class="icon-arrow-up"></span>');
@@ -120,7 +120,7 @@ $(document).ready(function() {
   $(upBtn).on('click', function(){
     $('html, body').animate({scrollTop: 0}, 700, 'easeInQuad');
     return false;
-  });
+  }); */
 
   // ---------------------- Lightslider
   const  slider = $('#lightSlider').lightSlider({
