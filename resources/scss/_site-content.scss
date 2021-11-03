@@ -809,7 +809,10 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 
 @media only screen and (max-width: 768px) {
 
-  .form-container-extra-margin { margin-top: 8.7rem; }
+  .form-container-extra-margin {
+    margin-top: 8.7rem;
+    margin-bottom: 11.4rem;
+  }
 
   .form-container-extra-margin .h3 { margin-bottom: 3.2rem; } // Piesaki sapni
 }
@@ -1908,7 +1911,10 @@ label[for="type-select"] {
 
 .company-phone,
 .company-email,
-.company-address { text-align: right; }
+.company-address {
+  text-align: right;
+  line-height: 1.25;
+}
 
 @media only screen and (min-width: 1600px) {
   .company-container-inner { max-width: 54%; }
@@ -1927,6 +1933,10 @@ label[for="type-select"] {
   .company-container .company-container-inner:last-child { margin-bottom: 4.6rem; }
 
   .company-logo { width: 72%; }
+
+  .company-phone,
+  .company-email,
+  .company-address { line-height: 1.25; }
 }
 
 /* ******** Google maps styles ******** */
