@@ -626,9 +626,11 @@ iframe { border: hidden; }
 
 .form-control::placeholder { color: #2F4858; }
 
-.form-control:focus {
+.form-control:focus,
+.form-control:active {
   outline: 2px solid rgba(196, 196, 196, 0.7);
   box-shadow: none;
+  border-radius: .333rem;
 }
 
 textarea.form-control  { 
