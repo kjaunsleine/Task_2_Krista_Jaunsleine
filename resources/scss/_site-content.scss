@@ -259,6 +259,8 @@ iframe { border: hidden; }
 @media only screen and (max-width: 320px) {
   .description-container.introduction-container { margin-bottom: 4.7rem; } // Piesaki sapni, sapnus atbalsta
 
+  .introduction-container.introduction-headline { margin-bottom: 1.57rem; }
+
   .description-wide {
     width: 92%;
     letter-spacing: initial;
