@@ -22,6 +22,8 @@ header { background-color: #fff; }
   font-weight: 500;
 }
 
+.navbar-light .navbar-nav .nav-link:last { padding-left: 1rem; }
+
 .navbar-nav .nav-item .active {
   font-weight: 700;
   padding-bottom: 0;
@@ -41,11 +43,11 @@ a.nav-link { transition: none; }
 
 .navbar-brand img{ max-width: 100%; }
 
-.navbar-nav { margin-left: 1.5rem; }
+.navbar-nav { margin-left: 1rem; }
 
 .navbar-light .navbar-toggler { border: none; }
 
-.nav-item { margin: 1rem 1.5rem 0 .7rem; }
+.nav-item { margin: 1rem 1rem 0 1rem; }
 
 .navbar-light .navbar-toggler-icon {
   margin-right: 3.3rem;
