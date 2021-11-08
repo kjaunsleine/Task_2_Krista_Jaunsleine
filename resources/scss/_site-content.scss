@@ -696,7 +696,7 @@ form div:nth-child(4) { position: relative; }
 #email-error,
 #company-error,
 #phone-error,
-#comment-error,
+#message-error,
 #permission-error { font-size: .8rem; }
 
 #name-error,
@@ -712,7 +712,7 @@ form div:nth-child(4) { position: relative; }
 #company.error,
 #phone.error { margin-bottom: 0; }
 
-#comment-error {
+#message-error {
   position: absolute;
   right: 0;
   bottom: .56rem;
@@ -787,7 +787,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   #name-error,
   #email-error,
   #phone-error,
-  #comment-error,
+  #message-error,
   #permission-error { font-size: .66rem; }
 }
 
