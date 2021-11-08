@@ -5,7 +5,7 @@ const name = document.getElementById('name');
 const email = document.getElementById('email');
 const company = document.getElementById('company');
 const phone = document.getElementById('phone');
-const comment = document.getElementById('comment');
+const message = document.getElementById('message');
 const permission = document.getElementById('permission');
 const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
 
@@ -13,7 +13,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     name.value = '';
     email.value = '';
     phone.value = '';
-    comment.value = '';
+    message.value = '';
     if(company) {
       company.value = '';
     }
@@ -27,18 +27,18 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
   form.validate({
     rules: {
       name: {required: true, minlength: 2, maxlength: 64},
-      email: {required: true, email: true},
+      email: {required: true, email: true, maxlength: 254},
       company: {required: true, maxlength: 300},
       phone:  {required: true, phoneRegex: true},
-      comment: 'required',
+      message: 'required',
       permission: 'required'
     },
     messages: {
       name: {required: emptyFieldMsg, minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
-      email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese' },
+      email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese',  maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 254' },
       company: {required: emptyFieldMsg, maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 300'},
       phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs' },
-      comment: emptyFieldMsg,
+      message: emptyFieldMsg,
       permission: 'Lauciņam jābūt atķeksētam, lai turpinātu'
     },
     errorPlacement: function(error, permission){
@@ -54,14 +54,14 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     if(form.valid() === true){
       $('.form-info').hide();
 
-      const submitMsg = document.createElement('div');
+      /* const submitMsg = document.createElement('div');
       $(submitMsg).addClass('submit-message');
       const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
-      $(submitMsg).html(html);
+      $(submitMsg).html(html); */
       $('.form-container').css({marginBottom: '12.3rem' });
       $('.form-container.form-container-extra-margin').css({marginBottom: '14.2rem' });
-      $('.form-container').append(submitMsg);
-      $('#submit').hide();
+      //$('.form-container').append(submitMsg);
+      $('#submitBtn').hide();
     } 
   });
 });
