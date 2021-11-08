@@ -29,7 +29,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       name: {required: true, minlength: 2, maxlength: 64},
       email: {required: true, email: true, maxlength: 254},
       company: {required: true, maxlength: 300},
-      phone:  {required: true, phoneRegex: true},
+      phone:  {required: true, phoneRegex: true, maxlength: 15, minlength: 8},
       message: 'required',
       permission: 'required'
     },
@@ -37,7 +37,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       name: {required: emptyFieldMsg, minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
       email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese',  maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 254' },
       company: {required: emptyFieldMsg, maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 300'},
-      phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs' },
+      phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 15', minlength: 'Jāievada vismaz 8 cipari'},
       message: emptyFieldMsg,
       permission: 'Lauciņam jābūt atķeksētam, lai turpinātu'
     },
@@ -54,13 +54,8 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     if(form.valid() === true){
       $('.form-info').hide();
 
-      /* const submitMsg = document.createElement('div');
-      $(submitMsg).addClass('submit-message');
-      const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
-      $(submitMsg).html(html); */
       $('.form-container').css({marginBottom: '12.3rem' });
       $('.form-container.form-container-extra-margin').css({marginBottom: '14.2rem' });
-      //$('.form-container').append(submitMsg);
       $('#submitBtn').hide();
     } 
   });
