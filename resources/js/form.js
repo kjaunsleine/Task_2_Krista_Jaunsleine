@@ -23,10 +23,14 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
     return this.optional(element) || /^[0-9\s\(\)\+\-]+$/.test(value);
   }, 'Jāievada derīgs telefona numurs');
 
+  $.validator.addMethod('nameRegex', function(value, element){
+    return this.optional(element) || /^[a-z ,.'-]+$/i.test(value);
+  }, 'Jāievada vārds bez cipariem un simboliem');
+
 
   form.validate({
     rules: {
-      name: {required: true, minlength: 2, maxlength: 64},
+      name: {required: true, nameRegex: true, minlength: 2, maxlength: 64},
       email: {required: true, email: true, maxlength: 254},
       company: {required: true, maxlength: 300},
       phone:  {required: true, phoneRegex: true, maxlength: 15, minlength: 8},
@@ -34,7 +38,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       permission: 'required'
     },
     messages: {
-      name: {required: emptyFieldMsg, minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
+      name: {required: emptyFieldMsg, nameRegex: 'Jāievada vārds bez cipariem un simboliem', minlength: 'Jābūt ievadītām vismaz 2 rakstu zīmēm', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 64'},
       email: {required: emptyFieldMsg, email: 'Jāievada derīga e-pasta adrese',  maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 254' },
       company: {required: emptyFieldMsg, maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 300'},
       phone: {required: emptyFieldMsg, phoneRegex: 'Jāievada derīgs telefona numurs', maxlength: 'Sasniegts maksimālais rakstu zīmju skaits - 15', minlength: 'Jāievada vismaz 8 cipari'},
