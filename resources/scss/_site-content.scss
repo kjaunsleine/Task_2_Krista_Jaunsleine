@@ -1552,15 +1552,12 @@ p.art-container-text-wide { max-width: 72%; }
 .modal-footer { border: none; }
 
 .modal-header {
-  width: 107%;
+  width: 107.5%;
   padding: .5rem;
   justify-content: flex-end;
 }
 
-.modal-title {
-  padding-left: 1.67rem;
-  font-size: 2rem;
-}
+.modal-title { font-size: 2rem; }
 
 .modal-content { background: transparent; }
 
@@ -1571,7 +1568,8 @@ p.art-container-text-wide { max-width: 72%; }
 
 .modal-header .close-icon {
   display: inline-block;
-  width: 2%;
+  width: 1.3rem;
+  height: 1.3rem;
   background-image: url(../img/close-white.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -1600,11 +1598,22 @@ p.art-container-text-wide { max-width: 72%; }
 
 .modal-backdrop.show { opacity: .9; }
 
+.modal-footer { padding: 0; }
+
 @media only screen and (max-width: 768px) {
   .modal-dialog {
     max-width: 84%;
     margin-top: 16.5rem;
   }
+
+  .modal-header { width: 105.5%; }
+
+  .modal-header .close-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .modal-footer > * { margin: 0; }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1614,7 +1623,7 @@ p.art-container-text-wide { max-width: 72%; }
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
 
   .modal-dialog {
     max-width: 94%;
@@ -1623,11 +1632,14 @@ p.art-container-text-wide { max-width: 72%; }
   }
 
   .modal-header {
-    width: 102%;
-    padding: .3rem;
+    width: 99.5%;
+    padding: .45rem;
   }
 
-  .modal-header .close-icon { width: 6%; }
+  .modal-header .close-icon {
+    width: .9rem;
+    height: .9rem;
+  }
 
   .modal-title {
     padding-left: 0;
