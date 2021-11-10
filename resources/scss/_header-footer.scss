@@ -41,11 +41,11 @@ a.nav-link { transition: none; }
 
 .navbar-brand img{ max-width: 100%; }
 
-.navbar-nav { margin-left: 1rem; }
+.navbar-nav { margin-left: 1.1rem; }
 
 .navbar-light .navbar-toggler { border: none; }
 
-.nav-item { margin: 1rem 1rem 0 1rem; }
+.nav-item { margin: 1.1rem 1rem 0 1.1rem; }
 
 .navbar-light .navbar-toggler-icon {
   margin-right: 3.3rem;
@@ -276,11 +276,14 @@ footer a { color: #fff; }
 
 
 @media only screen and (max-width: 991px) {
+
+  .footer-inner { margin-top: 1.7rem; }
+
   .footer-logo img { width: 90%; }
 
   .footer-logo .h4 {
     display: block;
-    padding-top: 1.39rem;
+    padding-top: 1.6rem;
   }
 
   .footer-menu,
