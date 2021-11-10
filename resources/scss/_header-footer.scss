@@ -243,9 +243,7 @@ footer a { color: #fff; }
 .footer-contacts .h4 { margin-bottom: .8rem }
 
 .footer-bank-info p,
-.footer-contacts p {
-  margin-bottom: .33rem;
-}
+.footer-contacts p { margin-bottom: .33rem; }
 
 .footer-contacts {margin-left: 1rem; }
 
@@ -283,7 +281,7 @@ footer a { color: #fff; }
 
   .footer-logo .h4 {
     display: block;
-    padding-top: 1.6rem;
+    padding-top: 1.7rem;
   }
 
   .footer-menu,
@@ -293,6 +291,8 @@ footer a { color: #fff; }
 
   .footer-contacts .h4 { visibility: hidden; }
 
+  .footer-contacts p:last-child { margin-bottom: 0; }
+
   .footer-details { display: block; }
 
   .footer-details:hover { color: #fff; }
@@ -300,6 +300,7 @@ footer a { color: #fff; }
   .footer-icons {
     height: 30%;
     margin-top: 1.75rem;
+    margin-bottom: 1.45rem;
   }
 
   .copyright {
