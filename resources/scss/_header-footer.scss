@@ -45,7 +45,7 @@ a.nav-link { transition: none; }
 
 .navbar-light .navbar-toggler { border: none; }
 
-.nav-item { margin: 1.1rem 1rem 0 1.1rem; }
+.nav-item { margin: 1.05rem 1.05rem 0 1.05rem; }
 
 .navbar-light .navbar-toggler-icon {
   margin-right: 3.3rem;
@@ -314,25 +314,37 @@ footer a { color: #fff; }
 
 @media only screen and (max-width: 576px) {
 
-  footer .ripped-up { margin-top: -2.1%; }
+  footer .ripped-up {
+    width: 200%;
+    right: 0;
+    margin-top: -6%;
+  }
   
-  .footer-inner { margin-top: 2rem; }
+  .footer-inner { margin-top: 1.3rem; }
 
   .footer-logo { margin-left: 1rem; }
 
-  .footer-logo .h4 { margin-bottom: .5rem; }
+  .footer-logo .h4 {
+    margin-bottom: .5rem;
+    padding-top: 1.4rem;
+  }
 
   .footer-logo img { width: 55%; }
 
   footer .h4 { font-size: 1rem; }
 
-  .footer-contacts p { font-size: .667rem; }
+  .footer-contacts .h4 { margin-bottom: .4rem; }
+
+  .footer-contacts p {
+    margin-bottom: .43rem;
+    font-size: .667rem;
+  }
 
   .footer-details { font-size: .778rem; }
 
   .footer-bank-info { margin-left: 0; }
 
-  .footer-icons { margin-top: 2.1rem; }
+  .footer-icons { margin-top: 2rem; }
 
   .copyright {
     width: 88%;
