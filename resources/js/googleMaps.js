@@ -217,13 +217,22 @@ const companies = [{
   /* ************* Create map ************  */
   
   let map;
+  let zoom;
+
+  if( $(window).width() > 568 ) {
+    zoom = 13;
+  } else if ( $(window).width() < 568 && $(window).width() > 375 ){
+    zoom = 12;
+  } else if ( $(window).width() < 376 ){
+    zoom = 11;
+  }
   
   window.initMap = function() {
   
     // Initialize map
     map = new google.maps.Map(document.getElementById("map"), {
       center: {lat: 56.947, lng: 24.115},
-      zoom: 13,
+      zoom: zoom,
       mapId: '188a28bf3623f836',
       disableDefaultUI: true,
       clickableIcons: false
@@ -269,7 +278,11 @@ const companies = [{
         let marker = markers[i];
   
         if (cityVal === 'riga'|| cityVal === '') {
-          map.setCenter({lat: 56.947, lng: 24.115});
+          if($window.width() < 481 ) {
+            map.setCenter({lat: 56.947, lng: 24.115});
+          } else {
+            map.setCenter({lat: 56.947, lng: 24.115});
+          }
         }
   
         if (cityVal === 'jelgava') {
