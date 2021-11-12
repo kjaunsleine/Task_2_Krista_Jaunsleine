@@ -203,7 +203,7 @@ iframe { border: hidden; }
   padding-left: 0;
 }
 
-.description-container-mb { margin-bottom: 8.4rem; }
+.description-container-mb { margin-bottom: 9rem; }
 
 .description-container.introduction-headline { margin-bottom: 3.5rem; }
 
@@ -214,6 +214,9 @@ iframe { border: hidden; }
     margin: 6.6rem auto 9.33rem auto;
     padding-left: 0;
   }
+
+  .description-container-mb { margin-bottom: 8.4rem; }
+
   .description-container-mb .description-text { margin-bottom: 0; }
 
 }
@@ -261,14 +264,14 @@ iframe { border: hidden; }
 }
 
 @media only screen and (max-width: 320px) {
-  .description-container.introduction-container { margin-bottom: 4.7rem; } // Piesaki sapni, sapnus atbalsta
+  .description-container.introduction-container { margin-bottom: 4.6rem; } // Piesaki sapni, sapnus atbalsta
 
   .introduction-container.introduction-headline { margin-bottom: 1.57rem; }
 
   .description-wide {
     width: 92%;
     letter-spacing: initial;
-    }
+  }
   
   .description-line { font-size: 1rem; } // Piesaki sapni
 }
@@ -689,6 +692,8 @@ input[type=checkbox]:checked { background: #ffa800 url(data:image/gif;base64,R0l
   margin-top: 3rem;
   padding: 0.95rem 3.5rem;}
 
+form div:nth-child(3) { position: relative; }
+
 form div:nth-child(4) { position: relative; }
 
 /******* Form errors ********/
@@ -721,7 +726,7 @@ form div:nth-child(4) { position: relative; }
 #message-error {
   position: absolute;
   right: 0;
-  bottom: .56rem;
+  bottom: .1rem;
 }
 
 form.submitted input:invalid { outline: 2px solid #CD5C5C;}
@@ -1375,12 +1380,15 @@ p.art-container-text-wide { max-width: 72%; }
   margin-bottom: 3.33rem;
 }
 
-.icons-inner { max-width: 77%; }
+.icons-inner {
+  max-width: 77%;
+}
 
+.icons-inner div { max-width: 27%; }
 
-.icons-inner div:nth-child(1) { max-width: 26%; }
+//.icons-inner div:nth-child(1) { max-width: 27%; }
 
-.icons-inner div:nth-child(2) { max-width: 28%; }
+//.icons-inner div:nth-child(2) { max-width: 28%; }
 
 @media only screen and (max-width: 768px) {
 
@@ -1392,7 +1400,7 @@ p.art-container-text-wide { max-width: 72%; }
   .people-art { 
     max-width: 59%;
     margin-top: 0;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.45rem;
   }
 
   .icons-inner {
@@ -1896,6 +1904,8 @@ label[for="type-select"] {
   top: 42px;
   box-shadow: none;
   -webkit-box-shadow: none;
+  will-change: display;
+  transition: display 1s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .SumoSelect > .optWrapper > .options > li.opt:first-child {
@@ -1930,22 +1940,53 @@ label[for="type-select"] {
   .SumoSelect {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
+    will-change: margin-bottom;
+    transition: margin-bottom 0.3s cubic-bezier(0.45, 0, 0.55, 1);
   }
 }
 
 @media only screen and (max-width: 360px) {
 
   .select-container {
-    padding-bottom: 2.9rem;
+    padding-bottom: 3.2rem;
   }
 
   label[for="type-select"] { margin-top: 1.05rem; }
 
-  .SelectBox { padding-top: .57rem; }
+  .SelectBox { padding-top: .7rem; }
 
   .SumoSelect {
     width: 280px;
     height: 41px;
+    margin-top: .6rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .SumoSelect > .optWrapper {
+    display: block;
+    opacity: 0;
+    height: 0;
+    will-change: opacity;
+    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open > .optWrapper {
+    height: initial;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open {
+    margin-bottom: 5.3rem;
+    will-change: margin-bottom;
+    transition: margin-bottom 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open .SelectBox span { padding-bottom: .4rem; }
+
+  .SumoSelect > .optWrapper > .options > li.opt {
+    padding-top: .6rem;
+    padding-bottom: 0;
   }
 
   label[for="location-select"],
@@ -2117,12 +2158,11 @@ label[for="type-select"] {
 }
 
 @media only screen and (max-width: 375px) {
-  .gm-style div:nth-last-child(3) div:first-child {
-    bottom: 0px !important;
+  div.gm-style > div:nth-last-child(3) > div:first-child {
+    top: unset !important;
+    bottom: 20px !important;
   }
-}
 
-@media only screen and (max-width: 320px) {
   div.gm-style > div:nth-last-child(3) > div:first-child img {
     width: 59px !important;
     height: 23px !important;
