@@ -219,13 +219,16 @@ const companies = [{
   let map;
   let zoom;
 
-  if( $(window).width() > 568 ) {
-    zoom = 13;
-  } else if ( $(window).width() < 568 && $(window).width() > 375 ){
-    zoom = 12;
-  } else if ( $(window).width() < 376 ){
-    zoom = 11;
+  function setZoomDepOnWidth(){
+    if( $(window).width() > 568 ) {
+      zoom = 13;
+    } else if ( $(window).width() < 568 && $(window).width() > 375 ){
+      zoom = 12;
+    } else if ( $(window).width() < 376 ){
+      zoom = 11;
+    }
   }
+  setZoomDepOnWidth();
   
   window.initMap = function() {
   
@@ -278,11 +281,9 @@ const companies = [{
         let marker = markers[i];
   
         if (cityVal === 'riga'|| cityVal === '') {
-          if($window.width() < 481 ) {
             map.setCenter({lat: 56.947, lng: 24.115});
-          } else {
-            map.setCenter({lat: 56.947, lng: 24.115});
-          }
+            setZoomDepOnWidth();
+            map.setZoom(zoom);
         }
   
         if (cityVal === 'jelgava') {
