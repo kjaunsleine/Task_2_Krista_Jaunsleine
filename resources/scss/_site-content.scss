@@ -1902,10 +1902,9 @@ label[for="type-select"] {
 
 .SumoSelect.open > .optWrapper {
   top: 42px;
+  padding-bottom: .5rem;
   box-shadow: none;
   -webkit-box-shadow: none;
-  will-change: display;
-  transition: display 1s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .SumoSelect > .optWrapper > .options > li.opt:first-child {
@@ -1915,10 +1914,6 @@ label[for="type-select"] {
 .SumoSelect > .optWrapper > .options > li.opt {
   padding: .15rem .83rem;
   border: none;
-}
-
-.SumoSelect > .optWrapper > .options > li.opt:last-child {
-  padding-bottom: .56rem;
 }
 
 .SumoSelect > .optWrapper > .options li.selected {
