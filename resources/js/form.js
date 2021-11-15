@@ -60,6 +60,9 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
       $(submitMsg).html(html);
 
+      $('.form-info').css({opacity: '0.5'});
+      $('#submitBtn').css({opacity: '0.5'});
+
     if(form.valid() === true) {
         let dataString = $(this).serialize();
         $.ajax({
