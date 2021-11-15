@@ -24,7 +24,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
   }, 'Jāievada derīgs telefona numurs');
 
   $.validator.addMethod('nameRegex', function(value, element){
-    return this.optional(element) || /^[a-zA-ZÆÐƎƏƐƔĲŊŒẞÞǷȜæðǝəɛɣĳŋœĸſßþƿȝĄƁÇĐƊĘĦĮƘŁØƠŞȘŢȚŦŲƯY̨Ƴąɓçđɗęħįƙłøơşșţțŧųưy̨ƴÁÀÂÄǍĂĀÃÅǺĄÆǼǢƁĆĊĈČÇĎḌĐƊÐÉÈĖÊËĚĔĒĘẸƎƏƐĠĜǦĞĢƔáàâäǎăāãåǻąæǽǣɓćċĉčçďḍđɗðéèėêëěĕēęẹǝəɛġĝǧğģɣĤḤĦIÍÌİÎÏǏĬĪĨĮỊĲĴĶƘĹĻŁĽĿʼNŃN̈ŇÑŅŊÓÒÔÖǑŎŌÕŐỌØǾƠŒĥḥħıíìiîïǐĭīĩįịĳĵķƙĸĺļłľŀŉńn̈ňñņŋóòôöǒŏōõőọøǿơœŔŘŖŚŜŠŞȘṢẞŤŢṬŦÞÚÙÛÜǓŬŪŨŰŮŲỤƯẂẀŴẄǷÝỲŶŸȲỸƳŹŻŽẒŕřŗſśŝšşșṣßťţṭŧþúùûüǔŭūũűůųụưẃẁŵẅƿýỳŷÿȳỹƴźżžẓ\s-,.\']+$/.test(value);
+    return this.optional(element) || "/^[\p{L}\s\-']+$/u".test(value);
   }, 'Jāievada vārds bez cipariem un simboliem');
 
 
@@ -60,10 +60,9 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
       $(submitMsg).html(html);
 
-      $('.form-info').css({opacity: '0.5'});
-      $('#submitBtn').css({opacity: '0.5'});
-
     if(form.valid() === true) {
+        $('.form-info').css({opacity: '0.5'});
+        $('#submitBtn').css({opacity: '0.5'});
         let dataString = $(this).serialize();
         $.ajax({
         type: 'POST',
