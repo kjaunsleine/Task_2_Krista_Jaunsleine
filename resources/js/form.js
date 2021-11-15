@@ -24,7 +24,7 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
   }, 'Jāievada derīgs telefona numurs');
 
   $.validator.addMethod('nameRegex', function(value, element){
-    return this.optional(element) || "/^[\p{L}\s\-']+$/u".test(value);
+    return this.optional(element) || /^[\p{L}\s\-']+$/u.test(value);
   }, 'Jāievada vārds bez cipariem un simboliem');
 
 
