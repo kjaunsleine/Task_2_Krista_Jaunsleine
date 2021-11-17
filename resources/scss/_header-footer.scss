@@ -22,13 +22,10 @@ header { background-color: #fff; }
   font-weight: 500;
 }
 
-.navbar-nav .nav-item .active {
+.navbar-nav .nav-item .active span {
   font-weight: 700;
   padding-bottom: 0;
-  text-decoration: underline;
-  text-decoration-color: #FFA800;
-  text-decoration-thickness: 0.167rem;
-  text-underline-position: under;
+  border-bottom: 3px solid #FFA800;
 }
 
 a.nav-link { transition: none; } 
@@ -45,7 +42,7 @@ a.nav-link { transition: none; }
 
 .navbar-light .navbar-toggler { border: none; }
 
-.nav-item { margin: 1.05rem 1.05rem 0 1.05rem; }
+.nav-item { margin: 1.3rem 1.05rem 0 1.05rem; }
 
 .navbar-light .navbar-toggler-icon {
   margin-right: 3.3rem;

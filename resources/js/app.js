@@ -66,9 +66,9 @@ $(document).ready(function() {
       $('.lang-menu').removeClass('dropdown');
       $('.lang-menu').html('');
       let html = '';
-      html += '<a class="nav-link active" href="#">LV</a>';
-      html += '<a class="nav-link" href="#">EN</a>';
-      html += '<a class="nav-link" href="#">RU</a>';
+      html += '<a class="nav-link active" href="#"><span>LV</span></a>';
+      html += '<a class="nav-link" href="#"><span>EN</span></a>';
+      html += '<a class="nav-link" href="#"><span>RU</span></a>';
       $('.lang-menu').html(html);
 
       $('.footer-details').after($('.footer-bank-info'));
@@ -97,8 +97,8 @@ $(document).ready(function() {
     $('.footer-bank-info').slideToggle();
   });
 
-  /* // ---------------------- Up button
-  const upBtn = document.createElement('a');
+  // ---------------------- Up button
+  /* const upBtn = document.createElement('a');
   $('body').prepend(upBtn);
   $(upBtn).html('<span class="icon-arrow-up"></span>');
   $(upBtn).attr('id', 'up-button');
@@ -108,26 +108,32 @@ $(document).ready(function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       $(upBtn).show().fadeIn();
         if ($(upBtn).offset().top >= footerOffsetTop){
-          $(upBtn).css({position:'absolute'});
-          $(upBtn).css({top: footerOffsetTop});
-          $(upBtn).css({bottom: 'unset'}); 
+          $(upBtn).addClass('stop');
+          $(upBtn).removeClass('move');
+          $(upBtn).css({top: footerOffsetTop}); 
         }
-      if($(document).scrollTop() + window.innerHeight < footerOffsetTop){
-        $(upBtn).css('position', 'fixed');
-        $(upBtn).css({top: 'auto'});
-        $(upBtn).css({bottom: '20px'});
-      }
+
+    if ($(document).scrollTop() + window.innerHeight < footerOffsetTop) {
+      $(upBtn).addClass('move');
+      $(upBtn).removeClass('stop');
+      $(upBtn).css({top: 'auto'}); 
+    }
       
     } else {
       $(upBtn).fadeOut().hide();
     }
-    
   }
-  window.onscroll = function() {scrollFunction()};
 
   $(upBtn).on('click', function(){
     $('html, body').animate({scrollTop: 0}, 700, 'easeInQuad');
     return false;
+  });
+
+  $window.on('scroll', scrollFunction);
+  $window.on('load resize', function(){
+    if ($window.width() < 1024){
+      $(upBtn).hide();
+    }
   }); */
 
   // ---------------------- Lightslider
