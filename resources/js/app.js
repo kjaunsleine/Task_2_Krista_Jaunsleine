@@ -173,12 +173,17 @@ $(document).ready(function() {
   function hideStoryDivs () {
     // Checks screen width
     if ($(window).width() < 992) {
-      $('.story-container button').remove();
+
+      $('.story-container-button-wrapper').remove();
+      const addMoreBtnDiv = document.createElement('div');
+      $(addMoreBtnDiv).addClass('story-container-button-wrapper');
+      
       // Creates 'Add more' button and story div
       const addMoreBtn = document.createElement('button');
       $(addMoreBtn).html('Skatīt vairāk');
       $(addMoreBtn).addClass('button');
-      $('.story-container').append(addMoreBtn);
+      $(addMoreBtnDiv).append(addMoreBtn);
+      $('.story-container').append(addMoreBtnDiv);
       let storyDiv;
       
       // Hides story divs which id > 20
@@ -199,14 +204,14 @@ $(document).ready(function() {
             $(storyDiv).show();
           } else {
             // When all 99 story divs are displayed, button dissapears
-            $(addMoreBtn).remove();
+            $('.story-container-button-wrapper').remove();
           } 
         }
         // After every click adds 1 to counter 
         counter++;
       });
     } else {
-      $('.story-container button').remove();
+      $('.story-container-button-wrapper').remove();
       // Show all divs on larger screens
       for(let i=1; i < 100; i++){
         let storyDiv = '#story' + i;
