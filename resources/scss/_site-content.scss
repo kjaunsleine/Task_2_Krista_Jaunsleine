@@ -595,25 +595,19 @@ iframe { border: hidden; }
     margin-top: 8.3rem;
     margin-bottom: 10.2rem;
   }
-
-  .application-container-bottom .application-container-inner { flex-basis: 31%; }
-
-  .application-container-bottom .application-container-inner .h3 { padding-bottom: 2.8rem; }
 }
 
 @media only screen and (max-width: 480px) {
   
   .application-container-bottom {
+    max-width: 90%;
     margin-top: 6.7rem;
     margin-bottom: 7.9rem;
   }
 
-  .application-container-bottom .h3 { padding-bottom: 3rem; }
-  
-  .application-container-bottom .application-container-inner {
-    margin-left: 0;
-    flex-basis: 75%;
-  }
+  .application-container-bottom .application-container-inner .h3 { padding-bottom: 2.8rem; }
+
+  .application-container-bottom .application-container-inner { margin-left: 0; }
 }
 
 /********* Forms *********/
@@ -997,13 +991,8 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 .hero {
   position: relative;
   width: 100vw;
-<<<<<<< Updated upstream
   height: 51.5vw;
   background: url(../img/Juris.jpg);
-=======
-  height: 50.5vw;
-  background: url('../img/Juris.jpg');
->>>>>>> Stashed changes
   background-repeat: no-repeat;
   background-size: cover;
 }
