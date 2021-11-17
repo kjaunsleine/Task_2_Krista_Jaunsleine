@@ -32,7 +32,7 @@ h3 {
   h1 { margin-bottom: 2.75rem; }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 480px) {
   h1 {
     margin-bottom: 1.45rem; // Ideja
     font-size: 2rem; 
@@ -309,7 +309,7 @@ iframe { border: hidden; }
   .introduction-container-sm-screen .description-text { margin-bottom: 4.2rem; } // 99iedvesmas-stasti.html
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .introduction-container .description-text {
     font-size: .78rem;
     font-weight: 500;
@@ -1448,23 +1448,23 @@ p.art-container-text-wide { max-width: 72%; }
 /********* 99 story container *********/
 // 99 iedvesmas stāsti
 
-.story-container {
-  width: 80%;
-  padding-left: 1.4rem;
-}
+.story-container { width: 1045px; }
+
+ 
 
 .story-container,
 .modal {
   font-family: 'Oswald', sans-serif;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .story {
+  display: inline-block;
   position: relative;
-  width: 11.7vw;
-  height: 11.7vw;
-  margin: .39rem;
+  width: 160px;
+  height: 160px;
+  margin: .225rem .39rem;
   background-repeat: none;
   background-size: cover;
   background-position: center;
@@ -1480,8 +1480,8 @@ p.art-container-text-wide { max-width: 72%; }
 .overlay,
 .story-overlay {
   position: absolute;
-  width: 11.7vw;
-  height: 11.7vw;
+  width: 160px;
+  height: 160px;
 }
 
 .overlay {
@@ -1520,14 +1520,14 @@ p.art-container-text-wide { max-width: 72%; }
 .story-coming-soon {
   position: absolute;
   top: 30%;
-  margin: auto auto;
   font-weight: 700;
   line-height: 1.5rem;
+  text-align: center;
   z-index: 1;
 }
 
 .story-container .button {
-  margin: 2.4rem auto 0 auto;
+  margin: 2.1rem auto 0 auto;
   padding: .85rem 3.4rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -1538,49 +1538,52 @@ p.art-container-text-wide { max-width: 72%; }
   .story .number { font-size: 2.5rem; }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-  .story-container { width: 69%; }
+@media only screen and (max-width: 1280px) {
+  .story-container { width: 871px; }
+}
 
-  .story-coming-soon { font-size: .778rem; }
+@media only screen and (max-width: 991px) {
+  .story-container { width: 697px; }
+  
+  .story-container-button-wrapper {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+
   .story-container {
-    width: 86%;
-    padding-left: 1rem;
+    width: 627px;
+    padding-top: .25rem;
   }
 
   .story,
   .story-overlay,
   .overlay {
-    width: 18.55vw;
-    height: 18.55vw;
+    width: 142.7px;
+    height: 142.7px;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .story-container { padding-left: 0; }
-
-  .story-coming-soon { font-size: .778rem; }
+@media only screen and (max-width: 680px) {
+  .story-container { width: 471px; }
 }
 
 @media only screen and (max-width: 480px) {
-  .story-container { width: 92%; }
+  
+  .story-container {
+    width: 297px;
+    padding-top: 0;
+  }
 
   .story,
   .story-overlay,
   .overlay {
-    width: 42vw;
-    height: 42vw;
+    width: 134px;
+    height: 134px;
   }
 
-  .story-coming-soon { font-size: 1rem; }
-}
-
-  @media only screen and (max-width: 360px) {
-  .story-container { width: 93%; }
-
-  .story { margin: .33rem; }
+  .story { margin: 0 .4rem .36rem .4rem; }
 
   .story-title {
     margin-top: 2.5rem;
@@ -1589,6 +1592,15 @@ p.art-container-text-wide { max-width: 72%; }
   }
 
   .story-coming-soon { font-size: .778rem; }
+}
+
+@media only screen and (max-width: 300px) {
+  .story,
+  .story-overlay,
+  .overlay {
+    width: 126px;
+    height: 126px;
+  }
 }
 
 /********* Modal *********/
@@ -1789,8 +1801,9 @@ p.art-container-text-wide { max-width: 72%; }
   .team-member-container h3 { margin-top: 21rem; }
 
   .team-member-container p {
-    margin-bottom: 1rem;
-    margin-left: .6rem;
+    margin-bottom: 1.2rem;
+    margin-left: .8rem;
+    line-height: 1.25;
   }
 
   .team-member-1,
@@ -1800,14 +1813,19 @@ p.art-container-text-wide { max-width: 72%; }
     max-width: 352px;
     max-height: 443px;
     margin-bottom: 1.39rem;
-  }  
+  }
 
-  .team-member-3 p {margin-bottom: .9rem;}
+  .team-member-1 p {
+    margin-left: 0;
+    margin-right: .3rem;
+  }
+
+  .team-member-3 p { margin-bottom: 1.5rem; }
 }
 
 @media only screen and (max-width: 360px) {
   .team-description {
-    margin-top: 6rem;
+    margin-top: 6.2rem;
     margin-bottom: 6.5rem;
   }
 
@@ -1830,7 +1848,7 @@ p.art-container-text-wide { max-width: 72%; }
   }
 
   .team-member-container p {
-    margin-bottom: .8rem;
+    margin-bottom: .9rem;
     font-size: .778rem;
   }
 
