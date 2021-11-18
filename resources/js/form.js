@@ -7,7 +7,7 @@ const company = document.getElementById('company');
 const phone = document.getElementById('phone');
 const message = document.getElementById('message');
 const permission = document.getElementById('permission');
-const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
+const emptyFieldMsg = 'Šis lauks ir obligāts';
 
   $(window).on('load', function(){
     name.value = '';
@@ -29,6 +29,9 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
 
 
   form.validate({
+    errorPlacement: function( error, permission ) {
+        error.appendTo(permission.parent('div'));
+    },
     rules: {
       name: {required: true, nameRegex: true, minlength: 2, maxlength: 64},
       email: {required: true, email: true, maxlength: 254},
@@ -45,9 +48,10 @@ const emptyFieldMsg = 'Lauciņš nedrīkst palikt tukšs';
       message: emptyFieldMsg,
       permission: 'Lauciņam jābūt atķeksētam, lai turpinātu'
     },
-    errorPlacement: function(error, permission){
+    /* errorPlacement: function(error, permission){
       error.appendTo(permission.parent('div'));
-    }
+    }, */
+    
   });
 
   // ------------------------- Form submit message
