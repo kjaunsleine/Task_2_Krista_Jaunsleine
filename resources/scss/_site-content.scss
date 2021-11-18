@@ -564,6 +564,8 @@ iframe { border: hidden; }
   }
 
   .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
+  
+  .baloon-art { margin-left: 2rem; }
 }
 
 @media only screen and (max-width: 320px) {
@@ -574,7 +576,6 @@ iframe { border: hidden; }
   .dog-art,
   .baloon-art { max-width: 97%; }
 
-  .baloon-art { margin-left: 2rem; }
 
   .application-container.application-container-img p { line-height: 1.3; }
 
@@ -1594,7 +1595,7 @@ p.art-container-text-wide { max-width: 72%; }
   .story-coming-soon { font-size: .778rem; }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 314px) {
   .story,
   .story-overlay,
   .overlay {
@@ -1956,6 +1957,31 @@ label[for="type-select"] {
   }
 }
 
+@media only screen and (max-width: 635px) {
+  .SumoSelect > .optWrapper {
+    display: block;
+    opacity: 0;
+    height: 0;
+    will-change: opacity;
+    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open > .optWrapper {
+    height: initial;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open {
+    margin-bottom: 6.3rem;
+    will-change: margin-bottom;
+    transition: margin-bottom 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  .SumoSelect.open .SelectBox span { padding-bottom: .4rem; }
+
+}
+
 @media only screen and (max-width: 360px) {
 
   .select-container {
@@ -1973,27 +1999,7 @@ label[for="type-select"] {
     margin-bottom: 1.3rem;
   }
 
-  .SumoSelect > .optWrapper {
-    display: block;
-    opacity: 0;
-    height: 0;
-    will-change: opacity;
-    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
-  }
-
-  .SumoSelect.open > .optWrapper {
-    height: initial;
-    opacity: 1;
-    transition: opacity 0.3s cubic-bezier(0.45, 0, 0.55, 1);
-  }
-
-  .SumoSelect.open {
-    margin-bottom: 5.3rem;
-    will-change: margin-bottom;
-    transition: margin-bottom 0.3s cubic-bezier(0.45, 0, 0.55, 1);
-  }
-
-  .SumoSelect.open .SelectBox span { padding-bottom: .4rem; }
+  .SumoSelect.open { margin-bottom: 5.3rem; }
 
   .SumoSelect > .optWrapper > .options > li.opt {
     padding-top: .6rem;
