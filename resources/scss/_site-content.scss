@@ -713,14 +713,6 @@ form div:nth-child(4) { position: relative; }
 #message-error,
 #permission-error { font-size: .8rem; }
 
-#name-error,
-#email-error,
-#company-error,
-#phone-error {
-  float: inline-start;
-  margin-bottom: .44rem;
-}
-
 #name.error,
 #email.error,
 #company.error,
@@ -729,7 +721,7 @@ form div:nth-child(4) { position: relative; }
 #message-error {
   position: absolute;
   right: 0;
-  bottom: .5rem;
+  bottom: 4%;
 }
 
 form.submitted input:invalid { outline: 2px solid #CD5C5C;}
@@ -803,6 +795,10 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   #phone-error,
   #message-error,
   #permission-error { font-size: .66rem; }
+}
+
+#message-error {
+  bottom: 6%;
 }
 
 @media only screen and (max-width: 320px) {
