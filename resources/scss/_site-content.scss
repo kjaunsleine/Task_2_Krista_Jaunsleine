@@ -32,14 +32,16 @@ h3 {
   h1 { margin-bottom: 2.75rem; }
 }
 
+@media only screen and (max-width: 576px) {
+  h2 {
+    font-size: 1rem;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   h1 {
     margin-bottom: 1.45rem; // Ideja
     font-size: 2rem; 
-  }
-
-  h2 {
-    font-size: 1rem;
   }
 
   h3 {
@@ -289,17 +291,19 @@ iframe { border: hidden; }
   padding-left: 0;
 }
 
+@media only screen and (max-width: 991px) {
+  .introduction-text.description-text { // Ideja
+    width: 79%;
+    margin-bottom: 9rem;
+  } 
+}
+
 @media only screen and (max-width: 768px) {
   .introduction-container { //Ideja
     margin-top: 5rem;
     margin-bottom: 8rem;
   } 
-    
-  .introduction-text.description-text { // Ideja
-    width: 79%;
-    margin-bottom: 9rem;
-  } 
-
+  
   .introduction-container .description-text { 
     margin-top: 2.33rem;
     margin-bottom: 5rem; 
@@ -1596,14 +1600,14 @@ p.art-container-text-wide { max-width: 72%; }
 
 @media only screen and (max-width: 1280px) {
   .story-container { width: 871px; }
+
+  .story-container-button-wrapper {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 991px) {
   .story-container { width: 697px; }
-  
-  .story-container-button-wrapper {
-    text-align: center;
-  }
 }
 
 @media only screen and (max-width: 768px) {
