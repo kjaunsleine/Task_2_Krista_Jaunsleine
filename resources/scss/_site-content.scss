@@ -720,7 +720,7 @@ form div:nth-child(4) { position: relative; }
 .error { color: #CD5C5C; }
 
 .form-control.error,
-.form-check-input.error { outline: 2px solid #CD5C5C; }
+.form-check-input.error { box-shadow: 0 0 2px 5px #CD5C5C; }
 
 #name-error,
 #email-error,
@@ -817,7 +817,7 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
 }
 
 #message-error {
-  bottom: 6%;
+  bottom: 5%;
 }
 
 @media only screen and (max-width: 320px) {
