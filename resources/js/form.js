@@ -63,20 +63,32 @@ const emptyFieldMsg = 'Šis lauks ir obligāts';
       $(submitMsg).addClass('submit-message');
       const html = "<p>Paldies, ka sapņo!</p><p>Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies.</p>";
       $(submitMsg).html(html);
-    if(form.valid() === true){
-      $('.form-info').hide();
 
-      $('.form-container').css({marginBottom: '12.3rem' });
-      $('.form-container.form-container-extra-margin').css({marginBottom: '14rem' });
-      if($(window).width() < 769) {
-        $('.form-container.form-container-extra-margin').css({marginBottom: '9rem' });
+    if(form.valid() === true) {
+        $('.form-info').css({opacity: '0.5'});
+        $('#submitBtn').css({opacity: '0.5'});
+        let dataString = $(this).serialize();
+        $.ajax({
+        type: 'POST',
+        url: 'submit.php',
+        data: dataString,
+        success: function(data){
+          $('.form-info').hide();
+          $('#submitBtn').hide();
+
+          $('.form-container').css({marginBottom: '12.3rem' });
+          $('.form-container.form-container-extra-margin').css({marginBottom: '14.2rem' });
+          if($(window).width() < 769) {
+            $('.form-container.form-container-extra-margin').css({marginBottom: '9rem' });
+          }
+          if($(window).width() < 577) {
+            $('.form-container.form-container-extra-margin').css({marginBottom: '11.1rem' });
+          }
+          $('.form-container').append(submitMsg);
+          
+            }
+        });
       }
-      if($(window).width() < 577) {
-        $('.form-container.form-container-extra-margin').css({marginBottom: '11rem' });
-      }
-      $('.form-container').append(submitMsg);
-      $('#submitBtn').hide();
-    } 
   });
 });
 
