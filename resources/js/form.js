@@ -67,12 +67,12 @@ const emptyFieldMsg = 'Šis lauks ir obligāts';
       $('.form-info').hide();
 
       $('.form-container').css({marginBottom: '12.3rem' });
-      $('.form-container.form-container-extra-margin').css({marginBottom: '14.2rem' });
+      $('.form-container.form-container-extra-margin').css({marginBottom: '14rem' });
       if($(window).width() < 769) {
         $('.form-container.form-container-extra-margin').css({marginBottom: '9rem' });
       }
       if($(window).width() < 577) {
-        $('.form-container.form-container-extra-margin').css({marginBottom: '11.1rem' });
+        $('.form-container.form-container-extra-margin').css({marginBottom: '11rem' });
       }
       $('.form-container').append(submitMsg);
       $('#submitBtn').hide();
