@@ -17,7 +17,7 @@ header { background-color: #fff; }
 .navbar { padding: 0; }
 
 .navbar-light .navbar-nav .nav-link {
-  padding: .5rem 0 0 0;
+  padding: .4rem 0 0 0;
   color: #060606;
   font-weight: 500;
 }
@@ -83,7 +83,7 @@ a.nav-link { transition: none; }
   .navbar-collapse { justify-content: center; }
 }
 
-@media only screen and (max-width: 1280px) and (min-width: 991px){
+@media only screen and (max-width: 1295px) and (min-width: 991px){
   
   .navbar-brand img { max-width: 90%; }
 
@@ -147,7 +147,7 @@ a.nav-link { transition: none; }
   }
 
   .nav-link {
-    margin-top: 3.25rem;
+    margin-top: 3.15rem;
     padding-bottom: 0;
     padding-left: 1rem;
   }
@@ -169,7 +169,6 @@ a.nav-link { transition: none; }
   .navbar-light .close-icon { margin-right: 1.2rem; }
 
   .navbar-light .navbar-toggler {
-    margin-top: .4rem;
     padding-left: .2rem;
     padding-right: .2rem;
   }
@@ -194,8 +193,10 @@ a.nav-link { transition: none; }
   .navbar-brand img { max-width: 51%; }
 
   .navbar-nav .nav-item {
-    margin: 1.4rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
+
+  .navbar-light .navbar-nav .nav-link { padding-top: .95rem; }
 
   .navbar-nav .nav-link { margin-top: 0; }
 
@@ -203,6 +204,8 @@ a.nav-link { transition: none; }
   .collapse.show { top: 48px; }
 
   .lang-menu a { margin: 0 .95rem; }
+
+  .navbar-toggler { margin-top: 0; }
 }
 
 // Footer
