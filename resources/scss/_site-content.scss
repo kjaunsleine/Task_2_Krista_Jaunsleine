@@ -932,7 +932,10 @@ form.submitted textarea:invalid { outline: 2px solid #CD5C5C;}
   margin: 0 2.3rem 0 2.4rem;
 }
 
-.logo-container-inner .logo { width: 6%; }
+.logo-container-inner .logo {
+  width: 6%;
+  min-width: 6%;
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
   .logo-container-inner img { margin-left: 2rem; }
