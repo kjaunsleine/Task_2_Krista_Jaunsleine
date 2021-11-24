@@ -547,6 +547,9 @@ iframe { border: hidden; }
   .application-container h2 { margin-top: 2.9rem; }
 
   .application-container .application-container-inner:nth-child(1) h2 { margin-bottom: 1.3rem; }
+
+  .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -578,8 +581,6 @@ iframe { border: hidden; }
   .application-container.application-container-img .application-container-inner:nth-child(1) .application-button {
     margin-bottom: 4.5rem;
   }
-
-  .application-container.application-container-img .application-container-inner:nth-child(2) { margin-top: 0; }
   
   .baloon-art { margin-left: 2.3rem; }
 }
