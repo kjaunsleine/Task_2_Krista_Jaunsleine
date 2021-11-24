@@ -218,6 +218,7 @@ footer {
 footer .ripped-up { margin-top: -4.9%; }
 
 .footer-inner {
+  justify-content: space-around;
   margin-top: .3rem;
   padding-right: 1rem;
 }
@@ -359,4 +360,10 @@ footer a { color: #fff; }
 
   .copyright p:last-child { margin-bottom: 2rem; }
 
+}
+
+@media only screen and (max-width: 480px) {
+  .footer-inner {
+    justify-content: flex-start;
+  }
 }
